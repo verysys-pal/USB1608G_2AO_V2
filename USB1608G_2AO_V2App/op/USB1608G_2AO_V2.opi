@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display typeId="org.csstudio.opibuilder.Display" version="1.0.0">
+  <name>USB-1608G-2AO $(P)</name>
+  <macros>
+    <include_parent_macros>true</include_parent_macros>
+  </macros>
+  <width>1000</width>
+  <height>900</height>
+  <background_color>
+    <color red="240" green="240" blue="240"/>
+  </background_color>
+  <widgets>
+    <!-- Title -->
+    <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+      <name>Title</name>
+      <x>0</x><y>5</y><width>800</width><height>25</height>
+      <text>USB-1608G-2AO $(P)</text>
+      <horizontal_alignment>1</horizontal_alignment>
+      <transparent>true</transparent>
+      <font>
+        <fontData fontName="Sans" height="16" style="1"/>
+      </font>
+      <foreground_color>
+        <color red="0" green="0" blue="0"/>
+      </foreground_color>
+    </widget>
+
+    <!-- Model Name -->
+    <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+      <name>LblModel</name>
+      <x>70</x><y>42</y><width>70</width><height>20</height>
+      <text>Model</text>
+      <horizontal_alignment>2</horizontal_alignment>
+      <transparent>true</transparent>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
+      <name>ModelName</name>
+      <x>150</x><y>42</y><width>150</width><height>20</height>
+      <pv_name>$(P)ModelName</pv_name>
+    </widget>
+
+    <!-- Model Number -->
+    <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+      <name>LblModelNo</name>
+      <x>70</x><y>70</y><width>70</width><height>20</height>
+      <text>Model No.</text>
+      <horizontal_alignment>2</horizontal_alignment>
+      <transparent>true</transparent>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
+      <name>ModelNumber</name>
+      <x>150</x><y>70</y><width>150</width><height>20</height>
+      <pv_name>$(P)ModelNumber</pv_name>
+    </widget>
+
+    <!-- Unique ID -->
+    <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+      <name>LblUID</name>
+      <x>220</x><y>42</y><width>90</width><height>20</height>
+      <text>Unique ID</text>
+      <horizontal_alignment>2</horizontal_alignment>
+      <transparent>true</transparent>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
+      <name>UniqueID</name>
+      <x>320</x><y>42</y><width>100</width><height>20</height>
+      <pv_name>$(P)UniqueID</pv_name>
+    </widget>
+
+    <!-- Driver Version -->
+    <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+      <name>LblDrv</name>
+      <x>220</x><y>70</y><width>115</width><height>20</height>
+      <text>Driver version</text>
+      <horizontal_alignment>2</horizontal_alignment>
+      <transparent>true</transparent>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
+      <name>DriverVersion</name>
+      <x>338</x><y>70</y><width>82</width><height>20</height>
+      <pv_name>$(P)DriverVersion</pv_name>
+    </widget>
+
+    <!-- Poll timings -->
+    <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+      <name>LblPollSleep</name>
+      <x>410</x><y>42</y><width>140</width><height>20</height>
+      <text>Poll sleep time (ms)</text>
+      <horizontal_alignment>2</horizontal_alignment>
+      <transparent>true</transparent>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.TextInput" version="1.0.0">
+      <name>PollSleepMS</name>
+      <x>553</x><y>42</y><width>57</width><height>20</height>
+      <pv_name>$(P)PollSleepMS</pv_name>
+    </widget>
+
+    <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+      <name>LblPollCycle</name>
+      <x>410</x><y>70</y><width>140</width><height>20</height>
+      <text>Poll cycle time (ms)</text>
+      <horizontal_alignment>2</horizontal_alignment>
+      <transparent>true</transparent>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
+      <name>PollTimeMS</name>
+      <x>554</x><y>70</y><width>56</width><height>20</height>
+      <pv_name>$(P)PollTimeMS</pv_name>
+    </widget>
+
+    <!-- Embedded: Digital IO (top block) -->
+    <widget typeId="org.csstudio.opibuilder.widgets.EmbeddedDisplay" version="1.0.0">
+      <name>DigitalIO</name>
+      <x>65</x><y>95</y><width>560</width><height>155</height>
+      <file>measCompDigitalIO8.opi</file>
+      <macros>
+        <P>$(P)</P>
+        <Bi>$(Bi)</Bi>
+        <Bo>$(Bo)</Bo>
+        <Bd>$(Bd)</Bd>
+        <Li>$(Li)</Li>
+        <Lo>$(Lo)</Lo>
+      </macros>
+    </widget>
+
+    <!-- Embedded: Analog In 8 -->
+    <widget typeId="org.csstudio.opibuilder.widgets.EmbeddedDisplay" version="1.0.0">
+      <name>AnalogIn8</name>
+      <x>65</x><y>255</y><width>295</width><height>285</height>
+      <file>measCompAnalogIn8.opi</file>
+      <macros>
+        <P>$(P)</P>
+        <Ai>$(Ai)</Ai>
+      </macros>
+    </widget>
+
+    <!-- Embedded: Analog Out 2 -->
+    <widget typeId="org.csstudio.opibuilder.widgets.EmbeddedDisplay" version="1.0.0">
+      <name>AnalogOut2</name>
+      <x>65</x><y>545</y><width>295</width><height>115</height>
+      <file>measCompAnalogOut2.opi</file>
+      <macros>
+        <P>$(P)</P>
+        <Ao>$(Ao)</Ao>
+      </macros>
+    </widget>
+
+    <!-- Threshold Logic (simplified) -->
+    <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+      <name>LblTLTitle</name>
+      <x>70</x><y>675</y><width>200</width><height>20</height>
+      <text>ThresholdLogic Controller</text>
+      <transparent>true</transparent>
+      <font>
+        <fontData fontName="Sans" height="13" style="1"/>
+      </font>
+    </widget>
+
+    <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+      <name>LblThreshold</name>
+      <x>80</x><y>705</y><width>80</width><height>15</height>
+      <text>Threshold:</text>
+      <horizontal_alignment>2</horizontal_alignment>
+      <transparent>true</transparent>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.TextInput" version="1.0.0">
+      <name>Threshold</name>
+      <x>170</x><y>700</y><width>80</width><height>25</height>
+      <pv_name>$(P)ThresholdLogic1Threshold</pv_name>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+      <name>LblHyst</name>
+      <x>80</x><y>735</y><width>80</width><height>15</height>
+      <text>Hysteresis:</text>
+      <horizontal_alignment>2</horizontal_alignment>
+      <transparent>true</transparent>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.TextInput" version="1.0.0">
+      <name>Hysteresis</name>
+      <x>170</x><y>730</y><width>80</width><height>25</height>
+      <pv_name>$(P)ThresholdLogic1Hysteresis</pv_name>
+    </widget>
+
+    <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+      <name>LblLogicStatus</name>
+      <x>80</x><y>795</y><width>80</width><height>15</height>
+      <text>Logic Status:</text>
+      <horizontal_alignment>2</horizontal_alignment>
+      <transparent>true</transparent>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
+      <name>LogicStatus</name>
+      <x>170</x><y>790</y><width>120</width><height>25</height>
+      <pv_name>$(P)ThresholdLogic1OutputState</pv_name>
+    </widget>
+
+    <widget typeId="org.csstudio.opibuilder.widgets.ActionButton" version="1.0.0">
+      <name>ResetButton</name>
+      <x>390</x><y>790</y><width>80</width><height>25</height>
+      <text>Reset</text>
+      <actions>
+        <action typeId="org.csstudio.opibuilder.actions.WRITE_PV">
+          <pv_name>$(P)ThresholdLogic1Reset</pv_name>
+          <value>1</value>
+        </action>
+      </actions>
+    </widget>
+
+    <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+      <name>LblAlarm</name>
+      <x>520</x><y>700</y><width>85</width><height>20</height>
+      <text>Alarm State</text>
+      <transparent>true</transparent>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
+      <name>AlarmState</name>
+      <x>610</x><y>700</y><width>80</width><height>25</height>
+      <pv_name>$(P)ThresholdLogic1AlarmState</pv_name>
+    </widget>
+
+    <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+      <name>LblCurrent</name>
+      <x>520</x><y>730</y><width>120</width><height>20</height>
+      <text>Current Value</text>
+      <transparent>true</transparent>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
+      <name>CurrentValue</name>
+      <x>520</x><y>755</y><width>120</width><height>25</height>
+      <pv_name>$(P)ThresholdLogic1CurrentValue</pv_name>
+    </widget>
+
+    <!-- Placeholders for plots can be added later in Phoebus -->
+  </widgets>
+</display>
+

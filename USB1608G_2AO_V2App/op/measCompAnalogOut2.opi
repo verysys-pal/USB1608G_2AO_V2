@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display typeId="org.csstudio.opibuilder.Display" version="1.0.0">
+  <name>Analog output</name>
+  <macros>
+    <include_parent_macros>true</include_parent_macros>
+  </macros>
+  <width>295</width>
+  <height>115</height>
+  <widgets>
+    <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+      <name>Title</name>
+      <x>69</x><y>5</y><width>156</width><height>25</height>
+      <text>Analog output</text>
+      <transparent>true</transparent>
+    </widget>
+
+    <!-- AO 1 -->
+    <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0"><name>Ao1Lbl</name><x>7</x><y>35</y><width>10</width><height>20</height><text>1</text><horizontal_alignment>2</horizontal_alignment><transparent>true</transparent></widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.TextInput" version="1.0.0"><name>Ao1Val</name><x>22</x><y>35</y><width>80</width><height>20</height><pv_name>$(P)$(Ao)1</pv_name></widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.TextInput" version="1.0.0"><name>Ao1TwkVal</name><x>210</x><y>35</y><width>60</width><height>20</height><pv_name>$(P)$(Ao)1TweakVal</pv_name></widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.ActionButton" version="1.0.0"><name>Ao1TwkDown</name><x>192</x><y>35</y><width>15</width><height>20</height><text>&lt;</text><actions><action typeId="org.csstudio.opibuilder.actions.WRITE_PV"><pv_name>$(P)$(Ao)1TweakDown.PROC</pv_name><value>1</value></action></actions></widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.ActionButton" version="1.0.0"><name>Ao1TwkUp</name><x>273</x><y>35</y><width>15</width><height>20</height><text>&gt;</text><actions><action typeId="org.csstudio.opibuilder.actions.WRITE_PV"><pv_name>$(P)$(Ao)1TweakUp.PROC</pv_name><value>1</value></action></actions></widget>
+
+    <!-- AO 2 -->
+    <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0"><name>Ao2Lbl</name><x>7</x><y>61</y><width>10</width><height>20</height><text>2</text><horizontal_alignment>2</horizontal_alignment><transparent>true</transparent></widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.TextInput" version="1.0.0"><name>Ao2Val</name><x>22</x><y>61</y><width>80</width><height>20</height><pv_name>$(P)$(Ao)2</pv_name></widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.TextInput" version="1.0.0"><name>Ao2TwkVal</name><x>210</x><y>61</y><width>60</width><height>20</height><pv_name>$(P)$(Ao)2TweakVal</pv_name></widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.ActionButton" version="1.0.0"><name>Ao2TwkDown</name><x>192</x><y>61</y><width>15</width><height>20</height><text>&lt;</text><actions><action typeId="org.csstudio.opibuilder.actions.WRITE_PV"><pv_name>$(P)$(Ao)2TweakDown.PROC</pv_name><value>1</value></action></actions></widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.ActionButton" version="1.0.0"><name>Ao2TwkUp</name><x>273</x><y>61</y><width>15</width><height>20</height><text>&gt;</text><actions><action typeId="org.csstudio.opibuilder.actions.WRITE_PV"><pv_name>$(P)$(Ao)2TweakUp.PROC</pv_name><value>1</value></action></actions></widget>
+
+    <!-- Configure link note -->
+    <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+      <name>CfgInfo</name>
+      <x>101</x><y>86</y><width>93</width><height>20</height>
+      <text>Configure (use setup panel)</text>
+      <transparent>true</transparent>
+    </widget>
+  </widgets>
+  
+</display>
+

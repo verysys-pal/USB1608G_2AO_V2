@@ -1,0 +1,27 @@
+# RELEASE - Location of external support modules
+
+# EPICS_BASE should appear last so earlier modules can override stuff:
+EPICS_BASE = /usr/local/epics/EPICS_R7.0/base
+
+SUPPORT=/usr/local/epics/EPICS_R7.0/modules/synApps/support
+
+ASYN=$(SUPPORT)/asyn-R4-44-2
+CALC=$(SUPPORT)/calc-R3-7-5
+SCALER=$(SUPPORT)/scaler-4-1
+MCA=$(SUPPORT)/mca-R7-10
+BUSY=$(SUPPORT)/busy-R1-7-4
+SSCAN=$(SUPPORT)/sscan-R2-11-6
+AUTOSAVE=$(SUPPORT)/autosave-R5-11
+SNCSEQ=$(SUPPORT)/sequencer-mirror-R2-2-9
+MEASCOMP=$(SUPPORT)/measComp-R4-2
+
+
+# Set RULES here if you want to use build rules from somewhere
+# other than EPICS_BASE:
+#RULES = $(MODULES)/build-rules
+
+# These lines allow developers to override these RELEASE settings
+# without having to modify this file directly.
+-include $(TOP)/../RELEASE.local
+-include $(TOP)/../RELEASE.$(EPICS_HOST_ARCH).local
+-include $(TOP)/configure/RELEASE.local

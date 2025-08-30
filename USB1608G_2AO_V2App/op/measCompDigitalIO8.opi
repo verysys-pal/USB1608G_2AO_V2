@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display typeId="org.csstudio.opibuilder.Display" version="1.0.0">
+  <name>Digital I/O</name>
+  <macros>
+    <include_parent_macros>true</include_parent_macros>
+  </macros>
+  <width>560</width>
+  <height>155</height>
+  <widgets>
+    <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+      <name>Title</name>
+      <x>206</x><y>3</y><width>132</width><height>25</height>
+      <text>Digital I/O</text>
+      <transparent>true</transparent>
+    </widget>
+
+    <!-- Inputs (hex) and Outputs (hex) Text update/input -->
+    <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
+      <name>InputsHex</name>
+      <x>435</x><y>57</y><width>100</width><height>18</height>
+      <pv_name>$(P)$(Li)</pv_name>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.TextInput" version="1.0.0">
+      <name>OutputsHex</name>
+      <x>435</x><y>87</y><width>100</width><height>20</height>
+      <pv_name>$(P)$(Lo)</pv_name>
+    </widget>
+
+    <!-- Simple per-bit output toggles (1..8) using ComboBox) -->
+    <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0"><name>LblOutputs</name><x>30</x><y>87</y><width>70</width><height>20</height><text>Outputs</text><horizontal_alignment>2</horizontal_alignment><transparent>true</transparent></widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.ComboBox" version="1.0.0"><name>Bo1</name><x>110</x><y>82</y><width>35</width><height>30</height><pv_name>$(P)$(Bo)1</pv_name></widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.ComboBox" version="1.0.0"><name>Bo2</name><x>150</x><y>82</y><width>35</width><height>30</height><pv_name>$(P)$(Bo)2</pv_name></widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.ComboBox" version="1.0.0"><name>Bo3</name><x>190</x><y>82</y><width>35</width><height>30</height><pv_name>$(P)$(Bo)3</pv_name></widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.ComboBox" version="1.0.0"><name>Bo4</name><x>230</x><y>82</y><width>35</width><height>30</height><pv_name>$(P)$(Bo)4</pv_name></widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.ComboBox" version="1.0.0"><name>Bo5</name><x>270</x><y>82</y><width>35</width><height>30</height><pv_name>$(P)$(Bo)5</pv_name></widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.ComboBox" version="1.0.0"><name>Bo6</name><x>310</x><y>82</y><width>35</width><height>30</height><pv_name>$(P)$(Bo)6</pv_name></widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.ComboBox" version="1.0.0"><name>Bo7</name><x>350</x><y>82</y><width>35</width><height>30</height><pv_name>$(P)$(Bo)7</pv_name></widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.ComboBox" version="1.0.0"><name>Bo8</name><x>390</x><y>82</y><width>35</width><height>30</height><pv_name>$(P)$(Bo)8</pv_name></widget>
+
+    <!-- Simple per-bit direction controls (1..8) using ComboBox) -->
+    <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0"><name>LblDir</name><x>10</x><y>123</y><width>90</width><height>20</height><text>Direction</text><horizontal_alignment>2</horizontal_alignment><transparent>true</transparent></widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.ComboBox" version="1.0.0"><name>Bd1</name><x>110</x><y>118</y><width>35</width><height>30</height><pv_name>$(P)$(Bd)1</pv_name></widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.ComboBox" version="1.0.0"><name>Bd2</name><x>150</x><y>118</y><width>35</width><height>30</height><pv_name>$(P)$(Bd)2</pv_name></widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.ComboBox" version="1.0.0"><name>Bd3</name><x>190</x><y>118</y><width>35</width><height>30</height><pv_name>$(P)$(Bd)3</pv_name></widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.ComboBox" version="1.0.0"><name>Bd4</name><x>230</x><y>118</y><width>35</width><height>30</height><pv_name>$(P)$(Bd)4</pv_name></widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.ComboBox" version="1.0.0"><name>Bd5</name><x>270</x><y>118</y><width>35</width><height>30</height><pv_name>$(P)$(Bd)5</pv_name></widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.ComboBox" version="1.0.0"><name>Bd6</name><x>310</x><y>118</y><width>35</width><height>30</height><pv_name>$(P)$(Bd)6</pv_name></widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.ComboBox" version="1.0.0"><name>Bd7</name><x>350</x><y>118</y><width>35</width><height>30</height><pv_name>$(P)$(Bd)7</pv_name></widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.ComboBox" version="1.0.0"><name>Bd8</name><x>390</x><y>118</y><width>35</width><height>30</height><pv_name>$(P)$(Bd)8</pv_name></widget>
+
+    <!-- Input indicators (use simple TextUpdates as placeholders) -->
+    <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0"><name>LblInputs</name><x>40</x><y>57</y><width>60</width><height>20</height><text>Inputs</text><horizontal_alignment>2</horizontal_alignment><transparent>true</transparent></widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0"><name>Bi1</name><x>110</x><y>55</y><width>35</width><height>20</height><pv_name>$(P)$(Bi)1.VAL</pv_name></widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0"><name>Bi2</name><x>150</x><y>55</y><width>35</width><height>20</height><pv_name>$(P)$(Bi)2.VAL</pv_name></widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0"><name>Bi3</name><x>190</x><y>55</y><width>35</width><height>20</height><pv_name>$(P)$(Bi)3.VAL</pv_name></widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0"><name>Bi4</name><x>230</x><y>55</y><width>35</width><height>20</height><pv_name>$(P)$(Bi)4.VAL</pv_name></widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0"><name>Bi5</name><x>270</x><y>55</y><width>35</width><height>20</height><pv_name>$(P)$(Bi)5.VAL</pv_name></widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0"><name>Bi6</name><x>310</x><y>55</y><width>35</width><height>20</height><pv_name>$(P)$(Bi)6.VAL</pv_name></widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0"><name>Bi7</name><x>350</x><y>55</y><width>35</width><height>20</height><pv_name>$(P)$(Bi)7.VAL</pv_name></widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0"><name>Bi8</name><x>390</x><y>55</y><width>35</width><height>20</height><pv_name>$(P)$(Bi)8.VAL</pv_name></widget>
+  </widgets>
+</display>
+

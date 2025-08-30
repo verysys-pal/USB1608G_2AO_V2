@@ -1,0 +1,28 @@
+USB1608G_2AO_V2_registerRecordDeviceDriver.o: \
+ USB1608G_2AO_V2_registerRecordDeviceDriver.cpp \
+ /usr/local/epics/EPICS_R7.0/base/include/compilerDependencies.h \
+ /usr/local/epics/EPICS_R7.0/base/include/compiler/gcc/compilerSpecific.h \
+ /usr/local/epics/EPICS_R7.0/base/include/epicsStdlib.h \
+ /usr/local/epics/EPICS_R7.0/base/include/libComAPI.h \
+ /usr/local/epics/EPICS_R7.0/base/include/os/Linux/osdStrtod.h \
+ /usr/local/epics/EPICS_R7.0/base/include/epicsTypes.h \
+ /usr/local/epics/EPICS_R7.0/base/include/compilerDependencies.h \
+ /usr/local/epics/EPICS_R7.0/base/include/errMdef.h \
+ /usr/local/epics/EPICS_R7.0/base/include/iocsh.h \
+ /usr/local/epics/EPICS_R7.0/base/include/iocshRegisterCommon.h \
+ /usr/local/epics/EPICS_R7.0/base/include/dbCoreAPI.h \
+ /usr/local/epics/EPICS_R7.0/base/include/registryCommon.h \
+ /usr/local/epics/EPICS_R7.0/base/include/dbStaticLib.h \
+ /usr/local/epics/EPICS_R7.0/base/include/dbFldTypes.h \
+ /usr/local/epics/EPICS_R7.0/base/include/dbBase.h \
+ /usr/local/epics/EPICS_R7.0/base/include/ellLib.h \
+ /usr/local/epics/EPICS_R7.0/base/include/dbDefs.h \
+ /usr/local/epics/EPICS_R7.0/base/include/recSup.h \
+ /usr/local/epics/EPICS_R7.0/base/include/devSup.h \
+ /usr/local/epics/EPICS_R7.0/base/include/link.h \
+ /usr/local/epics/EPICS_R7.0/base/include/cantProceed.h \
+ /usr/local/epics/EPICS_R7.0/base/include/dbJLink.h \
+ /usr/local/epics/EPICS_R7.0/base/include/dbCoreAPI.h \
+ /usr/local/epics/EPICS_R7.0/base/include/registryRecordType.h \
+ /usr/local/epics/EPICS_R7.0/base/include/recSup.h \
+ /usr/local/epics/EPICS_R7.0/base/include/shareLib.h

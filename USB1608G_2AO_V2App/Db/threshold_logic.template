@@ -1,0 +1,170 @@
+# ThresholdLogic.template
+# EPICS 데이터베이스 템플릿 - 임계값 기반 로직 제어
+# 매개변수:
+#   P     - PV 접두사 (예: "USB1608G_2AO_cpp:")
+#   R     - 레코드 이름 접미사 (예: "ThresholdLogic")
+#   PORT  - asyn 포트 이름
+#   ADDR  - asyn 주소 (기본값: 0)
+#   PREC  - 소수점 자릿수 (기본값: 3)
+#   EGU   - 엔지니어링 단위 (기본값: "V")
+#   SCAN  - 스캔 주기 (기본값: "1 second")
+
+# 임계값 설정 레코드 (아날로그 출력)
+record(ao, "$(P)$(R)Threshold") {
+    field(DESC, "Threshold Value Setting")
+    field(DTYP, "asynFloat64")
+    field(OUT,  "@asyn($(PORT),$(ADDR=0))THRESHOLD_VALUE")
+    field(PREC, "$(PREC=3)")
+    field(EGU,  "$(EGU=V)")
+    field(PINI, "YES")
+    field(VAL,  "$(THRESHOLD=0.0)")
+    field(DRVL, "$(DRVL=-10.0)")
+    field(DRVH, "$(DRVH=10.0)")
+    field(LOPR, "$(LOPR=-10.0)")
+    field(HOPR, "$(HOPR=10.0)")
+}
+
+# 히스테리시스 설정 레코드 (아날로그 출력)
+record(ao, "$(P)$(R)Hysteresis") {
+    field(DESC, "Hysteresis Value Setting")
+    field(DTYP, "asynFloat64")
+    field(OUT,  "@asyn($(PORT),$(ADDR=0))HYSTERESIS_VALUE")
+    field(PREC, "$(PREC=3)")
+    field(EGU,  "$(EGU=V)")
+    field(PINI, "YES")
+    field(VAL,  "$(HYSTERESIS=0.1)")
+    field(DRVL, "0.0")
+    field(DRVH, "1.0")
+    field(LOPR, "0.0")
+    field(HOPR, "1.0")
+}
+
+# 현재 값 모니터링 레코드 (실제 아날로그 입력 채널에서 값 읽기)
+record(ai, "$(P)$(R)CurrentValue") {
+    field(DESC, "Current Input Value from $(IN_CH)")
+    field(INP,  "$(P)$(IN_CH) CP")
+    field(SCAN, "Passive")
+    field(PREC, "$(PREC=3)")
+    field(EGU,  "$(EGU=V)")
+    field(LOPR, "$(LOPR=-10.0)")
+    field(HOPR, "$(HOPR=10.0)")
+    field(HIHI, "$(HIHI=9.0)")
+    field(HIGH, "$(HIGH=8.0)")
+    field(LOW,  "$(LOW=-8.0)")
+    field(LOLO, "$(LOLO=-9.0)")
+    field(HHSV, "MAJOR")
+    field(HSV,  "MINOR")
+    field(LSV,  "MINOR")
+    field(LLSV, "MAJOR")
+    field(FLNK, "$(P)$(R)Compare")
+}
+
+# 임계값 비교 계산 레코드
+record(calcout, "$(P)$(R)Compare") {
+    field(DESC, "Threshold Comparison :  $(IN_CH) -> $(OUT_CH)")
+    field(CALC, "A>=(B+C)?1:(A<=(B-C)?0:D)")
+    field(INPA, "$(P)$(IN_CH) CP")
+    field(INPB, "$(P)$(R)Threshold")
+    field(INPC, "$(P)$(R)Hysteresis")
+    field(INPD, "$(P)$(R)OutputState")
+    field(OUT,  "$(P)$(OUT_CH) PP")
+    field(OOPT, "Every Time")
+    field(DOPT, "Use CALC")
+    field(SCAN, "Passive")
+}
+
+# 출력 상태 레코드 (실제 바이너리 출력 채널 상태 모니터링)
+record(bi, "$(P)$(R)OutputState") {
+    field(DESC, "Current Output State of $(OUT_CH)")
+    field(INP,  "$(P)$(OUT_CH) CP")
+    field(SCAN, "Passive")
+    field(ZNAM, "Low")
+    field(ONAM, "High")
+    field(ZSV,  "NO_ALARM")
+    field(OSV,  "NO_ALARM")
+}
+
+# 활성화 제어 레코드 (바이너리 출력)
+record(bo, "$(P)$(R)Enable") {
+    field(DESC, "Enable/Disable Threshold Logic")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR=0))ENABLE")
+    field(PINI, "YES")
+    field(VAL,  "$(ENABLE=0)")
+    field(ZNAM, "Disabled")
+    field(ONAM, "Enabled")
+    field(ZSV,  "NO_ALARM")
+    field(OSV,  "NO_ALARM")
+}
+
+# 상태 모니터링 레코드 (다중 바이너리 입력)
+record(mbbi, "$(P)$(R)Status") {
+    field(DESC, "Threshold Logic Status")
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR=0))STATUS")
+    field(SCAN, "I/O Intr")
+    field(ZRST, "Idle")
+    field(ONST, "Active")
+    field(TWST, "Error")
+    field(THST, "Disabled")
+    field(ZRSV, "NO_ALARM")
+    field(ONSV, "NO_ALARM")
+    field(TWSV, "MAJOR")
+    field(THSV, "NO_ALARM")
+}
+
+# 리셋 명령 레코드 (바이너리 출력)
+record(bo, "$(P)$(R)Reset") {
+    field(DESC, "Reset Threshold Logic")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR=0))RESET")
+    field(ZNAM, "Normal")
+    field(ONAM, "Reset")
+    field(HIGH, "1")
+    field(PINI, "NO")
+}
+
+# 업데이트 주기 설정 레코드 (아날로그 출력)
+record(ao, "$(P)$(R)UpdateRate") {
+    field(DESC, "Update Rate in Hz")
+    field(DTYP, "asynFloat64")
+    field(OUT,  "@asyn($(PORT),$(ADDR=0))UPDATE_RATE")
+    field(PREC, "1")
+    field(EGU,  "Hz")
+    field(PINI, "YES")
+    field(VAL,  "$(UPDATE_RATE=10.0)")
+    field(DRVL, "0.1")
+    field(DRVH, "1000.0")
+    field(LOPR, "0.1")
+    field(HOPR, "1000.0")
+}
+
+# 마지막 업데이트 시간 레코드 (문자열 입력)
+record(stringin, "$(P)$(R)LastUpdate") {
+    field(DESC, "Last Update Timestamp")
+    field(DTYP, "asynOctetRead")
+    field(INP,  "@asyn($(PORT),$(ADDR=0))LAST_UPDATE")
+    field(SCAN, "I/O Intr")
+    field(VAL,  "Never")
+}
+
+# 알람 상태 레코드 (바이너리 입력)
+record(bi, "$(P)$(R)AlarmState") {
+    field(DESC, "Alarm State")
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR=0))ALARM_STATE")
+    field(SCAN, "I/O Intr")
+    field(ZNAM, "Normal")
+    field(ONAM, "Alarm")
+    field(ZSV,  "NO_ALARM")
+    field(OSV,  "MAJOR")
+}
+
+# 트리거 카운터 레코드 (롱 입력)
+record(longin, "$(P)$(R)TriggerCount") {
+    field(DESC, "Number of Threshold Triggers")
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR=0))TRIGGER_COUNT")
+    field(SCAN, "I/O Intr")
+    field(EGU,  "counts")
+}

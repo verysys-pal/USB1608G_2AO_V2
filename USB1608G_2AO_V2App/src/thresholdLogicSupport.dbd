@@ -1,0 +1,4 @@
+# ThresholdLogicController 지원을 위한 DBD 정의
+
+# 드라이버 등록 함수
+registrar(ThresholdLogicRegister)
