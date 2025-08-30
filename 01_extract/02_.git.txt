@@ -1,0 +1,3501 @@
+📁 tree of .git/
+./.git
+├── COMMIT_EDITMSG
+├── FETCH_HEAD
+├── HEAD
+├── ORIG_HEAD
+├── branches
+├── config
+├── description
+├── hooks
+│   ├── applypatch-msg.sample
+│   ├── commit-msg.sample
+│   ├── fsmonitor-watchman.sample
+│   ├── post-update.sample
+│   ├── pre-applypatch.sample
+│   ├── pre-commit.sample
+│   ├── pre-merge-commit.sample
+│   ├── pre-push.sample
+│   ├── pre-rebase.sample
+│   ├── pre-receive.sample
+│   ├── prepare-commit-msg.sample
+│   ├── push-to-checkout.sample
+│   └── update.sample
+├── index
+├── info
+│   └── exclude
+├── logs
+│   ├── HEAD
+│   └── refs
+│       ├── heads
+│       │   └── master
+│       └── remotes
+│           └── origin
+│               └── master
+├── objects
+│   ├── 00
+│   │   ├── 3d8153b6208b4cc7f0a5e13b62a45c5f9f4c28
+│   │   ├── 75b79ac7f77e9f374abc279d23c34338b0bf6e
+│   │   └── ffd9881d30c048ab3e34d0e7b17ac837dd8384
+│   ├── 01
+│   │   └── 62b29a1256911b782b656da97eba0c8398ae52
+│   ├── 03
+│   │   ├── 49c852995d3c294b047ee0e6dc73924e345d2b
+│   │   ├── b147458bbabd7b785afb5e3f29c3822dfcf8b3
+│   │   └── ee8cd87ba4022d4850369e9c4956db36ca8f20
+│   ├── 04
+│   │   └── c048e51fa6ad0272a624d766bcb457c82dee6a
+│   ├── 08
+│   │   └── da7274ac0fc28fc87bb97b64ffc0b7edc17d1d
+│   ├── 0b
+│   │   └── 106e3d642aa35e94e8738537f4ef8ae5b6a200
+│   ├── 0d
+│   │   └── 773852b753c2494b7cdcea48147c4988cff7d6
+│   ├── 0f
+│   │   ├── 535151fad40e23a6d5ec9a33283dab58f0bebe
+│   │   └── 6cb16a904aacae3ad1096e78cd352ed5bccd63
+│   ├── 12
+│   │   └── 9691fe26f39e800cab8072d034811dd4232538
+│   ├── 13
+│   │   └── 34e9f02ea424f84e2d12af6212e2e2dee6472a
+│   ├── 14
+│   │   └── 85133bfd3155ff8ba2d2fbf79e50eef100f7e7
+│   ├── 19
+│   │   ├── 68edbfa76d76d8ddaf0b1252796d8b39fbb14e
+│   │   └── c9068d194270e6e05a7c5983db6467b05e3d03
+│   ├── 1e
+│   │   └── fc84c52a0ef0de2b387387e3a51c77b6074684
+│   ├── 21
+│   │   └── 2485ebe7741ac1f4f6bad0c487134bbfeaefa7
+│   ├── 23
+│   │   └── 360cff5f8922c0a2c88e45ab42acc376674671
+│   ├── 26
+│   │   └── ef52d20a37b5930c8021d22bdf9183086fa257
+│   ├── 28
+│   │   └── bf5ddacd5aedbadf822f031d37c4d189d67956
+│   ├── 2a
+│   │   └── 8185415d3a254f8e7da47d6619f13fcd1ffff7
+│   ├── 2c
+│   │   └── f0f78343775f63401cc3e026afd7229e8d5993
+│   ├── 2d
+│   │   └── c57c597a12d49dd8bb4b56d43a534beed58630
+│   ├── 31
+│   │   ├── b4c4353301fcd1462af52d14d3afe3d0824504
+│   │   └── fd6ff22f7ea5577ff3e44e837d164706dfd693
+│   ├── 32
+│   │   └── f52d5692ad60002251f49106167e64ec214c72
+│   ├── 34
+│   │   └── ace577520c2526f3d988a3e8fb7e196e983d15
+│   ├── 36
+│   │   ├── 2d7c25bb405a5cc76d0c7518cc240999a574f4
+│   │   └── 9a9f2e64e1312f7dc865079cc0ddd9271d509f
+│   ├── 3a
+│   │   └── 525245b6f9383c93cb98f69ed994cbe3af4004
+│   ├── 3b
+│   │   └── a269dccfd9b18085c35992719103c50e091dce
+│   ├── 3d
+│   │   └── d8c69c3a97830e664ed632b70b8a845ad1fc4c
+│   ├── 3f
+│   │   └── cd0a81f79243456ca00f3be03fa02e42c24564
+│   ├── 42
+│   │   └── 8a16826621e5ffdcb13b429341104a0791a054
+│   ├── 46
+│   │   └── 1595257ec9349fb805e9429f3cfdd6016ee9ca
+│   ├── 4c
+│   │   ├── 0d99515bc25e3ecd4e308ce997228e9476a5c1
+│   │   ├── 2f50777701c15600414b5ccf4c9f397b19879e
+│   │   └── ef507b8340cb4fa33e96c204745e4a2595b03a
+│   ├── 4d
+│   │   └── ed8605e62ca179168c4bcb93a58cbd2eb2c1ca
+│   ├── 4f
+│   │   ├── 17a1cd58c4b4b4f35375ecac6a6e681de1b0af
+│   │   └── 17de6b34b95a70757121306487d09725c6e631
+│   ├── 53
+│   │   └── 03868ffb6366067b38d0aa54bca649e0ec63b8
+│   ├── 56
+│   │   ├── 3b2429fd5af19d5ab3d2a97264ce18d0a425f1
+│   │   └── d8cdbc69d39a7ef36133d88a2e4232e739e6ae
+│   ├── 57
+│   │   ├── 05ee63e64f3888afc1a844869ccc89eef43659
+│   │   ├── 413bfad8e6677042e332a5579e12a208bea13e
+│   │   └── 7abf3834496a2d2fbbb0e1c0728b0d44f7aac7
+│   ├── 5b
+│   │   └── 2a39c0977b235cbc36eb877faa869510f07b81
+│   ├── 5e
+│   │   └── b370a751268feaf1eb988d1e2e0c9a69ec8d48
+│   ├── 60
+│   │   └── ab8ae8883cca93035342a8795a7168f7f0a8d4
+│   ├── 68
+│   │   └── 3f22dfa4dc1e6af0ca50c37983ce4504dda34e
+│   ├── 69
+│   │   └── 3ff719bc92b9c5064beaa4edc4dae2385a391b
+│   ├── 6b
+│   │   └── 8fe9c484c4387ac717f67da7ccc70c9ebad4e8
+│   ├── 6d
+│   │   ├── 56e14e8b53dc7fd6d9c57e426b4c14f8345591
+│   │   └── bc4386c23a1e3302d3a3767bb18f380bdf67ff
+│   ├── 6e
+│   │   ├── 6ab5a0589540de31a359008b15711d3b9ebea0
+│   │   └── d9007a4868b9d6063bc172cd1da6dc142e2c90
+│   ├── 73
+│   │   └── d9aa8bfcde597c317eff8efb48c9109d46bc84
+│   ├── 75
+│   │   └── 7ce21cdf09a950daff9dc82cd02cb0efe735bc
+│   ├── 76
+│   │   └── 36af77edec3e87bc4bd8a06c6ba2d2335bb65b
+│   ├── 7a
+│   │   └── 52f1b6c5dbade35e15c0d7f1c4bf2b8d3597d3
+│   ├── 80
+│   │   └── 6ca8c59d2532f234925400989acf58661403f3
+│   ├── 82
+│   │   └── 527192b4da2ffa15bcfeccb56d71b5eca35474
+│   ├── 87
+│   │   ├── 635265bdb9d0c64f5c79916c907b8d175ca458
+│   │   └── d1e7e340816ed9e0b4292bc3bf4785f2acf342
+│   ├── 8a
+│   │   └── 34c12730b3922163bd6397624176f3d85da27b
+│   ├── 8b
+│   │   ├── 0d2d4cbe9c1967ba09b1ebc7fa35481b1c5432
+│   │   └── 18f29558f963b03c74f78a297728b48e64d90b
+│   ├── 8e
+│   │   └── 3bd7e4113a087369426a58fa3e294b4d5fc672
+│   ├── 8f
+│   │   └── 050f8b64d2d22ea2f0b934d19545c1cf76c785
+│   ├── 90
+│   │   ├── 1987c6cacb1d91a364439314476c259291a34e
+│   │   └── 354670bd9c963fdb6e06e39e2cd3205ecd4433
+│   ├── 91
+│   │   └── e47d0b536225d200b4c23255ae586d51e85468
+│   ├── 92
+│   │   ├── 5430940872f6f9a78d16c0c7cd3fb18f5dd3f8
+│   │   └── d8cf15fa85a6c3f0edb3441e1e95be0f846b43
+│   ├── 95
+│   │   └── 86cea75cf874f3d6214120981a7f041611d37e
+│   ├── 97
+│   │   └── 0d9561966e7d03ee4ba9af5fb46e4708ac9eff
+│   ├── 98
+│   │   └── b7dffc400cfe59dfea76bf5a048b3f604b8dbc
+│   ├── 9a
+│   │   └── ac0ab47e352df0505eff624b6638ac26896673
+│   ├── 9b
+│   │   ├── 1341040993c2598556fdc772fceae69902a4fb
+│   │   └── 232eb3af174e83de4953ac850d01fb3aa9a864
+│   ├── 9c
+│   │   └── 364d2d01511b88d0affd835c5b983a6e9125e2
+│   ├── 9d
+│   │   └── 2a4f11494667025a09b96373888bc5131bbc3a
+│   ├── a1
+│   │   └── 8dda795714f9133f747f04af119c7ddc9663cf
+│   ├── a3
+│   │   └── a4f3ed0d1ded2961e8ad87516cd45f921202cd
+│   ├── a4
+│   │   └── ad20975810c0d033adedb9b903e7b9ae056003
+│   ├── a5
+│   │   └── 1b8ce4d45f88c7c66fa8009961431c0820336c
+│   ├── a6
+│   │   └── 9b909e0078779f21bee655de12f79205b32397
+│   ├── a7
+│   │   └── 6e59187c780d5b54af634d85f59f825386ed77
+│   ├── a8
+│   │   └── 517480b1f07547876ed44bad7bd99c433f7882
+│   ├── aa
+│   │   └── 93d9d90cc2468ce083d1b282b8b827937f93e3
+│   ├── ab
+│   │   └── 9ca848e4743cb0aac817d5ce784604f0ff76e0
+│   ├── b0
+│   │   └── 2529475ec1274c67be6c477e94a68bccd4125b
+│   ├── be
+│   │   └── 678b95e51dabb4463a716e0eb0fb069658f4b0
+│   ├── bf
+│   │   ├── 7debb35877ca4adb3bbabcda030202a2715c01
+│   │   └── c9f9d605264cb6bf5f8ce149994eb91a7ea22c
+│   ├── c2
+│   │   └── e930195fa48ac1ffda5d5667ea5ce9cdd6addf
+│   ├── c4
+│   │   ├── 0f4e856d473a589982795bb28a7731225fa2d1
+│   │   └── 98c636825b979a7171854cfb2a085157f58860
+│   ├── c6
+│   │   └── 3bff58e4f98410cab59de84ae59626b51bb539
+│   ├── c7
+│   │   ├── 4db9e2d8f485a9be45d1a9777bf15591822e34
+│   │   └── 779885494d164214dd5fc55b36e3d89e551dd3
+│   ├── cc
+│   │   └── ed418fe02e1be683c0d83189f10c93c8225708
+│   ├── d0
+│   │   ├── 3395d0e384014ea5c8927ffc4f956ab3e9cdce
+│   │   └── 9d668d537526fb41c1e08b1ecb53c1260c60b3
+│   ├── d5
+│   │   └── 137ca5f82299919a28016efb2fc241cad7dae8
+│   ├── db
+│   │   └── 11f09c3c6943d0fc6950bc45dff0e79973e594
+│   ├── dc
+│   │   └── 57b0d83efd33a27899736b758aa6e548ba800d
+│   ├── dd
+│   │   └── e56cb9c0a13a24e3f7b2315eeabf442eb05e6f
+│   ├── e0
+│   │   ├── 9c2a18408c0fb60149b889dcfa061fbbc7f7df
+│   │   └── b3229a1749e98e05191bdeac59f7b5df89f817
+│   ├── e1
+│   │   └── b9aa4ab50de345f4d5f0cf7013f6026aa015e3
+│   ├── e4
+│   │   └── b1c8a326b911c0a1c3e9d25b6657cb0aa10211
+│   ├── e6
+│   │   └── 9de29bb2d1d6434b8b29ae775ad8c2e48c5391
+│   ├── e7
+│   │   └── ccf6d39b2aecc422ac47217c888114dad5429b
+│   ├── e9
+│   │   ├── 55e50f93ea7891301582e59cb26c27a2643f15
+│   │   └── 63ff7bcf20ad4145100b641eddc5c6f3188c86
+│   ├── ea
+│   │   └── dc0da0da649f11696c1efc547d815d356fa0b6
+│   ├── ee
+│   │   └── 1302eeb77083076390ec776cbaa6a8544e3da6
+│   ├── f2
+│   │   └── a7004d47cc3e1ead507554d0edec58e0e39ea4
+│   ├── f3
+│   │   └── 1d06387a04ee4f281495b38c80994855cbf58e
+│   ├── f4
+│   │   └── 9b7e7a235aff76a164b9d3454fa6cbd68c40a6
+│   ├── f6
+│   │   ├── 7262f4bfe141d7ce178e298d844a4a9b35050d
+│   │   └── d10d1f107c61906ae0a75f0f7b1a358378fbd2
+│   ├── f8
+│   │   └── 75745f04c23745cd4cca92652c07f35ede88ac
+│   ├── f9
+│   │   ├── 071ef85bfd75df8bb284f778a43f3cbb4bdb3b
+│   │   └── c1932cb1e30fbc41ad60a7e17134eb2c05c564
+│   ├── fb
+│   │   ├── 2b39f25c7fd31cd2cc5e86e53f9ad57790f33d
+│   │   └── 389fe5beef2982ed9f0c883ec462985eea371d
+│   ├── fe
+│   │   └── 985d8874727a3def0c7a93a0ecd927765189ca
+│   ├── ff
+│   │   └── e12e30607f2f3334d719d382db3bbc0c21d924
+│   ├── info
+│   └── pack
+└── refs
+    ├── heads
+    │   └── master
+    ├── remotes
+    │   └── origin
+    │       └── master
+    └── tags
+
+120 directories, 160 files
+
+
+
+
+
+
+
+
+
+
+📄 All files under .git/:
+./.git/COMMIT_EDITMSG
+./.git/FETCH_HEAD
+./.git/HEAD
+./.git/ORIG_HEAD
+./.git/config
+./.git/description
+./.git/hooks/applypatch-msg.sample
+./.git/hooks/commit-msg.sample
+./.git/hooks/fsmonitor-watchman.sample
+./.git/hooks/post-update.sample
+./.git/hooks/pre-applypatch.sample
+./.git/hooks/pre-commit.sample
+./.git/hooks/pre-merge-commit.sample
+./.git/hooks/pre-push.sample
+./.git/hooks/pre-rebase.sample
+./.git/hooks/pre-receive.sample
+./.git/hooks/prepare-commit-msg.sample
+./.git/hooks/push-to-checkout.sample
+./.git/hooks/update.sample
+./.git/index
+./.git/info/exclude
+./.git/logs/HEAD
+./.git/logs/refs/heads/master
+./.git/logs/refs/remotes/origin/master
+./.git/objects/00/3d8153b6208b4cc7f0a5e13b62a45c5f9f4c28
+./.git/objects/00/75b79ac7f77e9f374abc279d23c34338b0bf6e
+./.git/objects/00/ffd9881d30c048ab3e34d0e7b17ac837dd8384
+./.git/objects/01/62b29a1256911b782b656da97eba0c8398ae52
+./.git/objects/03/49c852995d3c294b047ee0e6dc73924e345d2b
+./.git/objects/03/b147458bbabd7b785afb5e3f29c3822dfcf8b3
+./.git/objects/03/ee8cd87ba4022d4850369e9c4956db36ca8f20
+./.git/objects/04/c048e51fa6ad0272a624d766bcb457c82dee6a
+./.git/objects/08/da7274ac0fc28fc87bb97b64ffc0b7edc17d1d
+./.git/objects/0b/106e3d642aa35e94e8738537f4ef8ae5b6a200
+./.git/objects/0d/773852b753c2494b7cdcea48147c4988cff7d6
+./.git/objects/0f/535151fad40e23a6d5ec9a33283dab58f0bebe
+./.git/objects/0f/6cb16a904aacae3ad1096e78cd352ed5bccd63
+./.git/objects/12/9691fe26f39e800cab8072d034811dd4232538
+./.git/objects/13/34e9f02ea424f84e2d12af6212e2e2dee6472a
+./.git/objects/14/85133bfd3155ff8ba2d2fbf79e50eef100f7e7
+./.git/objects/19/68edbfa76d76d8ddaf0b1252796d8b39fbb14e
+./.git/objects/19/c9068d194270e6e05a7c5983db6467b05e3d03
+./.git/objects/1e/fc84c52a0ef0de2b387387e3a51c77b6074684
+./.git/objects/21/2485ebe7741ac1f4f6bad0c487134bbfeaefa7
+./.git/objects/23/360cff5f8922c0a2c88e45ab42acc376674671
+./.git/objects/26/ef52d20a37b5930c8021d22bdf9183086fa257
+./.git/objects/28/bf5ddacd5aedbadf822f031d37c4d189d67956
+./.git/objects/2a/8185415d3a254f8e7da47d6619f13fcd1ffff7
+./.git/objects/2c/f0f78343775f63401cc3e026afd7229e8d5993
+./.git/objects/2d/c57c597a12d49dd8bb4b56d43a534beed58630
+./.git/objects/31/b4c4353301fcd1462af52d14d3afe3d0824504
+./.git/objects/31/fd6ff22f7ea5577ff3e44e837d164706dfd693
+./.git/objects/32/f52d5692ad60002251f49106167e64ec214c72
+./.git/objects/34/ace577520c2526f3d988a3e8fb7e196e983d15
+./.git/objects/36/2d7c25bb405a5cc76d0c7518cc240999a574f4
+./.git/objects/36/9a9f2e64e1312f7dc865079cc0ddd9271d509f
+./.git/objects/3a/525245b6f9383c93cb98f69ed994cbe3af4004
+./.git/objects/3b/a269dccfd9b18085c35992719103c50e091dce
+./.git/objects/3d/d8c69c3a97830e664ed632b70b8a845ad1fc4c
+./.git/objects/3f/cd0a81f79243456ca00f3be03fa02e42c24564
+./.git/objects/42/8a16826621e5ffdcb13b429341104a0791a054
+./.git/objects/46/1595257ec9349fb805e9429f3cfdd6016ee9ca
+./.git/objects/4c/0d99515bc25e3ecd4e308ce997228e9476a5c1
+./.git/objects/4c/2f50777701c15600414b5ccf4c9f397b19879e
+./.git/objects/4c/ef507b8340cb4fa33e96c204745e4a2595b03a
+./.git/objects/4d/ed8605e62ca179168c4bcb93a58cbd2eb2c1ca
+./.git/objects/4f/17a1cd58c4b4b4f35375ecac6a6e681de1b0af
+./.git/objects/4f/17de6b34b95a70757121306487d09725c6e631
+./.git/objects/53/03868ffb6366067b38d0aa54bca649e0ec63b8
+./.git/objects/56/3b2429fd5af19d5ab3d2a97264ce18d0a425f1
+./.git/objects/56/d8cdbc69d39a7ef36133d88a2e4232e739e6ae
+./.git/objects/57/05ee63e64f3888afc1a844869ccc89eef43659
+./.git/objects/57/413bfad8e6677042e332a5579e12a208bea13e
+./.git/objects/57/7abf3834496a2d2fbbb0e1c0728b0d44f7aac7
+./.git/objects/5b/2a39c0977b235cbc36eb877faa869510f07b81
+./.git/objects/5e/b370a751268feaf1eb988d1e2e0c9a69ec8d48
+./.git/objects/60/ab8ae8883cca93035342a8795a7168f7f0a8d4
+./.git/objects/68/3f22dfa4dc1e6af0ca50c37983ce4504dda34e
+./.git/objects/69/3ff719bc92b9c5064beaa4edc4dae2385a391b
+./.git/objects/6b/8fe9c484c4387ac717f67da7ccc70c9ebad4e8
+./.git/objects/6d/56e14e8b53dc7fd6d9c57e426b4c14f8345591
+./.git/objects/6d/bc4386c23a1e3302d3a3767bb18f380bdf67ff
+./.git/objects/6e/6ab5a0589540de31a359008b15711d3b9ebea0
+./.git/objects/6e/d9007a4868b9d6063bc172cd1da6dc142e2c90
+./.git/objects/73/d9aa8bfcde597c317eff8efb48c9109d46bc84
+./.git/objects/75/7ce21cdf09a950daff9dc82cd02cb0efe735bc
+./.git/objects/76/36af77edec3e87bc4bd8a06c6ba2d2335bb65b
+./.git/objects/7a/52f1b6c5dbade35e15c0d7f1c4bf2b8d3597d3
+./.git/objects/80/6ca8c59d2532f234925400989acf58661403f3
+./.git/objects/82/527192b4da2ffa15bcfeccb56d71b5eca35474
+./.git/objects/87/635265bdb9d0c64f5c79916c907b8d175ca458
+./.git/objects/87/d1e7e340816ed9e0b4292bc3bf4785f2acf342
+./.git/objects/8a/34c12730b3922163bd6397624176f3d85da27b
+./.git/objects/8b/0d2d4cbe9c1967ba09b1ebc7fa35481b1c5432
+./.git/objects/8b/18f29558f963b03c74f78a297728b48e64d90b
+./.git/objects/8e/3bd7e4113a087369426a58fa3e294b4d5fc672
+./.git/objects/8f/050f8b64d2d22ea2f0b934d19545c1cf76c785
+./.git/objects/90/1987c6cacb1d91a364439314476c259291a34e
+./.git/objects/90/354670bd9c963fdb6e06e39e2cd3205ecd4433
+./.git/objects/91/e47d0b536225d200b4c23255ae586d51e85468
+./.git/objects/92/5430940872f6f9a78d16c0c7cd3fb18f5dd3f8
+./.git/objects/92/d8cf15fa85a6c3f0edb3441e1e95be0f846b43
+./.git/objects/95/86cea75cf874f3d6214120981a7f041611d37e
+./.git/objects/97/0d9561966e7d03ee4ba9af5fb46e4708ac9eff
+./.git/objects/98/b7dffc400cfe59dfea76bf5a048b3f604b8dbc
+./.git/objects/9a/ac0ab47e352df0505eff624b6638ac26896673
+./.git/objects/9b/1341040993c2598556fdc772fceae69902a4fb
+./.git/objects/9b/232eb3af174e83de4953ac850d01fb3aa9a864
+./.git/objects/9c/364d2d01511b88d0affd835c5b983a6e9125e2
+./.git/objects/9d/2a4f11494667025a09b96373888bc5131bbc3a
+./.git/objects/a1/8dda795714f9133f747f04af119c7ddc9663cf
+./.git/objects/a3/a4f3ed0d1ded2961e8ad87516cd45f921202cd
+./.git/objects/a4/ad20975810c0d033adedb9b903e7b9ae056003
+./.git/objects/a5/1b8ce4d45f88c7c66fa8009961431c0820336c
+./.git/objects/a6/9b909e0078779f21bee655de12f79205b32397
+./.git/objects/a7/6e59187c780d5b54af634d85f59f825386ed77
+./.git/objects/a8/517480b1f07547876ed44bad7bd99c433f7882
+./.git/objects/aa/93d9d90cc2468ce083d1b282b8b827937f93e3
+./.git/objects/ab/9ca848e4743cb0aac817d5ce784604f0ff76e0
+./.git/objects/b0/2529475ec1274c67be6c477e94a68bccd4125b
+./.git/objects/be/678b95e51dabb4463a716e0eb0fb069658f4b0
+./.git/objects/bf/7debb35877ca4adb3bbabcda030202a2715c01
+./.git/objects/bf/c9f9d605264cb6bf5f8ce149994eb91a7ea22c
+./.git/objects/c2/e930195fa48ac1ffda5d5667ea5ce9cdd6addf
+./.git/objects/c4/0f4e856d473a589982795bb28a7731225fa2d1
+./.git/objects/c4/98c636825b979a7171854cfb2a085157f58860
+./.git/objects/c6/3bff58e4f98410cab59de84ae59626b51bb539
+./.git/objects/c7/4db9e2d8f485a9be45d1a9777bf15591822e34
+./.git/objects/c7/779885494d164214dd5fc55b36e3d89e551dd3
+./.git/objects/cc/ed418fe02e1be683c0d83189f10c93c8225708
+./.git/objects/d0/3395d0e384014ea5c8927ffc4f956ab3e9cdce
+./.git/objects/d0/9d668d537526fb41c1e08b1ecb53c1260c60b3
+./.git/objects/d5/137ca5f82299919a28016efb2fc241cad7dae8
+./.git/objects/db/11f09c3c6943d0fc6950bc45dff0e79973e594
+./.git/objects/dc/57b0d83efd33a27899736b758aa6e548ba800d
+./.git/objects/dd/e56cb9c0a13a24e3f7b2315eeabf442eb05e6f
+./.git/objects/e0/9c2a18408c0fb60149b889dcfa061fbbc7f7df
+./.git/objects/e0/b3229a1749e98e05191bdeac59f7b5df89f817
+./.git/objects/e1/b9aa4ab50de345f4d5f0cf7013f6026aa015e3
+./.git/objects/e4/b1c8a326b911c0a1c3e9d25b6657cb0aa10211
+./.git/objects/e6/9de29bb2d1d6434b8b29ae775ad8c2e48c5391
+./.git/objects/e7/ccf6d39b2aecc422ac47217c888114dad5429b
+./.git/objects/e9/55e50f93ea7891301582e59cb26c27a2643f15
+./.git/objects/e9/63ff7bcf20ad4145100b641eddc5c6f3188c86
+./.git/objects/ea/dc0da0da649f11696c1efc547d815d356fa0b6
+./.git/objects/ee/1302eeb77083076390ec776cbaa6a8544e3da6
+./.git/objects/f2/a7004d47cc3e1ead507554d0edec58e0e39ea4
+./.git/objects/f3/1d06387a04ee4f281495b38c80994855cbf58e
+./.git/objects/f4/9b7e7a235aff76a164b9d3454fa6cbd68c40a6
+./.git/objects/f6/7262f4bfe141d7ce178e298d844a4a9b35050d
+./.git/objects/f6/d10d1f107c61906ae0a75f0f7b1a358378fbd2
+./.git/objects/f8/75745f04c23745cd4cca92652c07f35ede88ac
+./.git/objects/f9/071ef85bfd75df8bb284f778a43f3cbb4bdb3b
+./.git/objects/f9/c1932cb1e30fbc41ad60a7e17134eb2c05c564
+./.git/objects/fb/2b39f25c7fd31cd2cc5e86e53f9ad57790f33d
+./.git/objects/fb/389fe5beef2982ed9f0c883ec462985eea371d
+./.git/objects/fe/985d8874727a3def0c7a93a0ecd927765189ca
+./.git/objects/ff/e12e30607f2f3334d719d382db3bbc0c21d924
+./.git/refs/heads/master
+./.git/refs/remotes/origin/master
+
+
+
+
+
+
+
+
+
+
+📄 Contents of files under .git/:
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/COMMIT_EDITMSG
+=================================================
+🎉
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/FETCH_HEAD
+=================================================
+e09c2a18408c0fb60149b889dcfa061fbbc7f7df		branch 'master' of https://github.com/verysys-pal/USB1608G_2AO_V2
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/HEAD
+=================================================
+ref: refs/heads/master
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/ORIG_HEAD
+=================================================
+4f17a1cd58c4b4b4f35375ecac6a6e681de1b0af
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/config
+=================================================
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+[remote "origin"]
+	url = https://github.com/verysys-pal/USB1608G_2AO_V2.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "master"]
+	remote = origin
+	merge = refs/heads/master
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/description
+=================================================
+Unnamed repository; edit this file 'description' to name the repository.
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/hooks/applypatch-msg.sample
+=================================================
+#!/bin/sh
+#
+# An example hook script to check the commit log message taken by
+# applypatch from an e-mail message.
+#
+# The hook should exit with non-zero status after issuing an
+# appropriate message if it wants to stop the commit.  The hook is
+# allowed to edit the commit message file.
+#
+# To enable this hook, rename this file to "applypatch-msg".
+
+. git-sh-setup
+commitmsg="$(git rev-parse --git-path hooks/commit-msg)"
+test -x "$commitmsg" && exec "$commitmsg" ${1+"$@"}
+:
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/hooks/commit-msg.sample
+=================================================
+#!/bin/sh
+#
+# An example hook script to check the commit log message.
+# Called by "git commit" with one argument, the name of the file
+# that has the commit message.  The hook should exit with non-zero
+# status after issuing an appropriate message if it wants to stop the
+# commit.  The hook is allowed to edit the commit message file.
+#
+# To enable this hook, rename this file to "commit-msg".
+
+# Uncomment the below to add a Signed-off-by line to the message.
+# Doing this in a hook is a bad idea in general, but the prepare-commit-msg
+# hook is more suited to it.
+#
+# SOB=$(git var GIT_AUTHOR_IDENT | sed -n 's/^\(.*>\).*$/Signed-off-by: \1/p')
+# grep -qs "^$SOB" "$1" || echo "$SOB" >> "$1"
+
+# This example catches duplicate Signed-off-by lines.
+
+test "" = "$(grep '^Signed-off-by: ' "$1" |
+	 sort | uniq -c | sed -e '/^[ 	]*1[ 	]/d')" || {
+	echo >&2 Duplicate Signed-off-by lines.
+	exit 1
+}
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/hooks/fsmonitor-watchman.sample
+=================================================
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+use IPC::Open2;
+
+# An example hook script to integrate Watchman
+# (https://facebook.github.io/watchman/) with git to speed up detecting
+# new and modified files.
+#
+# The hook is passed a version (currently 2) and last update token
+# formatted as a string and outputs to stdout a new update token and
+# all files that have been modified since the update token. Paths must
+# be relative to the root of the working tree and separated by a single NUL.
+#
+# To enable this hook, rename this file to "query-watchman" and set
+# 'git config core.fsmonitor .git/hooks/query-watchman'
+#
+my ($version, $last_update_token) = @ARGV;
+
+# Uncomment for debugging
+# print STDERR "$0 $version $last_update_token\n";
+
+# Check the hook interface version
+if ($version ne 2) {
+	die "Unsupported query-fsmonitor hook version '$version'.\n" .
+	    "Falling back to scanning...\n";
+}
+
+my $git_work_tree = get_working_dir();
+
+my $retry = 1;
+
+my $json_pkg;
+eval {
+	require JSON::XS;
+	$json_pkg = "JSON::XS";
+	1;
+} or do {
+	require JSON::PP;
+	$json_pkg = "JSON::PP";
+};
+
+launch_watchman();
+
+sub launch_watchman {
+	my $o = watchman_query();
+	if (is_work_tree_watched($o)) {
+		output_result($o->{clock}, @{$o->{files}});
+	}
+}
+
+sub output_result {
+	my ($clockid, @files) = @_;
+
+	# Uncomment for debugging watchman output
+	# open (my $fh, ">", ".git/watchman-output.out");
+	# binmode $fh, ":utf8";
+	# print $fh "$clockid\n@files\n";
+	# close $fh;
+
+	binmode STDOUT, ":utf8";
+	print $clockid;
+	print "\0";
+	local $, = "\0";
+	print @files;
+}
+
+sub watchman_clock {
+	my $response = qx/watchman clock "$git_work_tree"/;
+	die "Failed to get clock id on '$git_work_tree'.\n" .
+		"Falling back to scanning...\n" if $? != 0;
+
+	return $json_pkg->new->utf8->decode($response);
+}
+
+sub watchman_query {
+	my $pid = open2(\*CHLD_OUT, \*CHLD_IN, 'watchman -j --no-pretty')
+	or die "open2() failed: $!\n" .
+	"Falling back to scanning...\n";
+
+	# In the query expression below we're asking for names of files that
+	# changed since $last_update_token but not from the .git folder.
+	#
+	# To accomplish this, we're using the "since" generator to use the
+	# recency index to select candidate nodes and "fields" to limit the
+	# output to file names only. Then we're using the "expression" term to
+	# further constrain the results.
+	if (substr($last_update_token, 0, 1) eq "c") {
+		$last_update_token = "\"$last_update_token\"";
+	}
+	my $query = <<"	END";
+		["query", "$git_work_tree", {
+			"since": $last_update_token,
+			"fields": ["name"],
+			"expression": ["not", ["dirname", ".git"]]
+		}]
+	END
+
+	# Uncomment for debugging the watchman query
+	# open (my $fh, ">", ".git/watchman-query.json");
+	# print $fh $query;
+	# close $fh;
+
+	print CHLD_IN $query;
+	close CHLD_IN;
+	my $response = do {local $/; <CHLD_OUT>};
+
+	# Uncomment for debugging the watch response
+	# open ($fh, ">", ".git/watchman-response.json");
+	# print $fh $response;
+	# close $fh;
+
+	die "Watchman: command returned no output.\n" .
+	"Falling back to scanning...\n" if $response eq "";
+	die "Watchman: command returned invalid output: $response\n" .
+	"Falling back to scanning...\n" unless $response =~ /^\{/;
+
+	return $json_pkg->new->utf8->decode($response);
+}
+
+sub is_work_tree_watched {
+	my ($output) = @_;
+	my $error = $output->{error};
+	if ($retry > 0 and $error and $error =~ m/unable to resolve root .* directory (.*) is not watched/) {
+		$retry--;
+		my $response = qx/watchman watch "$git_work_tree"/;
+		die "Failed to make watchman watch '$git_work_tree'.\n" .
+		    "Falling back to scanning...\n" if $? != 0;
+		$output = $json_pkg->new->utf8->decode($response);
+		$error = $output->{error};
+		die "Watchman: $error.\n" .
+		"Falling back to scanning...\n" if $error;
+
+		# Uncomment for debugging watchman output
+		# open (my $fh, ">", ".git/watchman-output.out");
+		# close $fh;
+
+		# Watchman will always return all files on the first query so
+		# return the fast "everything is dirty" flag to git and do the
+		# Watchman query just to get it over with now so we won't pay
+		# the cost in git to look up each individual file.
+		my $o = watchman_clock();
+		$error = $output->{error};
+
+		die "Watchman: $error.\n" .
+		"Falling back to scanning...\n" if $error;
+
+		output_result($o->{clock}, ("/"));
+		$last_update_token = $o->{clock};
+
+		eval { launch_watchman() };
+		return 0;
+	}
+
+	die "Watchman: $error.\n" .
+	"Falling back to scanning...\n" if $error;
+
+	return 1;
+}
+
+sub get_working_dir {
+	my $working_dir;
+	if ($^O =~ 'msys' || $^O =~ 'cygwin') {
+		$working_dir = Win32::GetCwd();
+		$working_dir =~ tr/\\/\//;
+	} else {
+		require Cwd;
+		$working_dir = Cwd::cwd();
+	}
+
+	return $working_dir;
+}
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/hooks/post-update.sample
+=================================================
+#!/bin/sh
+#
+# An example hook script to prepare a packed repository for use over
+# dumb transports.
+#
+# To enable this hook, rename this file to "post-update".
+
+exec git update-server-info
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/hooks/pre-applypatch.sample
+=================================================
+#!/bin/sh
+#
+# An example hook script to verify what is about to be committed
+# by applypatch from an e-mail message.
+#
+# The hook should exit with non-zero status after issuing an
+# appropriate message if it wants to stop the commit.
+#
+# To enable this hook, rename this file to "pre-applypatch".
+
+. git-sh-setup
+precommit="$(git rev-parse --git-path hooks/pre-commit)"
+test -x "$precommit" && exec "$precommit" ${1+"$@"}
+:
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/hooks/pre-commit.sample
+=================================================
+#!/bin/sh
+#
+# An example hook script to verify what is about to be committed.
+# Called by "git commit" with no arguments.  The hook should
+# exit with non-zero status after issuing an appropriate message if
+# it wants to stop the commit.
+#
+# To enable this hook, rename this file to "pre-commit".
+
+if git rev-parse --verify HEAD >/dev/null 2>&1
+then
+	against=HEAD
+else
+	# Initial commit: diff against an empty tree object
+	against=$(git hash-object -t tree /dev/null)
+fi
+
+# If you want to allow non-ASCII filenames set this variable to true.
+allownonascii=$(git config --type=bool hooks.allownonascii)
+
+# Redirect output to stderr.
+exec 1>&2
+
+# Cross platform projects tend to avoid non-ASCII filenames; prevent
+# them from being added to the repository. We exploit the fact that the
+# printable range starts at the space character and ends with tilde.
+if [ "$allownonascii" != "true" ] &&
+	# Note that the use of brackets around a tr range is ok here, (it's
+	# even required, for portability to Solaris 10's /usr/bin/tr), since
+	# the square bracket bytes happen to fall in the designated range.
+	test $(git diff --cached --name-only --diff-filter=A -z $against |
+	  LC_ALL=C tr -d '[ -~]\0' | wc -c) != 0
+then
+	cat <<\EOF
+Error: Attempt to add a non-ASCII file name.
+
+This can cause problems if you want to work with people on other platforms.
+
+To be portable it is advisable to rename the file.
+
+If you know what you are doing you can disable this check using:
+
+  git config hooks.allownonascii true
+EOF
+	exit 1
+fi
+
+# If there are whitespace errors, print the offending file names and fail.
+exec git diff-index --check --cached $against --
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/hooks/pre-merge-commit.sample
+=================================================
+#!/bin/sh
+#
+# An example hook script to verify what is about to be committed.
+# Called by "git merge" with no arguments.  The hook should
+# exit with non-zero status after issuing an appropriate message to
+# stderr if it wants to stop the merge commit.
+#
+# To enable this hook, rename this file to "pre-merge-commit".
+
+. git-sh-setup
+test -x "$GIT_DIR/hooks/pre-commit" &&
+        exec "$GIT_DIR/hooks/pre-commit"
+:
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/hooks/pre-push.sample
+=================================================
+#!/bin/sh
+
+# An example hook script to verify what is about to be pushed.  Called by "git
+# push" after it has checked the remote status, but before anything has been
+# pushed.  If this script exits with a non-zero status nothing will be pushed.
+#
+# This hook is called with the following parameters:
+#
+# $1 -- Name of the remote to which the push is being done
+# $2 -- URL to which the push is being done
+#
+# If pushing without using a named remote those arguments will be equal.
+#
+# Information about the commits which are being pushed is supplied as lines to
+# the standard input in the form:
+#
+#   <local ref> <local oid> <remote ref> <remote oid>
+#
+# This sample shows how to prevent push of commits where the log message starts
+# with "WIP" (work in progress).
+
+remote="$1"
+url="$2"
+
+zero=$(git hash-object --stdin </dev/null | tr '[0-9a-f]' '0')
+
+while read local_ref local_oid remote_ref remote_oid
+do
+	if test "$local_oid" = "$zero"
+	then
+		# Handle delete
+		:
+	else
+		if test "$remote_oid" = "$zero"
+		then
+			# New branch, examine all commits
+			range="$local_oid"
+		else
+			# Update to existing branch, examine new commits
+			range="$remote_oid..$local_oid"
+		fi
+
+		# Check for WIP commit
+		commit=$(git rev-list -n 1 --grep '^WIP' "$range")
+		if test -n "$commit"
+		then
+			echo >&2 "Found WIP commit in $local_ref, not pushing"
+			exit 1
+		fi
+	fi
+done
+
+exit 0
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/hooks/pre-rebase.sample
+=================================================
+#!/bin/sh
+#
+# Copyright (c) 2006, 2008 Junio C Hamano
+#
+# The "pre-rebase" hook is run just before "git rebase" starts doing
+# its job, and can prevent the command from running by exiting with
+# non-zero status.
+#
+# The hook is called with the following parameters:
+#
+# $1 -- the upstream the series was forked from.
+# $2 -- the branch being rebased (or empty when rebasing the current branch).
+#
+# This sample shows how to prevent topic branches that are already
+# merged to 'next' branch from getting rebased, because allowing it
+# would result in rebasing already published history.
+
+publish=next
+basebranch="$1"
+if test "$#" = 2
+then
+	topic="refs/heads/$2"
+else
+	topic=`git symbolic-ref HEAD` ||
+	exit 0 ;# we do not interrupt rebasing detached HEAD
+fi
+
+case "$topic" in
+refs/heads/??/*)
+	;;
+*)
+	exit 0 ;# we do not interrupt others.
+	;;
+esac
+
+# Now we are dealing with a topic branch being rebased
+# on top of master.  Is it OK to rebase it?
+
+# Does the topic really exist?
+git show-ref -q "$topic" || {
+	echo >&2 "No such branch $topic"
+	exit 1
+}
+
+# Is topic fully merged to master?
+not_in_master=`git rev-list --pretty=oneline ^master "$topic"`
+if test -z "$not_in_master"
+then
+	echo >&2 "$topic is fully merged to master; better remove it."
+	exit 1 ;# we could allow it, but there is no point.
+fi
+
+# Is topic ever merged to next?  If so you should not be rebasing it.
+only_next_1=`git rev-list ^master "^$topic" ${publish} | sort`
+only_next_2=`git rev-list ^master           ${publish} | sort`
+if test "$only_next_1" = "$only_next_2"
+then
+	not_in_topic=`git rev-list "^$topic" master`
+	if test -z "$not_in_topic"
+	then
+		echo >&2 "$topic is already up to date with master"
+		exit 1 ;# we could allow it, but there is no point.
+	else
+		exit 0
+	fi
+else
+	not_in_next=`git rev-list --pretty=oneline ^${publish} "$topic"`
+	/usr/bin/perl -e '
+		my $topic = $ARGV[0];
+		my $msg = "* $topic has commits already merged to public branch:\n";
+		my (%not_in_next) = map {
+			/^([0-9a-f]+) /;
+			($1 => 1);
+		} split(/\n/, $ARGV[1]);
+		for my $elem (map {
+				/^([0-9a-f]+) (.*)$/;
+				[$1 => $2];
+			} split(/\n/, $ARGV[2])) {
+			if (!exists $not_in_next{$elem->[0]}) {
+				if ($msg) {
+					print STDERR $msg;
+					undef $msg;
+				}
+				print STDERR " $elem->[1]\n";
+			}
+		}
+	' "$topic" "$not_in_next" "$not_in_master"
+	exit 1
+fi
+
+<<\DOC_END
+
+This sample hook safeguards topic branches that have been
+published from being rewound.
+
+The workflow assumed here is:
+
+ * Once a topic branch forks from "master", "master" is never
+   merged into it again (either directly or indirectly).
+
+ * Once a topic branch is fully cooked and merged into "master",
+   it is deleted.  If you need to build on top of it to correct
+   earlier mistakes, a new topic branch is created by forking at
+   the tip of the "master".  This is not strictly necessary, but
+   it makes it easier to keep your history simple.
+
+ * Whenever you need to test or publish your changes to topic
+   branches, merge them into "next" branch.
+
+The script, being an example, hardcodes the publish branch name
+to be "next", but it is trivial to make it configurable via
+$GIT_DIR/config mechanism.
+
+With this workflow, you would want to know:
+
+(1) ... if a topic branch has ever been merged to "next".  Young
+    topic branches can have stupid mistakes you would rather
+    clean up before publishing, and things that have not been
+    merged into other branches can be easily rebased without
+    affecting other people.  But once it is published, you would
+    not want to rewind it.
+
+(2) ... if a topic branch has been fully merged to "master".
+    Then you can delete it.  More importantly, you should not
+    build on top of it -- other people may already want to
+    change things related to the topic as patches against your
+    "master", so if you need further changes, it is better to
+    fork the topic (perhaps with the same name) afresh from the
+    tip of "master".
+
+Let's look at this example:
+
+		   o---o---o---o---o---o---o---o---o---o "next"
+		  /       /           /           /
+		 /   a---a---b A     /           /
+		/   /               /           /
+	       /   /   c---c---c---c B         /
+	      /   /   /             \         /
+	     /   /   /   b---b C     \       /
+	    /   /   /   /             \     /
+    ---o---o---o---o---o---o---o---o---o---o---o "master"
+
+
+A, B and C are topic branches.
+
+ * A has one fix since it was merged up to "next".
+
+ * B has finished.  It has been fully merged up to "master" and "next",
+   and is ready to be deleted.
+
+ * C has not merged to "next" at all.
+
+We would want to allow C to be rebased, refuse A, and encourage
+B to be deleted.
+
+To compute (1):
+
+	git rev-list ^master ^topic next
+	git rev-list ^master        next
+
+	if these match, topic has not merged in next at all.
+
+To compute (2):
+
+	git rev-list master..topic
+
+	if this is empty, it is fully merged to "master".
+
+DOC_END
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/hooks/pre-receive.sample
+=================================================
+#!/bin/sh
+#
+# An example hook script to make use of push options.
+# The example simply echoes all push options that start with 'echoback='
+# and rejects all pushes when the "reject" push option is used.
+#
+# To enable this hook, rename this file to "pre-receive".
+
+if test -n "$GIT_PUSH_OPTION_COUNT"
+then
+	i=0
+	while test "$i" -lt "$GIT_PUSH_OPTION_COUNT"
+	do
+		eval "value=\$GIT_PUSH_OPTION_$i"
+		case "$value" in
+		echoback=*)
+			echo "echo from the pre-receive-hook: ${value#*=}" >&2
+			;;
+		reject)
+			exit 1
+		esac
+		i=$((i + 1))
+	done
+fi
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/hooks/prepare-commit-msg.sample
+=================================================
+#!/bin/sh
+#
+# An example hook script to prepare the commit log message.
+# Called by "git commit" with the name of the file that has the
+# commit message, followed by the description of the commit
+# message's source.  The hook's purpose is to edit the commit
+# message file.  If the hook fails with a non-zero status,
+# the commit is aborted.
+#
+# To enable this hook, rename this file to "prepare-commit-msg".
+
+# This hook includes three examples. The first one removes the
+# "# Please enter the commit message..." help message.
+#
+# The second includes the output of "git diff --name-status -r"
+# into the message, just before the "git status" output.  It is
+# commented because it doesn't cope with --amend or with squashed
+# commits.
+#
+# The third example adds a Signed-off-by line to the message, that can
+# still be edited.  This is rarely a good idea.
+
+COMMIT_MSG_FILE=$1
+COMMIT_SOURCE=$2
+SHA1=$3
+
+/usr/bin/perl -i.bak -ne 'print unless(m/^. Please enter the commit message/..m/^#$/)' "$COMMIT_MSG_FILE"
+
+# case "$COMMIT_SOURCE,$SHA1" in
+#  ,|template,)
+#    /usr/bin/perl -i.bak -pe '
+#       print "\n" . `git diff --cached --name-status -r`
+# 	 if /^#/ && $first++ == 0' "$COMMIT_MSG_FILE" ;;
+#  *) ;;
+# esac
+
+# SOB=$(git var GIT_COMMITTER_IDENT | sed -n 's/^\(.*>\).*$/Signed-off-by: \1/p')
+# git interpret-trailers --in-place --trailer "$SOB" "$COMMIT_MSG_FILE"
+# if test -z "$COMMIT_SOURCE"
+# then
+#   /usr/bin/perl -i.bak -pe 'print "\n" if !$first_line++' "$COMMIT_MSG_FILE"
+# fi
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/hooks/push-to-checkout.sample
+=================================================
+#!/bin/sh
+
+# An example hook script to update a checked-out tree on a git push.
+#
+# This hook is invoked by git-receive-pack(1) when it reacts to git
+# push and updates reference(s) in its repository, and when the push
+# tries to update the branch that is currently checked out and the
+# receive.denyCurrentBranch configuration variable is set to
+# updateInstead.
+#
+# By default, such a push is refused if the working tree and the index
+# of the remote repository has any difference from the currently
+# checked out commit; when both the working tree and the index match
+# the current commit, they are updated to match the newly pushed tip
+# of the branch. This hook is to be used to override the default
+# behaviour; however the code below reimplements the default behaviour
+# as a starting point for convenient modification.
+#
+# The hook receives the commit with which the tip of the current
+# branch is going to be updated:
+commit=$1
+
+# It can exit with a non-zero status to refuse the push (when it does
+# so, it must not modify the index or the working tree).
+die () {
+	echo >&2 "$*"
+	exit 1
+}
+
+# Or it can make any necessary changes to the working tree and to the
+# index to bring them to the desired state when the tip of the current
+# branch is updated to the new commit, and exit with a zero status.
+#
+# For example, the hook can simply run git read-tree -u -m HEAD "$1"
+# in order to emulate git fetch that is run in the reverse direction
+# with git push, as the two-tree form of git read-tree -u -m is
+# essentially the same as git switch or git checkout that switches
+# branches while keeping the local changes in the working tree that do
+# not interfere with the difference between the branches.
+
+# The below is a more-or-less exact translation to shell of the C code
+# for the default behaviour for git's push-to-checkout hook defined in
+# the push_to_deploy() function in builtin/receive-pack.c.
+#
+# Note that the hook will be executed from the repository directory,
+# not from the working tree, so if you want to perform operations on
+# the working tree, you will have to adapt your code accordingly, e.g.
+# by adding "cd .." or using relative paths.
+
+if ! git update-index -q --ignore-submodules --refresh
+then
+	die "Up-to-date check failed"
+fi
+
+if ! git diff-files --quiet --ignore-submodules --
+then
+	die "Working directory has unstaged changes"
+fi
+
+# This is a rough translation of:
+#
+#   head_has_history() ? "HEAD" : EMPTY_TREE_SHA1_HEX
+if git cat-file -e HEAD 2>/dev/null
+then
+	head=HEAD
+else
+	head=$(git hash-object -t tree --stdin </dev/null)
+fi
+
+if ! git diff-index --quiet --cached --ignore-submodules $head --
+then
+	die "Working directory has staged changes"
+fi
+
+if ! git read-tree -u -m "$commit"
+then
+	die "Could not update working tree to new HEAD"
+fi
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/hooks/update.sample
+=================================================
+#!/bin/sh
+#
+# An example hook script to block unannotated tags from entering.
+# Called by "git receive-pack" with arguments: refname sha1-old sha1-new
+#
+# To enable this hook, rename this file to "update".
+#
+# Config
+# ------
+# hooks.allowunannotated
+#   This boolean sets whether unannotated tags will be allowed into the
+#   repository.  By default they won't be.
+# hooks.allowdeletetag
+#   This boolean sets whether deleting tags will be allowed in the
+#   repository.  By default they won't be.
+# hooks.allowmodifytag
+#   This boolean sets whether a tag may be modified after creation. By default
+#   it won't be.
+# hooks.allowdeletebranch
+#   This boolean sets whether deleting branches will be allowed in the
+#   repository.  By default they won't be.
+# hooks.denycreatebranch
+#   This boolean sets whether remotely creating branches will be denied
+#   in the repository.  By default this is allowed.
+#
+
+# --- Command line
+refname="$1"
+oldrev="$2"
+newrev="$3"
+
+# --- Safety check
+if [ -z "$GIT_DIR" ]; then
+	echo "Don't run this script from the command line." >&2
+	echo " (if you want, you could supply GIT_DIR then run" >&2
+	echo "  $0 <ref> <oldrev> <newrev>)" >&2
+	exit 1
+fi
+
+if [ -z "$refname" -o -z "$oldrev" -o -z "$newrev" ]; then
+	echo "usage: $0 <ref> <oldrev> <newrev>" >&2
+	exit 1
+fi
+
+# --- Config
+allowunannotated=$(git config --type=bool hooks.allowunannotated)
+allowdeletebranch=$(git config --type=bool hooks.allowdeletebranch)
+denycreatebranch=$(git config --type=bool hooks.denycreatebranch)
+allowdeletetag=$(git config --type=bool hooks.allowdeletetag)
+allowmodifytag=$(git config --type=bool hooks.allowmodifytag)
+
+# check for no description
+projectdesc=$(sed -e '1q' "$GIT_DIR/description")
+case "$projectdesc" in
+"Unnamed repository"* | "")
+	echo "*** Project description file hasn't been set" >&2
+	exit 1
+	;;
+esac
+
+# --- Check types
+# if $newrev is 0000...0000, it's a commit to delete a ref.
+zero=$(git hash-object --stdin </dev/null | tr '[0-9a-f]' '0')
+if [ "$newrev" = "$zero" ]; then
+	newrev_type=delete
+else
+	newrev_type=$(git cat-file -t $newrev)
+fi
+
+case "$refname","$newrev_type" in
+	refs/tags/*,commit)
+		# un-annotated tag
+		short_refname=${refname##refs/tags/}
+		if [ "$allowunannotated" != "true" ]; then
+			echo "*** The un-annotated tag, $short_refname, is not allowed in this repository" >&2
+			echo "*** Use 'git tag [ -a | -s ]' for tags you want to propagate." >&2
+			exit 1
+		fi
+		;;
+	refs/tags/*,delete)
+		# delete tag
+		if [ "$allowdeletetag" != "true" ]; then
+			echo "*** Deleting a tag is not allowed in this repository" >&2
+			exit 1
+		fi
+		;;
+	refs/tags/*,tag)
+		# annotated tag
+		if [ "$allowmodifytag" != "true" ] && git rev-parse $refname > /dev/null 2>&1
+		then
+			echo "*** Tag '$refname' already exists." >&2
+			echo "*** Modifying a tag is not allowed in this repository." >&2
+			exit 1
+		fi
+		;;
+	refs/heads/*,commit)
+		# branch
+		if [ "$oldrev" = "$zero" -a "$denycreatebranch" = "true" ]; then
+			echo "*** Creating a branch is not allowed in this repository" >&2
+			exit 1
+		fi
+		;;
+	refs/heads/*,delete)
+		# delete branch
+		if [ "$allowdeletebranch" != "true" ]; then
+			echo "*** Deleting a branch is not allowed in this repository" >&2
+			exit 1
+		fi
+		;;
+	refs/remotes/*,commit)
+		# tracking branch
+		;;
+	refs/remotes/*,delete)
+		# delete tracking branch
+		if [ "$allowdeletebranch" != "true" ]; then
+			echo "*** Deleting a tracking branch is not allowed in this repository" >&2
+			exit 1
+		fi
+		;;
+	*)
+		# Anything else (is there anything else?)
+		echo "*** Update hook: unknown type of update to ref $refname of type $newrev_type" >&2
+		exit 1
+		;;
+esac
+
+# --- Finished
+exit 0
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/index
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/info/exclude
+=================================================
+# git ls-files --others --exclude-from=.git/info/exclude
+# Lines that start with '#' are comments.
+# For a project mostly in C, the following would be a good set of
+# exclude patterns (uncomment them if you want to use them):
+# *.[oa]
+# *~
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/logs/HEAD
+=================================================
+0000000000000000000000000000000000000000 4f17a1cd58c4b4b4f35375ecac6a6e681de1b0af sysSTEP3 <tedanipal@gmail.com> 1756559949 +0900	commit (initial): 🎉
+4f17a1cd58c4b4b4f35375ecac6a6e681de1b0af e09c2a18408c0fb60149b889dcfa061fbbc7f7df sysSTEP3 <tedanipal@gmail.com> 1756560055 +0900	pull --tags origin master: Fast-forward
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/logs/refs/heads/master
+=================================================
+0000000000000000000000000000000000000000 4f17a1cd58c4b4b4f35375ecac6a6e681de1b0af sysSTEP3 <tedanipal@gmail.com> 1756559949 +0900	commit (initial): 🎉
+4f17a1cd58c4b4b4f35375ecac6a6e681de1b0af e09c2a18408c0fb60149b889dcfa061fbbc7f7df sysSTEP3 <tedanipal@gmail.com> 1756560055 +0900	pull --tags origin master: Fast-forward
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/logs/refs/remotes/origin/master
+=================================================
+0000000000000000000000000000000000000000 4f17a1cd58c4b4b4f35375ecac6a6e681de1b0af sysSTEP3 <tedanipal@gmail.com> 1756559960 +0900	update by push
+4f17a1cd58c4b4b4f35375ecac6a6e681de1b0af e09c2a18408c0fb60149b889dcfa061fbbc7f7df sysSTEP3 <tedanipal@gmail.com> 1756560053 +0900	fetch: fast-forward
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/00/3d8153b6208b4cc7f0a5e13b62a45c5f9f4c28
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/00/75b79ac7f77e9f374abc279d23c34338b0bf6e
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/00/ffd9881d30c048ab3e34d0e7b17ac837dd8384
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/01/62b29a1256911b782b656da97eba0c8398ae52
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/03/49c852995d3c294b047ee0e6dc73924e345d2b
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/03/b147458bbabd7b785afb5e3f29c3822dfcf8b3
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/03/ee8cd87ba4022d4850369e9c4956db36ca8f20
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/04/c048e51fa6ad0272a624d766bcb457c82dee6a
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/08/da7274ac0fc28fc87bb97b64ffc0b7edc17d1d
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/0b/106e3d642aa35e94e8738537f4ef8ae5b6a200
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/0d/773852b753c2494b7cdcea48147c4988cff7d6
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/0f/535151fad40e23a6d5ec9a33283dab58f0bebe
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/0f/6cb16a904aacae3ad1096e78cd352ed5bccd63
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/12/9691fe26f39e800cab8072d034811dd4232538
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/13/34e9f02ea424f84e2d12af6212e2e2dee6472a
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/14/85133bfd3155ff8ba2d2fbf79e50eef100f7e7
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/19/68edbfa76d76d8ddaf0b1252796d8b39fbb14e
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/19/c9068d194270e6e05a7c5983db6467b05e3d03
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/1e/fc84c52a0ef0de2b387387e3a51c77b6074684
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/21/2485ebe7741ac1f4f6bad0c487134bbfeaefa7
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/23/360cff5f8922c0a2c88e45ab42acc376674671
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/26/ef52d20a37b5930c8021d22bdf9183086fa257
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/28/bf5ddacd5aedbadf822f031d37c4d189d67956
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/2a/8185415d3a254f8e7da47d6619f13fcd1ffff7
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/2c/f0f78343775f63401cc3e026afd7229e8d5993
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/2d/c57c597a12d49dd8bb4b56d43a534beed58630
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/31/b4c4353301fcd1462af52d14d3afe3d0824504
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/31/fd6ff22f7ea5577ff3e44e837d164706dfd693
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/32/f52d5692ad60002251f49106167e64ec214c72
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/34/ace577520c2526f3d988a3e8fb7e196e983d15
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/36/2d7c25bb405a5cc76d0c7518cc240999a574f4
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/36/9a9f2e64e1312f7dc865079cc0ddd9271d509f
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/3a/525245b6f9383c93cb98f69ed994cbe3af4004
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/3b/a269dccfd9b18085c35992719103c50e091dce
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/3d/d8c69c3a97830e664ed632b70b8a845ad1fc4c
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/3f/cd0a81f79243456ca00f3be03fa02e42c24564
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/42/8a16826621e5ffdcb13b429341104a0791a054
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/46/1595257ec9349fb805e9429f3cfdd6016ee9ca
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/4c/0d99515bc25e3ecd4e308ce997228e9476a5c1
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/4c/2f50777701c15600414b5ccf4c9f397b19879e
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/4c/ef507b8340cb4fa33e96c204745e4a2595b03a
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/4d/ed8605e62ca179168c4bcb93a58cbd2eb2c1ca
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/4f/17a1cd58c4b4b4f35375ecac6a6e681de1b0af
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/4f/17de6b34b95a70757121306487d09725c6e631
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/53/03868ffb6366067b38d0aa54bca649e0ec63b8
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/56/3b2429fd5af19d5ab3d2a97264ce18d0a425f1
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/56/d8cdbc69d39a7ef36133d88a2e4232e739e6ae
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/57/05ee63e64f3888afc1a844869ccc89eef43659
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/57/413bfad8e6677042e332a5579e12a208bea13e
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/57/7abf3834496a2d2fbbb0e1c0728b0d44f7aac7
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/5b/2a39c0977b235cbc36eb877faa869510f07b81
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/5e/b370a751268feaf1eb988d1e2e0c9a69ec8d48
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/60/ab8ae8883cca93035342a8795a7168f7f0a8d4
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/68/3f22dfa4dc1e6af0ca50c37983ce4504dda34e
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/69/3ff719bc92b9c5064beaa4edc4dae2385a391b
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/6b/8fe9c484c4387ac717f67da7ccc70c9ebad4e8
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/6d/56e14e8b53dc7fd6d9c57e426b4c14f8345591
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/6d/bc4386c23a1e3302d3a3767bb18f380bdf67ff
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/6e/6ab5a0589540de31a359008b15711d3b9ebea0
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/6e/d9007a4868b9d6063bc172cd1da6dc142e2c90
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/73/d9aa8bfcde597c317eff8efb48c9109d46bc84
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/75/7ce21cdf09a950daff9dc82cd02cb0efe735bc
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/76/36af77edec3e87bc4bd8a06c6ba2d2335bb65b
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/7a/52f1b6c5dbade35e15c0d7f1c4bf2b8d3597d3
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/80/6ca8c59d2532f234925400989acf58661403f3
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/82/527192b4da2ffa15bcfeccb56d71b5eca35474
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/87/635265bdb9d0c64f5c79916c907b8d175ca458
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/87/d1e7e340816ed9e0b4292bc3bf4785f2acf342
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/8a/34c12730b3922163bd6397624176f3d85da27b
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/8b/0d2d4cbe9c1967ba09b1ebc7fa35481b1c5432
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/8b/18f29558f963b03c74f78a297728b48e64d90b
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/8e/3bd7e4113a087369426a58fa3e294b4d5fc672
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/8f/050f8b64d2d22ea2f0b934d19545c1cf76c785
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/90/1987c6cacb1d91a364439314476c259291a34e
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/90/354670bd9c963fdb6e06e39e2cd3205ecd4433
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/91/e47d0b536225d200b4c23255ae586d51e85468
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/92/5430940872f6f9a78d16c0c7cd3fb18f5dd3f8
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/92/d8cf15fa85a6c3f0edb3441e1e95be0f846b43
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/95/86cea75cf874f3d6214120981a7f041611d37e
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/97/0d9561966e7d03ee4ba9af5fb46e4708ac9eff
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/98/b7dffc400cfe59dfea76bf5a048b3f604b8dbc
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/9a/ac0ab47e352df0505eff624b6638ac26896673
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/9b/1341040993c2598556fdc772fceae69902a4fb
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/9b/232eb3af174e83de4953ac850d01fb3aa9a864
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/9c/364d2d01511b88d0affd835c5b983a6e9125e2
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/9d/2a4f11494667025a09b96373888bc5131bbc3a
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/a1/8dda795714f9133f747f04af119c7ddc9663cf
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/a3/a4f3ed0d1ded2961e8ad87516cd45f921202cd
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/a4/ad20975810c0d033adedb9b903e7b9ae056003
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/a5/1b8ce4d45f88c7c66fa8009961431c0820336c
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/a6/9b909e0078779f21bee655de12f79205b32397
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/a7/6e59187c780d5b54af634d85f59f825386ed77
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/a8/517480b1f07547876ed44bad7bd99c433f7882
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/aa/93d9d90cc2468ce083d1b282b8b827937f93e3
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/ab/9ca848e4743cb0aac817d5ce784604f0ff76e0
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/b0/2529475ec1274c67be6c477e94a68bccd4125b
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/be/678b95e51dabb4463a716e0eb0fb069658f4b0
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/bf/7debb35877ca4adb3bbabcda030202a2715c01
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/bf/c9f9d605264cb6bf5f8ce149994eb91a7ea22c
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/c2/e930195fa48ac1ffda5d5667ea5ce9cdd6addf
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/c4/0f4e856d473a589982795bb28a7731225fa2d1
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/c4/98c636825b979a7171854cfb2a085157f58860
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/c6/3bff58e4f98410cab59de84ae59626b51bb539
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/c7/4db9e2d8f485a9be45d1a9777bf15591822e34
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/c7/779885494d164214dd5fc55b36e3d89e551dd3
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/cc/ed418fe02e1be683c0d83189f10c93c8225708
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/d0/3395d0e384014ea5c8927ffc4f956ab3e9cdce
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/d0/9d668d537526fb41c1e08b1ecb53c1260c60b3
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/d5/137ca5f82299919a28016efb2fc241cad7dae8
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/db/11f09c3c6943d0fc6950bc45dff0e79973e594
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/dc/57b0d83efd33a27899736b758aa6e548ba800d
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/dd/e56cb9c0a13a24e3f7b2315eeabf442eb05e6f
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/e0/9c2a18408c0fb60149b889dcfa061fbbc7f7df
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/e0/b3229a1749e98e05191bdeac59f7b5df89f817
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/e1/b9aa4ab50de345f4d5f0cf7013f6026aa015e3
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/e4/b1c8a326b911c0a1c3e9d25b6657cb0aa10211
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/e6/9de29bb2d1d6434b8b29ae775ad8c2e48c5391
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/e7/ccf6d39b2aecc422ac47217c888114dad5429b
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/e9/55e50f93ea7891301582e59cb26c27a2643f15
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/e9/63ff7bcf20ad4145100b641eddc5c6f3188c86
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/ea/dc0da0da649f11696c1efc547d815d356fa0b6
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/ee/1302eeb77083076390ec776cbaa6a8544e3da6
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/f2/a7004d47cc3e1ead507554d0edec58e0e39ea4
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/f3/1d06387a04ee4f281495b38c80994855cbf58e
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/f4/9b7e7a235aff76a164b9d3454fa6cbd68c40a6
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/f6/7262f4bfe141d7ce178e298d844a4a9b35050d
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/f6/d10d1f107c61906ae0a75f0f7b1a358378fbd2
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/f8/75745f04c23745cd4cca92652c07f35ede88ac
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/f9/071ef85bfd75df8bb284f778a43f3cbb4bdb3b
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/f9/c1932cb1e30fbc41ad60a7e17134eb2c05c564
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/fb/2b39f25c7fd31cd2cc5e86e53f9ad57790f33d
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/fb/389fe5beef2982ed9f0c883ec462985eea371d
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/fe/985d8874727a3def0c7a93a0ecd927765189ca
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/objects/ff/e12e30607f2f3334d719d382db3bbc0c21d924
+=================================================
+[SKIPPED: ❌ binary or unreadable file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/refs/heads/master
+=================================================
+e09c2a18408c0fb60149b889dcfa061fbbc7f7df
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./.git/refs/remotes/origin/master
+=================================================
+e09c2a18408c0fb60149b889dcfa061fbbc7f7df

@@ -1,0 +1,179 @@
+
+
+📊 Summary of File Processing:
+---------------------------------------
+1.Total files processed         : 310
+2.Text files with content       : 144
+3.Empty text files              : 5
+4.Binary/unreadable files       : 146
+5.OP screen files (.edl/.opi)   : 15
+6.Image files (.png/.svg/etc)   : 0
+---------------------------------------
+
+
+
+
+
+
+
+
+
+
+📁 tree -L 2 of .
+.
+├── 01_extract
+│   └── 01_USB1608G_2AO_V2.txt
+├── Makefile
+├── README.md
+├── USB1608G_2AO_V2.code-workspace
+├── USB1608G_2AO_V2App
+│   ├── Db
+│   ├── Makefile
+│   ├── op
+│   └── src
+├── bin
+│   └── linux-x86_64
+├── configure
+│   ├── CONFIG
+│   ├── CONFIG_SITE
+│   ├── Makefile
+│   ├── O.Common
+│   ├── O.linux-x86_64
+│   ├── RELEASE
+│   ├── RULES
+│   ├── RULES.ioc
+│   ├── RULES_DIRS
+│   └── RULES_TOP
+├── db
+│   ├── USB1608G_2AO.substitutions
+│   ├── measCompAnalogIn.template
+│   ├── measCompAnalogInMode.template
+│   ├── measCompAnalogOut.template
+│   ├── measCompBinaryDir.template
+│   ├── measCompBinaryIn.template
+│   ├── measCompBinaryOut.template
+│   ├── measCompCounter.template
+│   ├── measCompDevice.template
+│   ├── measCompEncoder.template
+│   ├── measCompLongIn.template
+│   ├── measCompLongOut.template
+│   ├── measCompMCS.template
+│   ├── measCompMCSWaveform.template
+│   ├── measCompPulseGen.template
+│   ├── measCompTemperatureIn.template
+│   ├── measCompTrigger.template
+│   ├── measCompUSBTempConfig.template
+│   ├── measCompVoltageIn.template
+│   ├── measCompWaveformDig.template
+│   ├── measCompWaveformDigN.template
+│   ├── measCompWaveformGen.template
+│   ├── measCompWaveformGenN.template
+│   ├── threshold_logic.template
+│   ├── user.db
+│   └── user.substitutions
+├── dbd
+│   └── USB1608G_2AO_V2.dbd
+├── iocBoot
+│   ├── Makefile
+│   └── iocUSB1608G_2AO_V2
+└── lib
+    └── linux-x86_64
+
+16 directories, 41 files
+
+
+
+
+
+
+
+
+
+
+📄 Files directly under USB1608G_2AO_V2/:
+/usr/local/epics/EPICS_R7.0/siteApp/USB1608G_2AO_V2/Makefile
+/usr/local/epics/EPICS_R7.0/siteApp/USB1608G_2AO_V2/README.md
+/usr/local/epics/EPICS_R7.0/siteApp/USB1608G_2AO_V2/USB1608G_2AO_V2.code-workspace
+
+
+
+
+
+
+
+
+
+
+📄 Contents of files directly under USB1608G_2AO_V2/:
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: Makefile
+=================================================
+# Makefile at top of application tree
+TOP = .
+include $(TOP)/configure/CONFIG
+
+# Directories to build, any order
+DIRS += configure
+DIRS += $(wildcard *Sup)
+DIRS += $(wildcard *App)
+DIRS += $(wildcard *Top)
+DIRS += $(wildcard iocBoot)
+
+# The build order is controlled by these dependency rules:
+
+# All dirs except configure depend on configure
+$(foreach dir, $(filter-out configure, $(DIRS)), \
+    $(eval $(dir)_DEPEND_DIRS += configure))
+
+# Any *App dirs depend on all *Sup dirs
+$(foreach dir, $(filter %App, $(DIRS)), \
+    $(eval $(dir)_DEPEND_DIRS += $(filter %Sup, $(DIRS))))
+
+# Any *Top dirs depend on all *Sup and *App dirs
+$(foreach dir, $(filter %Top, $(DIRS)), \
+    $(eval $(dir)_DEPEND_DIRS += $(filter %Sup %App, $(DIRS))))
+
+# iocBoot depends on all *App dirs
+iocBoot_DEPEND_DIRS += $(filter %App,$(DIRS))
+
+# Add any additional dependency rules here:
+
+include $(TOP)/configure/RULES_TOP
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: README.md
+=================================================
+epics/synApps/measComp
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: USB1608G_2AO_V2.code-workspace
+=================================================
+[SKIPPED: ❌ binary or unreadable file]

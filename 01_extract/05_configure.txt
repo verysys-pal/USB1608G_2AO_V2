@@ -1,0 +1,309 @@
+📁 tree of configure/
+./configure
+├── CONFIG
+├── CONFIG_SITE
+├── Makefile
+├── O.Common
+├── O.linux-x86_64
+│   └── Makefile
+├── RELEASE
+├── RULES
+├── RULES.ioc
+├── RULES_DIRS
+└── RULES_TOP
+
+2 directories, 9 files
+
+
+
+
+
+
+
+
+
+
+📄 All files under configure/:
+./configure/CONFIG
+./configure/CONFIG_SITE
+./configure/Makefile
+./configure/O.linux-x86_64/Makefile
+./configure/RELEASE
+./configure/RULES
+./configure/RULES.ioc
+./configure/RULES_DIRS
+./configure/RULES_TOP
+
+
+
+
+
+
+
+
+
+
+📄 Contents of files under configure/:
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./configure/CONFIG
+=================================================
+# CONFIG - Load build configuration data
+#
+# Do not make changes to this file!
+
+# Allow user to override where the build rules come from
+RULES = $(EPICS_BASE)
+
+# RELEASE files point to other application tops
+include $(TOP)/configure/RELEASE
+-include $(TOP)/configure/RELEASE.$(EPICS_HOST_ARCH).Common
+
+ifdef T_A
+  -include $(TOP)/configure/RELEASE.Common.$(T_A)
+  -include $(TOP)/configure/RELEASE.$(EPICS_HOST_ARCH).$(T_A)
+endif
+
+# Check EPICS_BASE is set properly
+ifneq (file,$(origin EPICS_BASE))
+  $(error EPICS_BASE must be set in a configure/RELEASE file)
+else
+  ifeq ($(wildcard $(EPICS_BASE)/configure/CONFIG_BASE),)
+    $(error EPICS_BASE does not point to an EPICS installation)
+  endif
+endif
+
+CONFIG = $(RULES)/configure
+include $(CONFIG)/CONFIG
+
+# Override the Base definition:
+INSTALL_LOCATION = $(TOP)
+
+# CONFIG_SITE files contain local build configuration settings
+include $(TOP)/configure/CONFIG_SITE
+
+# Host-arch specific settings
+-include $(TOP)/configure/CONFIG_SITE.$(EPICS_HOST_ARCH).Common
+
+ifdef T_A
+  # Target-arch specific settings
+ -include $(TOP)/configure/CONFIG_SITE.Common.$(T_A)
+
+  #  Host & target specific settings
+ -include $(TOP)/configure/CONFIG_SITE.$(EPICS_HOST_ARCH).$(T_A)
+endif
+
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./configure/CONFIG_SITE
+=================================================
+# CONFIG_SITE
+
+# Make any application-specific changes to the EPICS build
+#   configuration variables in this file.
+#
+# Host/target specific settings can be specified in files named
+#   CONFIG_SITE.$(EPICS_HOST_ARCH).Common
+#   CONFIG_SITE.Common.$(T_A)
+#   CONFIG_SITE.$(EPICS_HOST_ARCH).$(T_A)
+
+# CHECK_RELEASE controls the consistency checking of the support
+#   applications pointed to by the RELEASE* files.
+# Normally CHECK_RELEASE should be set to YES.
+# Set CHECK_RELEASE to NO to disable checking completely.
+# Set CHECK_RELEASE to WARN to perform consistency checking but
+#   continue building even if conflicts are found.
+CHECK_RELEASE = YES
+
+# Set this when you only want to compile this application
+#   for a subset of the cross-compiled target architectures
+#   that Base is built for.
+#CROSS_COMPILER_TARGET_ARCHS = vxWorks-ppc32
+
+# To install files into a location other than $(TOP) define
+#   INSTALL_LOCATION here.
+#INSTALL_LOCATION=</absolute/path/to/install/top>
+
+# Set this when the IOC and build host use different paths
+#   to the install location. This may be needed to boot from
+#   a Microsoft FTP server say, or on some NFS configurations.
+#IOCS_APPL_TOP = </IOC's/absolute/path/to/install/top>
+
+# For application debugging purposes, override the HOST_OPT and/
+#   or CROSS_OPT settings from base/configure/CONFIG_SITE
+#HOST_OPT = NO
+#CROSS_OPT = NO
+
+# These allow developers to override the CONFIG_SITE variable
+# settings without having to modify the configure/CONFIG_SITE
+# file itself.
+-include $(TOP)/../CONFIG_SITE.local
+-include $(TOP)/configure/CONFIG_SITE.local
+
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./configure/Makefile
+=================================================
+TOP=..
+
+include $(TOP)/configure/CONFIG
+
+TARGETS = $(CONFIG_TARGETS)
+CONFIGS += $(subst ../,,$(wildcard $(CONFIG_INSTALLS)))
+
+include $(TOP)/configure/RULES
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./configure/O.linux-x86_64/Makefile
+=================================================
+#This Makefile created by makeMakefile.pl
+
+
+all :
+	$(MAKE) -f ../Makefile TOP=../.. T_A=linux-x86_64  $@
+
+.DEFAULT: force
+	$(MAKE) -f ../Makefile TOP=../.. T_A=linux-x86_64  $@
+
+force:  ;
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./configure/RELEASE
+=================================================
+# RELEASE - Location of external support modules
+
+# EPICS_BASE should appear last so earlier modules can override stuff:
+EPICS_BASE = /usr/local/epics/EPICS_R7.0/base
+
+SUPPORT=/usr/local/epics/EPICS_R7.0/modules/synApps/support
+
+ASYN=$(SUPPORT)/asyn-R4-44-2
+CALC=$(SUPPORT)/calc-R3-7-5
+SCALER=$(SUPPORT)/scaler-4-1
+MCA=$(SUPPORT)/mca-R7-10
+BUSY=$(SUPPORT)/busy-R1-7-4
+SSCAN=$(SUPPORT)/sscan-R2-11-6
+AUTOSAVE=$(SUPPORT)/autosave-R5-11
+SNCSEQ=$(SUPPORT)/sequencer-mirror-R2-2-9
+MEASCOMP=$(SUPPORT)/measComp-R4-2
+
+
+# Set RULES here if you want to use build rules from somewhere
+# other than EPICS_BASE:
+#RULES = $(MODULES)/build-rules
+
+# These lines allow developers to override these RELEASE settings
+# without having to modify this file directly.
+-include $(TOP)/../RELEASE.local
+-include $(TOP)/../RELEASE.$(EPICS_HOST_ARCH).local
+-include $(TOP)/configure/RELEASE.local
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./configure/RULES
+=================================================
+# RULES
+
+include $(CONFIG)/RULES
+
+# Library should be rebuilt because LIBOBJS may have changed.
+$(LIBNAME): ../Makefile
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./configure/RULES.ioc
+=================================================
+#RULES.ioc
+include $(CONFIG)/RULES.ioc
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./configure/RULES_DIRS
+=================================================
+#RULES_DIRS
+include $(CONFIG)/RULES_DIRS
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./configure/RULES_TOP
+=================================================
+#RULES_TOP
+include $(CONFIG)/RULES_TOP
+

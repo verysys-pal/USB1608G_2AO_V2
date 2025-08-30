@@ -1,0 +1,2298 @@
+📁 tree of db/
+./db
+├── USB1608G_2AO.substitutions
+├── measCompAnalogIn.template
+├── measCompAnalogInMode.template
+├── measCompAnalogOut.template
+├── measCompBinaryDir.template
+├── measCompBinaryIn.template
+├── measCompBinaryOut.template
+├── measCompCounter.template
+├── measCompDevice.template
+├── measCompEncoder.template
+├── measCompLongIn.template
+├── measCompLongOut.template
+├── measCompMCS.template
+├── measCompMCSWaveform.template
+├── measCompPulseGen.template
+├── measCompTemperatureIn.template
+├── measCompTrigger.template
+├── measCompUSBTempConfig.template
+├── measCompVoltageIn.template
+├── measCompWaveformDig.template
+├── measCompWaveformDigN.template
+├── measCompWaveformGen.template
+├── measCompWaveformGenN.template
+├── threshold_logic.template
+├── user.db
+└── user.substitutions
+
+0 directories, 26 files
+
+
+
+
+
+
+
+
+
+
+📄 All files under db/:
+./db/USB1608G_2AO.substitutions
+./db/measCompAnalogIn.template
+./db/measCompAnalogInMode.template
+./db/measCompAnalogOut.template
+./db/measCompBinaryDir.template
+./db/measCompBinaryIn.template
+./db/measCompBinaryOut.template
+./db/measCompCounter.template
+./db/measCompDevice.template
+./db/measCompEncoder.template
+./db/measCompLongIn.template
+./db/measCompLongOut.template
+./db/measCompMCS.template
+./db/measCompMCSWaveform.template
+./db/measCompPulseGen.template
+./db/measCompTemperatureIn.template
+./db/measCompTrigger.template
+./db/measCompUSBTempConfig.template
+./db/measCompVoltageIn.template
+./db/measCompWaveformDig.template
+./db/measCompWaveformDigN.template
+./db/measCompWaveformGen.template
+./db/measCompWaveformGenN.template
+./db/threshold_logic.template
+./db/user.db
+./db/user.substitutions
+
+
+
+
+
+
+
+
+
+
+📄 Contents of files under db/:
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./db/USB1608G_2AO.substitutions
+=================================================
+file "$(TOP)/USB1608G_2AO_V2App/Db/measCompDevice.template"
+{pattern {} {} }
+
+file "$(TOP)/USB1608G_2AO_V2App/Db/measCompLongIn.template"
+{
+pattern
+{ R,   MASK, ADDR}
+{Li,   0xFF,    0}
+}
+
+file "$(TOP)/USB1608G_2AO_V2App/Db/measCompBinaryIn.template"
+{
+pattern
+{ R,   MASK, ADDR}
+{Bi1,  0x01     0}
+{Bi2,  0x02     0}
+{Bi3,  0x04     0}
+{Bi4,  0x08     0}
+{Bi5,  0x10     0}
+{Bi6,  0x20     0}
+{Bi7,  0x40     0}
+{Bi8,  0x80     0}
+}
+
+file "$(TOP)/USB1608G_2AO_V2App/Db/measCompLongOut.template"
+{
+pattern
+{ R,   MASK, ADDR}
+{Lo,   0xFF,    0}
+}
+
+file "$(TOP)/USB1608G_2AO_V2App/Db/measCompBinaryOut.template"
+{
+pattern
+{ R,   MASK, ADDR}
+{Bo1,  0x01     0}
+{Bo2,  0x02     0}
+{Bo3,  0x04     0}
+{Bo4,  0x08     0}
+{Bo5,  0x10     0}
+{Bo6,  0x20     0}
+{Bo7,  0x40     0}
+{Bo8,  0x80     0}
+}
+
+# Direction bits on binary I/O
+#  VAL 0=input, 1=output
+file "$(TOP)/USB1608G_2AO_V2App/Db/measCompBinaryDir.template"
+{
+pattern
+{ R,   MASK,  VAL, ADDR}
+{Bd1,  0x01    0,     0}
+{Bd2,  0x02    0,     0}
+{Bd3,  0x04    0,     0}
+{Bd4,  0x08    0,     0}
+{Bd5,  0x10    1,     0}
+{Bd6,  0x20    1,     0}
+{Bd7,  0x40    1,     0}
+{Bd8,  0x80    1,     0}
+}
+
+file "$(TOP)/USB1608G_2AO_V2App/Db/measCompPulseGen.template"
+{
+pattern
+{    R,      ADDR,  PREC}
+{PulseGen1,     0,     4}
+}
+
+file "$(TOP)/USB1608G_2AO_V2App/Db/measCompCounter.template"
+{
+pattern
+{    R,     ADDR}
+{Counter1,     0}
+{Counter2,     1}
+}
+
+# Analog input mode
+file "$(TOP)/USB1608G_2AO_V2App/Db/measCompAnalogInMode.template"
+{
+pattern
+{  R,       ADDR,   MODE}
+{AiMode,       0,      0}
+}
+
+# Analog inputs
+file "$(TOP)/USB1608G_2AO_V2App/Db/measCompAnalogIn.template"
+{
+pattern
+{  R, ADDR, EGUL, LOPR, EGUF, HOPR,  RANGE,   SCAN,   PREC}
+{Ai1,   0,  -10., -10.,  10.,  10.,    0,  "1 second",   4}
+{Ai2,   1,  -10., -10.,  10.,  10.,    0,  "1 second",   4}
+{Ai3,   2,   -5.,  -5.,   5.,   5.,    1,  "1 second",   4}
+{Ai4,   3,   -5.,  -5.,   5.,   5.,    1,  "1 second",   4}
+{Ai5,   4,   -2.,  -2.,   2.,   2.,    2,  "1 second",   4}
+{Ai6,   5,   -2.,  -2.,   2.,   2.,    2,  "1 second",   4}
+{Ai7,   6,   -1.,  -1.,   1.,   1.,    3,  "1 second",   4}
+{Ai8,   7,   -1.,  -1.,   1.,   1.,    3,  "1 second",   4}
+}
+
+# Waveform digitzer
+file "$(TOP)/USB1608G_2AO_V2App/Db/measCompWaveformDig.template"
+{
+pattern
+{  R,     ADDR,  PREC}
+{WaveDig,    0,     4}
+}
+
+file "$(TOP)/USB1608G_2AO_V2App/Db/measCompWaveformDigN.template"
+{
+pattern
+{  R,        ADDR,  PREC}
+{WaveDig1,     0,      4}
+{WaveDig2,     1,      4}
+{WaveDig3,     2,      4}
+{WaveDig4,     3,      4}
+{WaveDig5,     4,      4}
+{WaveDig6,     5,      4}
+{WaveDig7,     6,      4}
+{WaveDig8,     7,      4}
+}
+
+
+# Analog outputs
+file "$(TOP)/USB1608G_2AO_V2App/Db/measCompAnalogOut.template"
+{
+pattern
+{ R,   VAL, ADDR, EGUL, DRVL, LOPR, EGUF, DRVH, HOPR, PREC}
+{Ao1,   0,    0,  -10., -10., -10.,  10.,  10.,  10.,    4}
+{Ao2,   0,    1,  -10., -10., -10.,  10.,  10.,  10.,    4}
+}
+
+# Waveform generator
+file "$(TOP)/USB1608G_2AO_V2App/Db/measCompWaveformGen.template"
+{
+pattern
+{  R,        ADDR,  PREC}
+{WaveGen,      0,      4}
+}
+file "$(TOP)/USB1608G_2AO_V2App/Db/measCompWaveformGenN.template"
+{
+pattern
+{  R,        ADDR,  PREC}
+{WaveGen1,     0,      4}
+{WaveGen2,     1,      4}
+}
+
+# Trigger
+file "$(TOP)/USB1608G_2AO_V2App/Db/measCompTrigger.template"
+{
+pattern
+{  R,   ADDR}
+{Trig,     0}
+}
+
+
+# Threshold Logic Controller 인스턴스
+# 각 아날로그 입력 채널에 대한 임계값 로직 제어
+# ThresholdLogic1: ai1 -> bo5
+# ThresholdLogic2: ai2 -> bo6
+# ThresholdLogic3: ai4 -> bo7
+# ThresholdLogic4: ai5 -> bo8
+file "$(TOP)/USB1608G_2AO_V2App/Db/threshold_logic.template"
+{
+pattern
+{ R,               IN_CH,  OUT_CH, THRESHOLD, HYSTERESIS, ENABLE, UPDATE_RATE, PREC, EGU }
+{ ThresholdLogic1, "Ai1",   "Bo5",     2.5,       0.1,        1,      10.0,        3,   "V" }
+{ ThresholdLogic2, "Ai2",   "Bo6",     5.0,       0.2,        1,      10.0,        3,   "V" }
+{ ThresholdLogic3, "Ai3",   "Bo7",     1.0,       0.05,       0,      5.0,         3,   "V" }
+{ ThresholdLogic4, "Ai4",   "Bo8",     7.5,       0.3,        0,      20.0,        3,   "V" }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./db/measCompAnalogIn.template
+=================================================
+record(ai,"$(P)$(R)")
+{
+    field(SCAN, "$(SCAN)")
+    field(DTYP, "asynInt32Average")
+    field(INP,  "@asyn($(PORT),$(ADDR))ANALOG_IN_VALUE")
+    field(LINR, "LINEAR")
+    field(EGUF, "$(EGUF)")
+    field(EGUL, "$(EGUL)")
+    field(HOPR, "$(HOPR)")
+    field(LOPR, "$(LOPR)")
+    field(PREC, "$(PREC)")
+}
+
+# Note: the driver constructs these enum fields based on model.
+record(mbbo,"$(P)$(R)Range")
+{
+    field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR))ANALOG_IN_RANGE")
+    field(VAL,  "$(RANGE)")
+}
+
+# Note: the driver constructs these enum fields based on model.
+record(mbbo,"$(P)$(R)Type")
+{
+    field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR))ANALOG_IN_TYPE")
+}
+
+record(ao,"$(P)$(R)Rate")
+{
+    field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR))ANALOG_IN_RATE")
+    field(VAL,  "60")
+}
+
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./db/measCompAnalogInMode.template
+=================================================
+record(mbbo,"$(P)$(R)")
+{
+    field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR))ANALOG_IN_MODE")
+    field(VAL,  "$(MODE)")
+    field(ZRVL, "0")
+    field(ZRST, "Differential")
+    field(ONVL, "1")
+    field(ONST, "Single-ended")
+}
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./db/measCompAnalogOut.template
+=================================================
+record(ao,"$(P)$(R)") {
+    field(PINI, "$(PINI=YES)")
+    # Setting PHAS=2 ensures that the Range record will process before this record during iocInit
+    field(PHAS, "2")
+    field(DTYP, "asynInt32")
+    field(FLNK, "$(P)$(R)Return.PROC  PP MS")
+    field(OUT,  "@asyn($(PORT),$(ADDR))ANALOG_OUT_VALUE")
+    field(EGUL, "$(EGUL)")
+    field(DRVL, "$(DRVL)")
+    field(LOPR, "$(LOPR)")
+    field(EGUF, "$(EGUF)")
+    field(DRVH, "$(DRVH)")
+    field(HOPR, "$(HOPR)")
+    field(PREC, "$(PREC)")
+    field(LINR, "LINEAR")
+    field(VAL,  "$(VAL)")
+}
+
+# Note: the driver constructs these enum fields based on model.
+record(mbbo,"$(P)$(R)Range")
+{
+    field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR))ANALOG_OUT_RANGE")
+}
+
+record(ao,"$(P)$(R)Return") {
+    field(DTYP, "asynInt32")
+    field(DISV, "0")
+    field(SDIS, "$(P)$(R)Pulse.VAL  NPP NMS")
+    field(OUT,  "@asyn($(PORT),$(ADDR))ANALOG_OUT_VALUE")
+    field(OMSL, "closed_loop")
+    field(EGUL, "$(EGUL)")
+    field(DRVL, "$(DRVL)")
+    field(LOPR, "$(LOPR)")
+    field(EGUF, "$(EGUF)")
+    field(DRVH, "$(DRVH)")
+    field(HOPR, "$(HOPR)")
+    field(PREC, "$(PREC)")
+    field(LINR, "LINEAR")
+    field(VAL,  "$(VAL)")
+}
+
+record(bo,"$(P)$(R)Pulse") {
+    field(ZNAM, "Normal")
+    field(ONAM, "Pulse")
+}
+
+record(ao,"$(P)$(R)TweakVal") {
+    field(PREC, "$(PREC)")
+}
+
+record(calcout,"$(P)$(R)TweakUp") {
+    field(CALC, "A+B")
+    field(INPA, "$(P)$(R).VAL  NPP MS")
+    field(INPB, "$(P)$(R)TweakVal.VAL  NPP MS")
+    field(OUT,  "$(P)$(R).VAL  PP MS")
+    field(PREC, "$(PREC)")
+}
+
+record(calcout,"$(P)$(R)TweakDown") {
+    field(CALC, "A-B")
+    field(INPA, "$(P)$(R).VAL  NPP MS")
+    field(INPB, "$(P)$(R)TweakVal.VAL  NPP MS")
+    field(OUT,  "$(P)$(R).VAL  PP MS")
+    field(PREC, "$(PREC)")
+}
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./db/measCompBinaryDir.template
+=================================================
+record(bo, "$(P)$(R)")
+{
+    field(PINI, "YES")
+    field(DTYP, "asynUInt32Digital")
+    field(OUT,  "@asynMask($(PORT),$(ADDR),$(MASK))DIGITAL_DIRECTION")
+    field(ZNAM, "In")
+    field(ONAM, "Out")
+    field(VAL,  "$(VAL)")
+    field(PINI, "YES")
+}
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./db/measCompBinaryIn.template
+=================================================
+record(bi, "$(P)$(R)")
+{
+    field(DESC, "$(DESC=)")
+    field(DTYP, "asynUInt32Digital")
+    field(INP,  "@asynMask($(PORT),$(ADDR),$(MASK))DIGITAL_INPUT")
+    field(ZNAM, "$(ZNAM=Low)")
+    field(ZSV,  "$(ZSV=NO_ALARM)")
+    field(ONAM, "$(ONAM=High)")
+    field(OSV,  "$(OSV=NO_ALARM)")
+    field(SCAN, "I/O Intr")
+}
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./db/measCompBinaryOut.template
+=================================================
+record(bo, "$(P)$(R)")
+{
+    field(PINI, "$(PINI=YES)")
+    # Setting PHAS=2 ensures that the Direction record will process before this record during iocInit
+    field(PHAS, "2")
+    field(DESC, "$(DESC=)")
+    field(DTYP, "asynUInt32Digital")
+    field(OUT,  "@asynMask($(PORT),$(ADDR),$(MASK))DIGITAL_OUTPUT")
+    field(ZNAM, "$(ZNAM=Low)")
+    field(ZSV,  "$(ZSV=NO_ALARM)")
+    field(ONAM, "$(ONAM=High)")
+    field(OSV,  "$(OSV=NO_ALARM)")
+}
+
+record(bi, "$(P)$(R)_RBV")
+{
+    field(DESC, "$(DESC=)")
+    field(DTYP, "asynUInt32Digital")
+    field(INP,  "@asynMask($(PORT),$(ADDR),$(MASK))DIGITAL_INPUT")
+    field(ZNAM, "$(ZNAM=Low)")
+    field(ZSV,  "$(ZSV=NO_ALARM)")
+    field(ONAM, "$(ONAM=High)")
+    field(OSV,  "$(OSV=NO_ALARM)")
+    field(SCAN, "I/O Intr")
+}
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./db/measCompCounter.template
+=================================================
+record(longin, "$(P)$(R)Counts")
+{
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR))COUNTER_VALUE")
+    field(SCAN, "I/O Intr")
+}
+
+record(bo, "$(P)$(R)Reset")
+{
+    field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR))COUNTER_RESET")
+    field(VAL,  "1")
+}
+
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./db/measCompDevice.template
+=================================================
+# Device settings
+record(stringin,"$(P)ModelName") {
+    field(PINI, "YES")
+    field(DTYP, "asynOctetRead")
+    field(INP,  "@asyn($(PORT) 0)MODEL_NAME")
+}
+
+record(longin,"$(P)ModelNumber") {
+    field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT) 0)MODEL_NUMBER")
+}
+
+record(stringin,"$(P)FirmwareVersion") {
+    field(PINI, "YES")
+    field(DTYP, "asynOctetRead")
+    field(INP,  "@asyn($(PORT) 0)FIRMWARE_VERSION")
+}
+
+record(stringin,"$(P)UniqueID") {
+    field(PINI, "YES")
+    field(DTYP, "asynOctetRead")
+    field(INP,  "@asyn($(PORT) 0)UNIQUE_ID")
+}
+
+record(stringin,"$(P)ULVersion") {
+    field(PINI, "YES")
+    field(DTYP, "asynOctetRead")
+    field(INP,  "@asyn($(PORT) 0)UL_VERSION")
+}
+
+record(stringin,"$(P)DriverVersion") {
+    field(PINI, "YES")
+    field(DTYP, "asynOctetRead")
+    field(INP,  "@asyn($(PORT) 0)DRIVER_VERSION")
+}
+
+record(ai,"$(P)PollTimeMS") {
+    field(DTYP, "asynFloat64")
+    field(INP,  "@asyn($(PORT) 0)POLL_TIME_MS")
+    field(PREC, "1")
+    field(SCAN, "I/O Intr")
+}
+
+record(ao,"$(P)PollSleepMS") {
+    field(PINI, "YES")
+    field(DTYP, "asynFloat64")
+    field(OUT,  "@asyn($(PORT) 0)POLL_SLEEP_MS")
+    field(VAL,  "50")
+    field(PREC, "1")
+}
+
+record(waveform, "$(P)LastErrorMessage") {
+    field(DTYP, "asynOctetRead")
+    field(INP,  "@asyn($(PORT) 0)LAST_ERROR_MESSAGE")
+    field(NELM, "256")
+    field(FTVL, "CHAR")
+    field(SCAN, "I/O Intr")
+}
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./db/measCompEncoder.template
+=================================================
+record(longin, "$(P)$(R)Counts")
+{
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR))COUNTER_VALUE")
+    field(SCAN, "I/O Intr")
+}
+
+record(bo, "$(P)$(R)Reset")
+{
+    field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR))COUNTER_RESET")
+    field(VAL,  "1")
+}
+
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./db/measCompLongIn.template
+=================================================
+record(longin, "$(P)$(R)")
+{
+    field(DTYP, "asynUInt32Digital")
+    field(INP,  "@asynMask($(PORT),$(ADDR),$(MASK))DIGITAL_INPUT")
+    field(SCAN, "I/O Intr")
+}
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./db/measCompLongOut.template
+=================================================
+###################################################################
+#  Binary output as longout                                       # 
+###################################################################
+record(longout, "$(P)$(R)")
+{
+    field(PINI, "$(PINI=NO)")
+    field(DTYP, "asynUInt32Digital")
+    field(OUT,  "@asynMask($(PORT),$(ADDR),$(MASK))DIGITAL_OUTPUT")
+}
+
+record(longin, "$(P)$(R)_RBV")
+{
+    field(DTYP, "asynUInt32Digital")
+    field(INP,  "@asynMask($(PORT),$(ADDR),$(MASK))DIGITAL_OUTPUT")
+    field(SCAN, "I/O Intr")
+}
+
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./db/measCompMCS.template
+=================================================
+# measCompMCS.template
+# Mark Rivers
+# June 2, 2014
+
+record(bi,"$(P)SNL_Connected") {
+  field(ZNAM, "Not connected")
+  field(ZSV,  "MAJOR")
+  field(ONAM, "Connected")
+  field(OSV,  "NO_ALARM")
+}
+
+record(bo,"$(P)EraseAll") {
+  field(DTYP, "asynInt32")
+  field(OUT,  "@asyn($(PORT),0)MCA_ERASE")
+  field(ZNAM, "Done")
+  field(ONAM, "Erase")
+  field(VAL,  "1")
+  field(FLNK, "$(P)ReadAllOnce")
+}
+
+record(bo,"$(P)EraseStart") {
+  field(DTYP, "asynInt32")
+  field(OUT,  "@asyn($(PORT),0)MCA_ERASE")
+  field(ZNAM, "Done")
+  field(ONAM, "Erase")
+  field(VAL,  "1")
+  field(FLNK, "$(P)StartAll.PROC")
+}
+
+record(bo,"$(P)StartAll") {
+  field(DTYP, "asynInt32")
+  field(OUT,  "@asyn($(PORT),0)MCA_START_ACQUIRE")
+  field(ZNAM, "Done")
+  field(ONAM, "Start")
+  field(VAL,  "1")
+  field(FLNK, "$(P)SetAcquiring.PROC")
+}
+
+record(bo,"$(P)SetAcquiring") {
+  field(OUT,  "$(P)Acquiring PP MS")
+  field(ZNAM, "Done")
+  field(ONAM, "Set")
+  field(VAL,  "1")
+  field(FLNK, "$(P)SetClientWait.PROC")
+}
+
+record(busy,"$(P)Acquiring") {
+  field(ZNAM, "Done")
+  field(ONAM, "Acquiring")
+}
+
+record(bo,"$(P)StopAll") {
+  field(DTYP, "asynInt32")
+  field(OUT,  "@asyn($(PORT),0)MCA_STOP_ACQUIRE")
+  field(ZNAM, "Done")
+  field(ONAM, "Stop")
+  field(VAL,  "1")
+}
+
+record(ao,"$(P)PresetReal") {
+  field(PINI, "YES")
+  field(DTYP, "asynFloat64")
+  field(OUT,  "@asyn($(PORT),0)MCA_PRESET_REAL")
+  field(VAL,  "0.0")
+  field(PREC, "3")
+}
+
+record(bi,"$(P)HardwareAcquiring") {
+  field(DTYP, "asynInt32")
+  field(INP,  "@asyn($(PORT),0)MCA_ACQUIRING")
+  field(ZNAM, "Done")
+  field(ONAM, "Acquiring")
+  field(SCAN, "I/O Intr")
+}
+
+record(ai,"$(P)ElapsedReal") {
+  field(DTYP, "asynFloat64")
+  field(INP,  "@asyn($(PORT),0)MCA_ELAPSED_REAL")
+  field(PREC, "3")
+  field(SCAN, "I/O Intr")
+}
+
+record(bo,"$(P)ReadAll") {
+  field(SCAN, "1 second")
+  field(DISV, "0")
+  field(SDIS, "$(P)Acquiring NPP NMS")
+  field(ZNAM, "Done")
+  field(ONAM, "Read")
+  field(FLNK, "$(P)ReadAllOnce")
+}
+
+record(bo,"$(P)ReadAllOnce") {
+  field(VAL,  "1")
+  field(OUT,  "$(P)DoReadAll.VAL PP MS")
+}
+
+record(bo,"$(P)DoReadAll") {
+  field(ZNAM, "Done")
+  field(ONAM, "Read")
+}
+
+record(longout,"$(P)NuseAll") {
+  field(PINI, "YES")
+  field(DTYP, "asynInt32")
+  field(OUT,  "@asyn($(PORT),0)MCA_NUM_CHANNELS")
+}
+
+record(longin,"$(P)CurrentChannel") {
+  field(DTYP, "asynInt32")
+  field(INP,  "@asyn($(PORT),0)MCS_CURRENT_POINT")
+  field(SCAN, "I/O Intr")
+}
+
+record(ao,"$(P)Dwell") {
+  field(PINI, "YES")
+  field(DTYP, "asynFloat64")
+  field(OUT,  "@asyn($(PORT),0)MCA_DWELL_TIME")
+  field(VAL,  "0.1")
+  field(PREC, "4")
+}
+
+record(ai,"$(P)Dwell_RBV") {
+  field(DTYP, "asynFloat64")
+  field(INP,  "@asyn($(PORT),0)MCA_DWELL_TIME")
+  field(PREC, "4")
+  field(SCAN, "I/O Intr")
+}
+
+record(bo,"$(P)ChannelAdvance") {
+  field(PINI, "YES")
+  field(DTYP, "asynInt32")
+  field(OUT,  "@asyn($(PORT),0)MCA_CH_ADV_SOURCE")
+  field(ZNAM, "Internal")
+  field(ONAM, "External")
+}
+
+record(longout,"$(P)Prescale") {
+  field(PINI, "YES")
+  field(DTYP, "asynInt32")
+  field(OUT,  "@asyn($(PORT),0)MCA_PRESCALE")
+  field(VAL,  "1")
+}
+
+record(bo,"$(P)EnableClientWait") {
+  field(PINI, "YES")
+  field(ZNAM, "Disable")
+  field(ONAM, "Enable")
+}
+
+record(bo,"$(P)SetClientWait") {
+  field(DISV, "0")
+  field(SDIS, "$(P)EnableClientWait NPP NMS")
+  field(OMSL, "closed_loop")
+  field(DOL,  "1")
+  field(OUT,  "$(P)ClientWait PP MS")
+  field(ONAM, "SetClientWait")
+  field(ZNAM, "Done")
+}
+
+record(busy,"$(P)ClientWait") {
+}
+
+record(mbboDirect,"$(P)MCSCounterEnable") {
+  field(PINI, "YES")
+  field(DTYP, "asynUInt32Digital")
+  field(OUT,  "@asynMask($(PORT),0,0xFFFFFFFF)MCS_COUNTER_ENABLE")
+  field(VAL, "0x1FF")
+}
+
+record(bo, "$(P)MCSCounter1Enable") {
+  field(PINI, "YES")
+  field(ZNAM, "No")
+  field(ONAM, "Yes")
+  field(VAL, "1")
+  field(OUT, "$(P)MCSCounterEnable.B0 PP")
+}
+
+record(bo, "$(P)MCSCounter2Enable") {
+  field(PINI, "YES")
+  field(ZNAM, "No")
+  field(ONAM, "Yes")
+  field(VAL, "1")
+  field(OUT, "$(P)MCSCounterEnable.B1 PP")
+}
+
+record(bo, "$(P)MCSCounter3Enable") {
+  field(PINI, "YES")
+  field(ZNAM, "No")
+  field(ONAM, "Yes")
+  field(VAL, "1")
+  field(OUT, "$(P)MCSCounterEnable.B2 PP")
+}
+
+record(bo, "$(P)MCSCounter4Enable") {
+  field(PINI, "YES")
+  field(ZNAM, "No")
+  field(ONAM, "Yes")
+  field(VAL, "1")
+  field(OUT, "$(P)MCSCounterEnable.B3 PP")
+}
+
+record(bo, "$(P)MCSCounter5Enable") {
+  field(PINI, "YES")
+  field(ZNAM, "No")
+  field(ONAM, "Yes")
+  field(VAL, "1")
+  field(OUT, "$(P)MCSCounterEnable.B4 PP")
+}
+
+record(bo, "$(P)MCSCounter6Enable") {
+  field(PINI, "YES")
+  field(ZNAM, "No")
+  field(ONAM, "Yes")
+  field(VAL, "1")
+  field(OUT, "$(P)MCSCounterEnable.B5 PP")
+}
+
+record(bo, "$(P)MCSCounter7Enable") {
+  field(PINI, "YES")
+  field(ZNAM, "No")
+  field(ONAM, "Yes")
+  field(VAL, "1")
+  field(OUT, "$(P)MCSCounterEnable.B6 PP")
+}
+
+record(bo, "$(P)MCSCounter8Enable") {
+  field(PINI, "YES")
+  field(ZNAM, "No")
+  field(ONAM, "Yes")
+  field(VAL, "1")
+  field(OUT, "$(P)MCSCounterEnable.B7 PP")
+}
+
+record(bo, "$(P)MCSDIOEnable") {
+  field(PINI, "YES")
+  field(ZNAM, "No")
+  field(ONAM, "Yes")
+  field(VAL, "1")
+  field(OUT, "$(P)MCSCounterEnable.B8 PP")
+}
+
+record(mbbo,"$(P)PrescaleCounter") {
+  field(PINI, "YES")
+  field(DTYP, "asynInt32")
+  field(OUT,  "@asyn($(PORT),0)MCS_PRESCALE_COUNTER")
+  field(ZRVL, "0")
+  field(ZRST, "CTR0")
+  field(ONVL, "1")
+  field(ONST, "CTR1")
+  field(TWVL, "2")
+  field(TWST, "CTR2")
+  field(THVL, "3")
+  field(THST, "CTR3")
+  field(FRVL, "4")
+  field(FRST, "CTR4")
+  field(FVVL, "5")
+  field(FVST, "CTR5")
+  field(SXVL, "6")
+  field(SXST, "CTR6")
+  field(SVVL, "7")
+  field(SVST, "CTR7")
+}
+
+record(mbbo,"$(P)Point0Action") {
+  field(PINI, "YES")
+  field(DTYP, "asynInt32")
+  field(OUT,  "@asyn($(PORT),0)MCS_POINT0_ACTION")
+  field(ZRVL, "0")
+  field(ZRST, "Clear")
+  field(ONVL, "1")
+  field(ONST, "No clear")
+  field(TWVL, "2")
+  field(TWST, "Skip")
+}
+
+record(longin,"$(P)MaxChannels") {
+  field(PINI, "YES")
+  field(DTYP, "asynInt32")
+  field(INP,  "@asyn($(PORT),0)MCS_MAX_POINTS")
+}
+
+record(mbbi, "$(P)Model") {
+  field(PINI, "YES")
+  field(DESC, "Model")
+  field(DTYP, "asynInt32")
+  field(INP,  "@asyn($(PORT) 0)MODEL")
+  field(ZRVL, "0")
+  field(ONVL, "1")
+  field(ZRST, "USB-CTR08")
+  field(ONST, "USB-CTR04")
+}
+
+record(mbbo,"$(P)TrigMode") {
+    field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),0)TRIGGER_MODE")
+    field(ZRVL, "0")
+    field(ZRST, "Rising edge")
+    field(ONVL, "1")
+    field(ONST, "Falling edge")
+    field(TWVL, "6")
+    field(TWST, "High level")
+    field(THVL, "7")
+    field(THST, "Low level")
+}
+
+###################################################################
+#  Absolute timebase waveform record                              #
+###################################################################
+record(waveform, "$(P)AbsTimeWF")
+{
+    field(FTVL, "DOUBLE")
+    field(DTYP, "asynFloat64ArrayIn")
+    field(INP,  "@asyn($(PORT),0)MCS_ABS_TIME_WF")
+    field(NELM, "$(MAX_POINTS)")
+    field(SCAN, "I/O Intr")
+}
+
+# asyn record for debugging
+record(asyn, "$(P)Asyn") {
+  field(PORT, "$(PORT)")
+}
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./db/measCompMCSWaveform.template
+=================================================
+# Waveform record to be used for MCS data, rather than MCA record.
+
+record(waveform, "$(P)$(R)") {
+  field(DTYP, "asynInt32ArrayIn")
+  field(INP,  "$(INP)MCA_DATA")
+  field(FTVL, "LONG")
+  field(NELM, "$(NUM_POINTS)")
+}
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./db/measCompPulseGen.template
+=================================================
+# This database is loaded for each pulse generator
+# Mark Rivers
+# July 26, 2011
+
+###################################################################
+#  Pulse start/stop                                               # 
+###################################################################
+record(bo, "$(P)$(R)Run")
+{
+    field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR))PULSE_RUN")
+    field(ZNAM, "Stop")
+    field(ZSV,  "NO_ALARM")
+    field(ONAM, "Run")
+    field(OSV,  "MINOR")
+}
+
+# NOTE: The records for the period and the frequency are a bit
+# complex because we want to be able to change either ao record
+# and have the other one update
+
+###################################################################
+#  Pulse period                                                   # 
+###################################################################
+record(ao, "$(P)$(R)Period")
+{
+    field(PINI, "YES")
+    field(DTYP, "asynFloat64")
+    field(OUT,  "@asyn($(PORT),$(ADDR))PULSE_PERIOD")
+    field(VAL,  "0.001")
+    field(PREC, "$(PREC)")
+    field(FLNK, "$(P)$(R)CalcFrequency")
+}
+
+record(ai, "$(P)$(R)Period_RBV")
+{
+    field(DTYP, "asynFloat64")
+    field(INP,  "@asyn($(PORT),$(ADDR))PULSE_PERIOD")
+    field(PREC, "$(PREC)")
+    field(SCAN, "I/O Intr")
+}
+
+###################################################################
+#  Calculate frequency based on new period                        # 
+###################################################################
+record(calcout, "$(P)$(R)CalcFrequency")
+{
+    field(INPA, "$(P)$(R)Period")
+    field(CALC, "1/A")
+    field(SDIS, "$(P)$(R)Frequency.PROC")
+    field(DISV, "1")
+    field(OUT, "$(P)$(R)Frequency PP MS")
+}
+
+###################################################################
+#  Pulse frequency                                                # 
+###################################################################
+record(ao, "$(P)$(R)Frequency")
+{
+    field(PREC, "$(PREC)")
+    field(FLNK, "$(P)$(R)CalcPeriod PP MS")
+}
+
+record(calc, "$(P)$(R)Frequency_RBV")
+{
+    field(INPA, "$(P)$(R)Period_RBV CP MS")
+    field(CALC, "1/A")
+    field(PREC, "$(PREC)")
+}
+
+###################################################################
+#  Calculate period based on new frequency                        # 
+###################################################################
+record(calcout, "$(P)$(R)CalcPeriod")
+{
+    field(INPA, "$(P)$(R)Frequency")
+    field(CALC, "1/A")
+    field(SDIS, "$(P)$(R)Period.PROC")
+    field(DISV, "1")
+    field(OUT, "$(P)$(R)Period PP MS")
+}
+
+###################################################################
+#  Pulse duty cycle                                               # 
+###################################################################
+record(ao, "$(P)$(R)DutyCycle")
+{
+    field(PINI, "YES")
+    field(DTYP, "asynFloat64")
+    field(OUT,  "@asyn($(PORT),$(ADDR))PULSE_DUTY_CYCLE")
+    field(VAL,  "0.5")
+    field(PREC, "$(PREC)")
+    field(FLNK, "$(P)$(R)CalcWidth")
+}
+
+record(ai, "$(P)$(R)DutyCycle_RBV")
+{
+    field(DTYP, "asynFloat64")
+    field(INP,  "@asyn($(PORT),$(ADDR))PULSE_DUTY_CYCLE")
+    field(PREC, "$(PREC)")
+    field(SCAN, "I/O Intr")
+}
+
+###################################################################
+#  Calculate width based on new duty cycle                        # 
+###################################################################
+record(calcout, "$(P)$(R)CalcWidth")
+{
+    field(INPA, "$(P)$(R)DutyCycle")
+    field(INPB, "$(P)$(R)Period")
+    field(CALC, "A*B")
+    field(SDIS, "$(P)$(R)Width.PROC")
+    field(DISV, "1")
+    field(OUT, "$(P)$(R)Width PP MS")
+}
+
+###################################################################
+#  Pulse width                                                    # 
+###################################################################
+record(ao, "$(P)$(R)Width")
+{
+    field(PREC, "$(PREC)")
+    field(FLNK, "$(P)$(R)CalcDutyCycle PP MS")
+}
+
+record(calc, "$(P)$(R)Width_RBV")
+{
+    field(INPA, "$(P)$(R)DutyCycle_RBV CP MS")
+    field(INPB, "$(P)$(R)Period_RBV CP MS")
+    field(CALC, "B*A")
+    field(PREC, "$(PREC)")
+}
+
+###################################################################
+#  Calculate duty cycle based on new width                        # 
+###################################################################
+record(calcout, "$(P)$(R)CalcDutyCycle")
+{
+    field(INPA, "$(P)$(R)Width")
+    field(INPB, "$(P)$(R)Period")
+    field(CALC, "A/B")
+    field(SDIS, "$(P)$(R)DutyCycle.PROC")
+    field(DISV, "1")
+    field(OUT, "$(P)$(R)DutyCycle PP MS")
+}
+
+###################################################################
+#  Pulse delay                                                    # 
+###################################################################
+record(ao, "$(P)$(R)Delay")
+{
+    field(PINI, "YES")
+    field(DTYP, "asynFloat64")
+    field(OUT,  "@asyn($(PORT),$(ADDR))PULSE_DELAY")
+    field(VAL,  "0.")
+    field(PREC, "$(PREC)")
+}
+
+record(ai, "$(P)$(R)Delay_RBV")
+{
+    field(DTYP, "asynFloat64")
+    field(INP,  "@asyn($(PORT),$(ADDR))PULSE_DELAY")
+    field(PREC, "$(PREC)")
+    field(SCAN, "I/O Intr")
+}
+
+###################################################################
+#  Pulse count                                                    # 
+###################################################################
+record(longout, "$(P)$(R)Count")
+{
+    field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR))PULSE_COUNT")
+}
+
+###################################################################
+#  Pulse idle state                                               # 
+###################################################################
+record(bo, "$(P)$(R)IdleState")
+{
+    field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR))PULSE_IDLE_STATE")
+    field(ZNAM, "Low")
+    field(ONAM, "High")
+    field(VAL,  "0")
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./db/measCompTemperatureIn.template
+=================================================
+record(ai,"$(P)$(R)")
+{
+    field(SCAN, "$(SCAN)")
+    field(DTYP, "asynFloat64")
+    field(INP,  "@asyn($(PORT),$(ADDR))TEMPERATURE_IN_VALUE")
+    field(PREC, "$(PREC)")
+}
+
+record(mbbo,"$(P)$(R)Scale")
+{
+    field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR))TEMPERATURE_SCALE")
+    field(ZRVL, "0")
+    field(ZRST, "Celsius")
+    field(ONVL, "1")
+    field(ONST, "Fahrenheit")
+    field(TWVL, "2")
+    field(TWST, "Kelvin")
+    field(THVL, "4")
+    field(THST, "Volts")
+    field(FRVL, "5")
+    field(FRST, "Noscale")
+}
+
+record(mbbo,"$(P)$(R)TCType")
+{
+    field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR))THERMOCOUPLE_TYPE")
+    field(ZRVL, "1")
+    field(ZRST, "Type J")
+    field(ONVL, "2")
+    field(ONST, "Type K")
+    field(TWVL, "3")
+    field(TWST, "Type T")
+    field(THVL, "4")
+    field(THST, "Type E")
+    field(FRVL, "5")
+    field(FRST, "Type R")
+    field(FVVL, "6")
+    field(FVST, "Type S")
+    field(SXVL, "7")
+    field(SXST, "Type B")
+    field(SVVL, "8")
+    field(SVST, "Type N")
+}
+
+record(mbbo,"$(P)$(R)Filter")
+{
+    field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR))TEMPERATURE_FILTER")
+    field(ZRVL, "0")
+    field(ZRST, "Filter")
+    field(ONVL, "0x400")
+    field(ONST, "No filter")
+}
+
+record(bo,"$(P)$(R)OpenTCDetect")
+{
+    field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR))THERMOCOUPLE_OPEN_DETECT")
+    field(ZNAM, "Disable")
+    field(ONAM, "Enable")
+}
+
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./db/measCompTrigger.template
+=================================================
+record(mbbo,"$(P)$(R)Mode") {
+    field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR))TRIGGER_MODE")
+    field(ZRVL, "12")
+    field(ZRST, "Positive edge")
+    field(ONVL, "13")
+    field(ONST, "Negative edge")
+    field(TWVL, "10")
+    field(TWST, "High")
+    field(THVL, "11")
+    field(THST, "Low")
+}
+
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./db/measCompUSBTempConfig.template
+=================================================
+# Note: the driver constructs these enum fields based on model.
+record(mbbo,"$(P)$(R)TemperatureSensor")
+{
+    field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR))TEMPERATURE_SENSOR")
+}
+
+record(mbbo,"$(P)$(R)TemperatureWiring")
+{
+    field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR))TEMPERATURE_WIRING")
+}
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./db/measCompVoltageIn.template
+=================================================
+record(ai,"$(P)$(R)")
+{
+    field(SCAN, "$(SCAN)")
+    field(DTYP, "asynFloat64")
+    field(INP,  "@asyn($(PORT),$(ADDR))VOLTAGE_IN_VALUE")
+    field(HOPR, "$(HOPR)")
+    field(LOPR, "$(LOPR)")
+    field(PREC, "$(PREC)")
+}
+
+# Note: the driver constructs these enum fields based on model.
+record(mbbo,"$(P)$(R)Range")
+{
+    field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR))VOLTAGE_IN_RANGE")
+    field(VAL,  "$(RANGE)")
+}
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./db/measCompWaveformDig.template
+=================================================
+# Database for Measurement Computing waveform generator
+# Mark Rivers
+# November 6, 2011
+
+###################################################################
+#  Number of points to use                                        # 
+###################################################################
+record(longout, "$(P)$(R)NumPoints")
+{
+    field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR))WAVEDIG_NUM_POINTS")
+    field(DRVL, "1")
+    field(DRVH, "$(WDIG_POINTS)")
+}
+
+###################################################################
+#  First channel to digitize                                      # 
+###################################################################
+record(mbbo, "$(P)$(R)FirstChan")
+{
+    field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR))WAVEDIG_FIRST_CHAN")
+    field(ZRVL, "0")
+    field(ZRST, "1")
+    field(ONVL, "1")
+    field(ONST, "2")
+    field(TWVL, "2")
+    field(TWST, "3")
+    field(THVL, "3")
+    field(THST, "4")
+    field(FRVL, "4")
+    field(FRST, "5")
+    field(FVVL, "5")
+    field(FVST, "6")
+    field(SXVL, "6")
+    field(SXST, "7")
+    field(SVVL, "7")
+    field(SVST, "8")
+}
+
+###################################################################
+#  First channel to digitize                                      # 
+###################################################################
+record(mbbo, "$(P)$(R)NumChans")
+{
+    field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR))WAVEDIG_NUM_CHANS")
+    field(ZRVL, "1")
+    field(ZRST, "1")
+    field(ONVL, "2")
+    field(ONST, "2")
+    field(TWVL, "3")
+    field(TWST, "3")
+    field(THVL, "4")
+    field(THST, "4")
+    field(FRVL, "5")
+    field(FRST, "5")
+    field(FVVL, "6")
+    field(FVST, "6")
+    field(SXVL, "7")
+    field(SXST, "7")
+    field(SVVL, "8")
+    field(SVST, "8")
+}
+###################################################################
+#  Timebase waveform record                                       #
+###################################################################
+record(waveform, "$(P)$(R)TimeWF")
+{
+    field(FTVL, "FLOAT")
+    field(DTYP, "asynFloat32ArrayIn")
+    field(INP,  "@asyn($(PORT),$(ADDR))WAVEDIG_TIME_WF")
+    field(NELM, "$(WDIG_POINTS)")
+    field(SCAN, "I/O Intr")
+}
+
+###################################################################
+#  Absolute timebase waveform record                              #
+###################################################################
+record(waveform, "$(P)$(R)AbsTimeWF")
+{
+    field(FTVL, "DOUBLE")
+    field(DTYP, "asynFloat64ArrayIn")
+    field(INP,  "@asyn($(PORT),$(ADDR))WAVEDIG_ABS_TIME_WF")
+    field(NELM, "$(WDIG_POINTS)")
+    field(SCAN, "I/O Intr")
+}
+
+###################################################################
+#  Current point                                                  # 
+###################################################################
+record(longin, "$(P)$(R)CurrentPoint")
+{
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR))WAVEDIG_CURRENT_POINT")
+    field(SCAN, "I/O Intr")
+}
+
+###################################################################
+#  Time per point                                                 # 
+###################################################################
+record(ao, "$(P)$(R)Dwell")
+{
+    field(PINI, "YES")
+    field(DTYP, "asynFloat64")
+    field(OUT,  "@asyn($(PORT),$(ADDR))WAVEDIG_DWELL")
+    field(VAL,  "0.001")
+    field(PREC, "$(PREC)")
+}
+record(ai, "$(P)$(R)DwellActual")
+{
+    field(DTYP, "asynFloat64")
+    field(INP,  "@asyn($(PORT),$(ADDR))WAVEDIG_DWELL_ACTUAL")
+    field(SCAN, "I/O Intr")
+    field(PREC, "$(PREC)")
+}
+
+###################################################################
+#  Total time                                                     # 
+###################################################################
+record(ai, "$(P)$(R)TotalTime")
+{
+    field(DTYP, "asynFloat64")
+    field(INP,  "@asyn($(PORT),$(ADDR))WAVEDIG_TOTAL_TIME")
+    field(PREC, "$(PREC)")
+    field(SCAN, "I/O Intr")
+}
+
+###################################################################
+#  External trigger                                               # 
+###################################################################
+record(bo, "$(P)$(R)ExtTrigger")
+{
+    field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR))WAVEDIG_EXT_TRIGGER")
+    field(ZNAM, "Internal")
+    field(ONAM, "External")
+}
+
+###################################################################
+#  External clock                                                 # 
+###################################################################
+record(bo, "$(P)$(R)ExtClock")
+{
+    field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR))WAVEDIG_EXT_CLOCK")
+    field(ZNAM, "Internal")
+    field(ONAM, "External")
+}
+
+###################################################################
+#  One-shot / continuous                                          # 
+###################################################################
+record(bo, "$(P)$(R)Continuous")
+{
+    field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR))WAVEDIG_CONTINUOUS")
+    field(ZNAM, "One-shot")
+    field(ONAM, "Continuous")
+}
+
+###################################################################
+#  Auto restart                                                   # 
+###################################################################
+record(bo, "$(P)$(R)AutoRestart")
+{
+    field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR))WAVEDIG_AUTO_RESTART")
+    field(ZNAM, "Disable")
+    field(ONAM, "Enable")
+}
+
+###################################################################
+#  Retrigger                                                      # 
+###################################################################
+record(bo, "$(P)$(R)Retrigger")
+{
+    field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR))WAVEDIG_RETRIGGER")
+    field(ZNAM, "Disable")
+    field(ONAM, "Enable")
+}
+
+###################################################################
+#  Trigger count                                                  # 
+###################################################################
+record(longout, "$(P)$(R)TriggerCount")
+{
+    field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR))WAVEDIG_TRIGGER_COUNT")
+    field(VAL,  "1")
+}
+
+###################################################################
+#  Burst mode                                                     # 
+###################################################################
+record(bo, "$(P)$(R)BurstMode")
+{
+    field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR))WAVEDIG_BURST_MODE")
+    field(ZNAM, "Disable")
+    field(ONAM, "Enable")
+}
+
+###################################################################
+#  Run                                                            # 
+###################################################################
+record(busy, "$(P)$(R)Run")
+{
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR))WAVEDIG_RUN")
+    field(ZNAM, "Stop")
+    field(ONAM, "Run")
+}
+
+###################################################################
+#  Read waveforms                                                 # 
+###################################################################
+# This tells the driver to read, which then does callbacks to the
+# input waveform records which are I/O Intr scanned
+# The driver always reads the waveforms when acquisition completes,
+# so this record can be passive for fast scans
+record(busy, "$(P)$(R)ReadWF")
+{
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR))WAVEDIG_READ_WF")
+    field(ZNAM, "Done")
+    field(ONAM, "Read")
+    field(SCAN, "1 second")
+    field(SDIS, "$(P)$(R)Run")
+    field(DISV, "0")
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./db/measCompWaveformDigN.template
+=================================================
+###################################################################
+#  User-defined waveform record                                   #
+###################################################################
+record(waveform, "$(P)$(R)VoltWF")
+{
+    field(FTVL, "DOUBLE")
+    field(DTYP, "asynFloat64ArrayIn")
+    field(INP,  "@asyn($(PORT),$(ADDR))WAVEDIG_VOLT_WF")
+    field(NELM, "$(WDIG_POINTS)")
+    field(SCAN, "I/O Intr")
+}
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./db/measCompWaveformGen.template
+=================================================
+# Database for Measurement Computing waveform generator
+# Mark Rivers
+# November 6, 2011
+
+###################################################################
+#  Number of points to use                                        # 
+###################################################################
+record(longin, "$(P)$(R)NumPoints")
+{
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR))WAVEGEN_NUM_POINTS")
+    field(SCAN, "I/O Intr")
+}
+
+###################################################################
+#  Number of points to use for user-defined waveforms             # 
+###################################################################
+record(longout, "$(P)$(R)UserNumPoints")
+{
+    field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR))WAVEGEN_USER_NUM_POINTS")
+    field(DRVL, "1")
+    field(DRVH, "$(WGEN_POINTS)")
+    field(VAL,  "$(WGEN_POINTS)")
+}
+
+###################################################################
+#  Number of points to use for pre-defined waveforms             # 
+###################################################################
+record(longout, "$(P)$(R)IntNumPoints")
+{
+    field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR))WAVEGEN_INT_NUM_POINTS")
+    field(DRVL, "1")
+    field(DRVH, "$(WGEN_POINTS)")
+    field(VAL,  "$(WGEN_POINTS)")
+}
+
+###################################################################
+#  Timebase waveform record for user waveforms                    #
+###################################################################
+record(waveform, "$(P)$(R)UserTimeWF")
+{
+    field(FTVL, "FLOAT")
+    field(DTYP, "asynFloat32ArrayIn")
+    field(INP,  "@asyn($(PORT),$(ADDR))WAVEGEN_USER_TIME_WF")
+    field(NELM, "$(WGEN_POINTS)")
+    field(SCAN, "I/O Intr")
+}
+
+###################################################################
+#  Timebase waveform record for predefined waveforms              #
+###################################################################
+record(waveform, "$(P)$(R)IntTimeWF")
+{
+    field(FTVL, "FLOAT")
+    field(DTYP, "asynFloat32ArrayIn")
+    field(INP,  "@asyn($(PORT),$(ADDR))WAVEGEN_INT_TIME_WF")
+    field(NELM, "$(WGEN_POINTS)")
+    field(SCAN, "I/O Intr")
+}
+
+###################################################################
+#  Current point                                                  # 
+###################################################################
+record(longin, "$(P)$(R)CurrentPoint")
+{
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR))WAVEGEN_CURRENT_POINT")
+    field(SCAN, "I/O Intr")
+}
+
+###################################################################
+#  Waveform frequency                                             # 
+###################################################################
+record(ai, "$(P)$(R)Frequency")
+{
+    field(DTYP, "asynFloat64")
+    field(INP,  "@asyn($(PORT),$(ADDR))WAVEGEN_FREQ")
+    field(PREC, "$(PREC)")
+    field(SCAN, "I/O Intr")
+}
+
+###################################################################
+#  Time per point readback, based on UserDwell or IntDwell        # 
+###################################################################
+record(ai, "$(P)$(R)Dwell")
+{
+    field(DTYP, "asynFloat64")
+    field(INP,  "@asyn($(PORT),$(ADDR))WAVEGEN_DWELL")
+    field(PREC, "$(PREC)")
+    field(SCAN, "I/O Intr")
+}
+
+# Needed?
+record(ai, "$(P)$(R)DwellActual")
+{
+    field(DTYP, "asynFloat64")
+    field(INP,  "@asyn($(PORT),$(ADDR))WAVEGEN_DWELL_ACTUAL")
+    field(SCAN, "I/O Intr")
+    field(PREC, "$(PREC)")
+}
+
+###################################################################
+#  Total time                                                     # 
+###################################################################
+record(ai, "$(P)$(R)TotalTime")
+{
+    field(DTYP, "asynFloat64")
+    field(INP,  "@asyn($(PORT),$(ADDR))WAVEGEN_TOTAL_TIME")
+    field(PREC, "$(PREC)")
+    field(SCAN, "I/O Intr")
+}
+
+###################################################################
+#  Internal waveform dwell                                        # 
+###################################################################
+record(ao, "$(P)$(R)IntDwell")
+{
+    field(PINI, "YES")
+    field(DTYP, "asynFloat64")
+    field(OUT,  "@asyn($(PORT),$(ADDR))WAVEGEN_INT_DWELL")
+    field(VAL,  "0.001")
+    field(PREC, "$(PREC)")
+    field(FLNK, "$(P)$(R)CalcIntFrequency")
+}
+
+###################################################################
+#  Calculate internal frequency based on new dwell                # 
+###################################################################
+record(calcout, "$(P)$(R)CalcIntFrequency")
+{
+    field(INPA, "$(P)$(R)IntDwell")
+    field(INPB, "$(P)$(R)IntNumPoints")
+    field(CALC, "1/A/B")
+    field(SDIS, "$(P)$(R)CalcIntDwell.PACT")
+    field(DISV, "1")
+    field(OUT,  "$(P)$(R)IntFrequency PP MS")
+}
+
+###################################################################
+#  Internal waveform frequency                                    # 
+###################################################################
+record(ao, "$(P)$(R)IntFrequency")
+{
+    field(PREC, "$(PREC)")
+    field(OUT,  "$(P)$(R)CalcIntDwell PP MS")
+}
+
+###################################################################
+#  Calculate internal dwell based on new frequency                # 
+###################################################################
+record(calcout, "$(P)$(R)CalcIntDwell")
+{
+    field(INPA, "$(P)$(R)IntFrequency")
+    field(INPB, "$(P)$(R)IntNumPoints CP")
+    field(CALC, "1/A/B")
+    field(SDIS, "$(P)$(R)CalcIntFrequency.PACT")
+    field(DISV, "1")
+    field(OUT,  "$(P)$(R)IntDwell PP MS")
+}
+
+###################################################################
+#  User waveform dwell                                            # 
+###################################################################
+record(ao, "$(P)$(R)UserDwell")
+{
+    field(PINI, "YES")
+    field(DTYP, "asynFloat64")
+    field(OUT,  "@asyn($(PORT),$(ADDR))WAVEGEN_USER_DWELL")
+    field(VAL,  "0.001")
+    field(PREC, "$(PREC)")
+    field(FLNK, "$(P)$(R)CalcUserFrequency")
+}
+
+###################################################################
+#  Calculate user frequency based on new dwell                    # 
+###################################################################
+record(calcout, "$(P)$(R)CalcUserFrequency")
+{
+    field(INPA, "$(P)$(R)UserDwell")
+    field(INPB, "$(P)$(R)UserNumPoints")
+    field(CALC, "1/A/B")
+    field(SDIS, "$(P)$(R)CalcUserDwell.PACT")
+    field(DISV, "1")
+    field(OUT, "$(P)$(R)UserFrequency PP MS")
+}
+
+###################################################################
+#  User waveform frequency                                        # 
+###################################################################
+record(ao, "$(P)$(R)UserFrequency")
+{
+    field(PREC, "$(PREC)")
+    field(FLNK, "$(P)$(R)CalcUserDwell PP MS")
+}
+
+###################################################################
+#  Calculate user dwell based on new frequency                    # 
+###################################################################
+record(calcout, "$(P)$(R)CalcUserDwell")
+{
+    field(INPA, "$(P)$(R)UserFrequency")
+    field(INPB, "$(P)$(R)UserNumPoints CP")
+    field(CALC, "1/A/B")
+    field(SDIS, "$(P)$(R)CalcUserFrequency.PACT")
+    field(DISV, "1")
+    field(OUT, "$(P)$(R)UserDwell PP MS")
+}
+
+###################################################################
+#  External trigger                                               # 
+###################################################################
+record(bo, "$(P)$(R)ExtTrigger")
+{
+    field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR))WAVEGEN_EXT_TRIGGER")
+    field(ZNAM, "Internal")
+    field(ONAM, "External")
+}
+
+###################################################################
+#  External clock                                                 # 
+###################################################################
+record(bo, "$(P)$(R)ExtClock")
+{
+    field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR))WAVEGEN_EXT_CLOCK")
+    field(ZNAM, "Internal")
+    field(ONAM, "External")
+}
+
+###################################################################
+#  External trigger                                               # 
+###################################################################
+record(bo, "$(P)$(R)Continuous")
+{
+    field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR))WAVEGEN_CONTINUOUS")
+    field(ZNAM, "One-shot")
+    field(ONAM, "Continuous")
+}
+
+###################################################################
+#  Retrigger                                                      # 
+###################################################################
+record(bo, "$(P)$(R)Retrigger")
+{
+    field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR))WAVEGEN_RETRIGGER")
+    field(ZNAM, "Disable")
+    field(ONAM, "Enable")
+}
+
+###################################################################
+#  Trigger count                                                  # 
+###################################################################
+record(longout, "$(P)$(R)TriggerCount")
+{
+    field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR))WAVEGEN_TRIGGER_COUNT")
+    field(VAL,  "1")
+}
+
+###################################################################
+#  Run                                                            # 
+###################################################################
+record(busy, "$(P)$(R)Run")
+{
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR))WAVEGEN_RUN")
+    field(ZNAM, "Stop")
+    field(ONAM, "Run")
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./db/measCompWaveformGenN.template
+=================================================
+###################################################################
+#  User-defined waveform record                                   #
+###################################################################
+record(waveform, "$(P)$(R)UserWF")
+{
+    field(FTVL, "FLOAT")
+    field(DTYP, "asynFloat32ArrayOut")
+    field(INP,  "@asyn($(PORT),$(ADDR))WAVEGEN_USER_WF")
+    field(NELM, "$(WGEN_POINTS)")
+}
+
+###################################################################
+#  Internally defined waveform record                             #
+###################################################################
+record(waveform, "$(P)$(R)InternalWF")
+{
+    field(FTVL, "FLOAT")
+    field(DTYP, "asynFloat32ArrayIn")
+    field(INP,  "@asyn($(PORT),$(ADDR))WAVEGEN_INT_WF")
+    field(NELM, "$(WGEN_POINTS)")
+    field(SCAN, "I/O Intr")
+}
+
+###################################################################
+#  Enable this channel                                            # 
+###################################################################
+record(bo, "$(P)$(R)Enable")
+{
+    field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR))WAVEGEN_ENABLE")
+    field(ZNAM, "Disable")
+    field(ONAM, "Enable")
+}
+
+###################################################################
+#  Waveform type                                                  # 
+###################################################################
+record(mbbo, "$(P)$(R)Type")
+{
+    field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR))WAVEGEN_WAVE_TYPE")
+    field(ZRVL, "0")
+    field(ZRST, "User-defined")
+    field(ONVL, "1")
+    field(ONST, "Sin wave")
+    field(TWVL, "2")
+    field(TWST, "Square wave")
+    field(THVL, "3")
+    field(THST, "Sawtooth")
+    field(FRVL, "4")
+    field(FRST, "Pulse")
+    field(FVVL, "5")
+    field(FVST, "Random")
+}
+
+###################################################################
+#  Pulse width                                                    # 
+###################################################################
+record(ao, "$(P)$(R)PulseWidth")
+{
+    field(PINI, "YES")
+    field(DTYP, "asynFloat64")
+    field(OUT,  "@asyn($(PORT),$(ADDR))WAVEGEN_PULSE_WIDTH")
+    field(VAL,  "0.001")
+    field(PREC, "$(PREC)")
+}
+
+###################################################################
+#  Amplitude                                                      # 
+###################################################################
+record(ao, "$(P)$(R)Amplitude")
+{
+    field(PINI, "YES")
+    field(DTYP, "asynFloat64")
+    field(OUT,  "@asyn($(PORT),$(ADDR))WAVEGEN_AMPLITUDE")
+    field(VAL,  "1.0")
+    field(PREC, "4")
+}
+
+###################################################################
+#  Offset                                                         # 
+###################################################################
+record(ao, "$(P)$(R)Offset")
+{
+    field(PINI, "YES")
+    field(DTYP, "asynFloat64")
+    field(OUT,  "@asyn($(PORT),$(ADDR))WAVEGEN_OFFSET")
+    field(VAL,  "0.0")
+    field(PREC, "4")
+}
+
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./db/threshold_logic.template
+=================================================
+# ThresholdLogic.template
+# EPICS 데이터베이스 템플릿 - 임계값 기반 로직 제어
+# 매개변수:
+#   P     - PV 접두사 (예: "USB1608G_2AO_cpp:")
+#   R     - 레코드 이름 접미사 (예: "ThresholdLogic")
+#   PORT  - asyn 포트 이름
+#   ADDR  - asyn 주소 (기본값: 0)
+#   PREC  - 소수점 자릿수 (기본값: 3)
+#   EGU   - 엔지니어링 단위 (기본값: "V")
+#   SCAN  - 스캔 주기 (기본값: "1 second")
+
+# 임계값 설정 레코드 (아날로그 출력)
+record(ao, "$(P)$(R)Threshold") {
+    field(DESC, "Threshold Value Setting")
+    field(DTYP, "asynFloat64")
+    field(OUT,  "@asyn($(PORT),$(ADDR=0))THRESHOLD_VALUE")
+    field(PREC, "$(PREC=3)")
+    field(EGU,  "$(EGU=V)")
+    field(PINI, "YES")
+    field(VAL,  "$(THRESHOLD=0.0)")
+    field(DRVL, "$(DRVL=-10.0)")
+    field(DRVH, "$(DRVH=10.0)")
+    field(LOPR, "$(LOPR=-10.0)")
+    field(HOPR, "$(HOPR=10.0)")
+}
+
+# 히스테리시스 설정 레코드 (아날로그 출력)
+record(ao, "$(P)$(R)Hysteresis") {
+    field(DESC, "Hysteresis Value Setting")
+    field(DTYP, "asynFloat64")
+    field(OUT,  "@asyn($(PORT),$(ADDR=0))HYSTERESIS_VALUE")
+    field(PREC, "$(PREC=3)")
+    field(EGU,  "$(EGU=V)")
+    field(PINI, "YES")
+    field(VAL,  "$(HYSTERESIS=0.1)")
+    field(DRVL, "0.0")
+    field(DRVH, "1.0")
+    field(LOPR, "0.0")
+    field(HOPR, "1.0")
+}
+
+# 현재 값 모니터링 레코드 (실제 아날로그 입력 채널에서 값 읽기)
+record(ai, "$(P)$(R)CurrentValue") {
+    field(DESC, "Current Input Value from $(IN_CH)")
+    field(INP,  "$(P)$(IN_CH) CP")
+    field(SCAN, "Passive")
+    field(PREC, "$(PREC=3)")
+    field(EGU,  "$(EGU=V)")
+    field(LOPR, "$(LOPR=-10.0)")
+    field(HOPR, "$(HOPR=10.0)")
+    field(HIHI, "$(HIHI=9.0)")
+    field(HIGH, "$(HIGH=8.0)")
+    field(LOW,  "$(LOW=-8.0)")
+    field(LOLO, "$(LOLO=-9.0)")
+    field(HHSV, "MAJOR")
+    field(HSV,  "MINOR")
+    field(LSV,  "MINOR")
+    field(LLSV, "MAJOR")
+    field(FLNK, "$(P)$(R)Compare")
+}
+
+# 임계값 비교 계산 레코드
+record(calcout, "$(P)$(R)Compare") {
+    field(DESC, "Threshold Comparison :  $(IN_CH) -> $(OUT_CH)")
+    field(CALC, "A>=(B+C)?1:(A<=(B-C)?0:D)")
+    field(INPA, "$(P)$(IN_CH) CP")
+    field(INPB, "$(P)$(R)Threshold")
+    field(INPC, "$(P)$(R)Hysteresis")
+    field(INPD, "$(P)$(R)OutputState")
+    field(OUT,  "$(P)$(OUT_CH) PP")
+    field(OOPT, "Every Time")
+    field(DOPT, "Use CALC")
+    field(SCAN, "Passive")
+}
+
+# 출력 상태 레코드 (실제 바이너리 출력 채널 상태 모니터링)
+record(bi, "$(P)$(R)OutputState") {
+    field(DESC, "Current Output State of $(OUT_CH)")
+    field(INP,  "$(P)$(OUT_CH) CP")
+    field(SCAN, "Passive")
+    field(ZNAM, "Low")
+    field(ONAM, "High")
+    field(ZSV,  "NO_ALARM")
+    field(OSV,  "NO_ALARM")
+}
+
+# 활성화 제어 레코드 (바이너리 출력)
+record(bo, "$(P)$(R)Enable") {
+    field(DESC, "Enable/Disable Threshold Logic")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR=0))ENABLE")
+    field(PINI, "YES")
+    field(VAL,  "$(ENABLE=0)")
+    field(ZNAM, "Disabled")
+    field(ONAM, "Enabled")
+    field(ZSV,  "NO_ALARM")
+    field(OSV,  "NO_ALARM")
+}
+
+# 상태 모니터링 레코드 (다중 바이너리 입력)
+record(mbbi, "$(P)$(R)Status") {
+    field(DESC, "Threshold Logic Status")
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR=0))STATUS")
+    field(SCAN, "I/O Intr")
+    field(ZRST, "Idle")
+    field(ONST, "Active")
+    field(TWST, "Error")
+    field(THST, "Disabled")
+    field(ZRSV, "NO_ALARM")
+    field(ONSV, "NO_ALARM")
+    field(TWSV, "MAJOR")
+    field(THSV, "NO_ALARM")
+}
+
+# 리셋 명령 레코드 (바이너리 출력)
+record(bo, "$(P)$(R)Reset") {
+    field(DESC, "Reset Threshold Logic")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR=0))RESET")
+    field(ZNAM, "Normal")
+    field(ONAM, "Reset")
+    field(HIGH, "1")
+    field(PINI, "NO")
+}
+
+# 업데이트 주기 설정 레코드 (아날로그 출력)
+record(ao, "$(P)$(R)UpdateRate") {
+    field(DESC, "Update Rate in Hz")
+    field(DTYP, "asynFloat64")
+    field(OUT,  "@asyn($(PORT),$(ADDR=0))UPDATE_RATE")
+    field(PREC, "1")
+    field(EGU,  "Hz")
+    field(PINI, "YES")
+    field(VAL,  "$(UPDATE_RATE=10.0)")
+    field(DRVL, "0.1")
+    field(DRVH, "1000.0")
+    field(LOPR, "0.1")
+    field(HOPR, "1000.0")
+}
+
+# 마지막 업데이트 시간 레코드 (문자열 입력)
+record(stringin, "$(P)$(R)LastUpdate") {
+    field(DESC, "Last Update Timestamp")
+    field(DTYP, "asynOctetRead")
+    field(INP,  "@asyn($(PORT),$(ADDR=0))LAST_UPDATE")
+    field(SCAN, "I/O Intr")
+    field(VAL,  "Never")
+}
+
+# 알람 상태 레코드 (바이너리 입력)
+record(bi, "$(P)$(R)AlarmState") {
+    field(DESC, "Alarm State")
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR=0))ALARM_STATE")
+    field(SCAN, "I/O Intr")
+    field(ZNAM, "Normal")
+    field(ONAM, "Alarm")
+    field(ZSV,  "NO_ALARM")
+    field(OSV,  "MAJOR")
+}
+
+# 트리거 카운터 레코드 (롱 입력)
+record(longin, "$(P)$(R)TriggerCount") {
+    field(DESC, "Number of Threshold Triggers")
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR=0))TRIGGER_COUNT")
+    field(SCAN, "I/O Intr")
+    field(EGU,  "counts")
+}
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./db/user.db
+=================================================
+[SKIPPED: ⭕ empty file]
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./db/user.substitutions
+=================================================
+[SKIPPED: ⭕ empty file]

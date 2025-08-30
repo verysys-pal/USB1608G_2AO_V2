@@ -1,0 +1,1931 @@
+📁 tree of iocBoot/
+./iocBoot
+├── Makefile
+└── iocUSB1608G_2AO_V2
+    ├── Log_stCmd.log
+    ├── Makefile
+    ├── README_ThresholdLogic.md
+    ├── auto_settings.req
+    ├── autosave
+    │   ├── auto_settings.sav
+    │   ├── auto_settings.sav0
+    │   ├── auto_settings.sav1
+    │   ├── auto_settings.sav2
+    │   └── auto_settings.savB
+    ├── catest_ThresholdLogic.sh
+    ├── catest_USB1608G_2AO.sh
+    ├── cleanup_USB1608G_2AO.sh
+    ├── envPaths
+    ├── medm_USB1608G_2AO.sh
+    ├── save_restore.cmd
+    └── st.cmd
+
+2 directories, 17 files
+
+
+
+
+
+
+
+
+
+
+📄 All files under iocBoot/:
+./iocBoot/Makefile
+./iocBoot/iocUSB1608G_2AO_V2/Log_stCmd.log
+./iocBoot/iocUSB1608G_2AO_V2/Makefile
+./iocBoot/iocUSB1608G_2AO_V2/README_ThresholdLogic.md
+./iocBoot/iocUSB1608G_2AO_V2/auto_settings.req
+./iocBoot/iocUSB1608G_2AO_V2/autosave/auto_settings.sav
+./iocBoot/iocUSB1608G_2AO_V2/autosave/auto_settings.sav0
+./iocBoot/iocUSB1608G_2AO_V2/autosave/auto_settings.sav1
+./iocBoot/iocUSB1608G_2AO_V2/autosave/auto_settings.sav2
+./iocBoot/iocUSB1608G_2AO_V2/autosave/auto_settings.savB
+./iocBoot/iocUSB1608G_2AO_V2/catest_ThresholdLogic.sh
+./iocBoot/iocUSB1608G_2AO_V2/catest_USB1608G_2AO.sh
+./iocBoot/iocUSB1608G_2AO_V2/cleanup_USB1608G_2AO.sh
+./iocBoot/iocUSB1608G_2AO_V2/envPaths
+./iocBoot/iocUSB1608G_2AO_V2/medm_USB1608G_2AO.sh
+./iocBoot/iocUSB1608G_2AO_V2/save_restore.cmd
+./iocBoot/iocUSB1608G_2AO_V2/st.cmd
+
+
+
+
+
+
+
+
+
+
+📄 Contents of files under iocBoot/:
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./iocBoot/Makefile
+=================================================
+TOP = ..
+include $(TOP)/configure/CONFIG
+DIRS += $(wildcard *ioc*)
+DIRS += $(wildcard as*)
+include $(CONFIG)/RULES_DIRS
+
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./iocBoot/iocUSB1608G_2AO_V2/Log_stCmd.log
+=================================================
+#!../../bin/linux-x86_64/USB1608G_2AO_V2
+< envPaths
+epicsEnvSet("IOC","iocUSB1608G_2AO_V2")
+epicsEnvSet("TOP","/usr/local/epics/EPICS_R7.0/siteApp/USB1608G_2AO_V2")
+epicsEnvSet("EPICS_BASE","/usr/local/epics/EPICS_R7.0/base")
+epicsEnvSet("SUPPORT","/usr/local/epics/EPICS_R7.0/modules/synApps/support")
+epicsEnvSet("ASYN","/usr/local/epics/EPICS_R7.0/modules/synApps/support/asyn-R4-44-2")
+epicsEnvSet("CALC","/usr/local/epics/EPICS_R7.0/modules/synApps/support/calc-R3-7-5")
+epicsEnvSet("SCALER","/usr/local/epics/EPICS_R7.0/modules/synApps/support/scaler-4-1")
+epicsEnvSet("MCA","/usr/local/epics/EPICS_R7.0/modules/synApps/support/mca-R7-10")
+epicsEnvSet("BUSY","/usr/local/epics/EPICS_R7.0/modules/synApps/support/busy-R1-7-4")
+epicsEnvSet("SSCAN","/usr/local/epics/EPICS_R7.0/modules/synApps/support/sscan-R2-11-6")
+epicsEnvSet("AUTOSAVE","/usr/local/epics/EPICS_R7.0/modules/synApps/support/autosave-R5-11")
+epicsEnvSet("SNCSEQ","/usr/local/epics/EPICS_R7.0/modules/synApps/support/sequencer-mirror-R2-2-9")
+epicsEnvSet("MEASCOMP","/usr/local/epics/EPICS_R7.0/modules/synApps/support/measComp-R4-2")
+## Register all support components
+dbLoadDatabase("/usr/local/epics/EPICS_R7.0/siteApp/USB1608G_2AO_V2/dbd/USB1608G_2AO_V2.dbd")
+USB1608G_2AO_V2_registerRecordDeviceDriver(pdbbase)
+ThresholdLogicRegister: IOC 쉘 명령어 등록 완료
+  - ThresholdLogicConfig: 임계값 로직 컨트롤러 생성
+  - ThresholdLogicHelp: 사용법 도움말 표시
+도움말을 보려면 'ThresholdLogicHelp'를 입력하세요.
+## Environment variable setup
+epicsEnvSet("PREFIX", "USB1608G_2AO:")
+epicsEnvSet("PORT", "USB1608G_2AO_PORT")
+epicsEnvSet("WDIG_POINTS", "1048576")
+epicsEnvSet("WGEN_POINTS", "1048576")
+epicsEnvSet("UNIQUE_ID", "01D97CFA")
+## Configure port driver
+MultiFunctionConfig("USB1608G_2AO_PORT", "01D97CFA", 1048576, 1048576)
+## Configure threshold logic controller
+epicsEnvSet("THRESHOLD_PORT", "THRESHOLD_LOGIC_PORT")
+ThresholdLogicConfig("THRESHOLD_LOGIC_PORT", "USB1608G_2AO_PORT", 0)
+[2025-08-30 15:17:31.899114] [경고] validateConfigurationWithErrorHandler: 히스테리시스가 임계값보다 큽니다
+[2025-08-30 15:17:31.899126] [정보] validateConfigurationWithErrorHandler: 히스테리시스를 임계값 절댓값보다 작게 설정하세요
+[2025-08-30 15:17:31.899129] [정보] ThresholdLogicController: 포트=THRESHOLD_LOGIC_PORT, 장치포트=USB1608G_2AO_PORT, 주소=0로 ThresholdLogicController 생성됨
+ThresholdLogicConfig: 성공적으로 생성됨 - 포트: THRESHOLD_LOGIC_PORT, 장치포트: USB1608G_2AO_PORT, 주소: 0
+## Load database templates
+dbLoadTemplate("/usr/local/epics/EPICS_R7.0/siteApp/USB1608G_2AO_V2/USB1608G_2AO_V2App/Db/USB1608G_2AO.substitutions", "P=USB1608G_2AO:,PORT=USB1608G_2AO_PORT,WDIG_POINTS=1048576,WGEN_POINTS=1048576")
+## Load save/restore configuration
+< save_restore.cmd
+# Debug-output level
+save_restoreSet_Debug(0)
+# Ok to save/restore save sets with missing values (no CA connection to PV)?
+save_restoreSet_IncompleteSetsOk(1)
+# Save dated backup files?
+save_restoreSet_DatedBackupFiles(1)
+# Number of sequenced backup files to write
+save_restoreSet_NumSeqFiles(3)
+# Time interval between sequenced backups
+save_restoreSet_SeqPeriodInSeconds(300)
+# specify where save files should be
+set_savefile_path(".", "autosave")
+# specify what save files should be restored.  Note these files must be
+# in the directory specified in set_savefile_path(), or, if that function
+# has not been called, from the directory current when iocInit is invoked0
+set_pass0_restoreFile("auto_settings.sav")
+set_pass1_restoreFile("auto_settings.sav")
+# specify directories in which to to search for included request files
+# Note cdCommands defines 'startup', but envPaths does not
+set_requestfile_path(".",         "")
+set_requestfile_path(".",         "autosave")
+set_requestfile_path(/usr/local/epics/EPICS_R7.0/modules/synApps/support/autosave-R5-11, "db")
+set_requestfile_path(/usr/local/epics/EPICS_R7.0/modules/synApps/support/calc-R3-7-5,     "db")
+set_requestfile_path(/usr/local/epics/EPICS_R7.0/modules/synApps/support/scaler-4-1,   "db")
+set_requestfile_path(/usr/local/epics/EPICS_R7.0/modules/synApps/support/sscan-R2-11-6,    "db")
+set_requestfile_path(/usr/local/epics/EPICS_R7.0/modules/synApps/support/measComp-R4-2, "db")
+## Initialize IOC
+iocInit
+############################################################################
+## EPICS R7.0.7
+## Rev. 2025-08-12T12:26+0900
+## Rev. Date build date/time: 
+############################################################################
+save_restore: **********************************
+
+USB1608G_2AO:ThresholdLogic1Threshold devAsynFloat64::initCommon drvUserCreate 
+USB1608G_2AO:ThresholdLogic1Hysteresis devAsynFloat64::initCommon drvUserCreate 
+USB1608G_2AO:ThresholdLogic1UpdateRate devAsynFloat64::initCommon drvUserCreate 
+USB1608G_2AO:ThresholdLogic2Threshold devAsynFloat64::initCommon drvUserCreate 
+USB1608G_2AO:ThresholdLogic2Hysteresis devAsynFloat64::initCommon drvUserCreate 
+USB1608G_2AO:ThresholdLogic2UpdateRate devAsynFloat64::initCommon drvUserCreate 
+USB1608G_2AO:ThresholdLogic3Threshold devAsynFloat64::initCommon drvUserCreate 
+USB1608G_2AO:ThresholdLogic3Hysteresis devAsynFloat64::initCommon drvUserCreate 
+USB1608G_2AO:ThresholdLogic3UpdateRate devAsynFloat64::initCommon drvUserCreate 
+USB1608G_2AO:ThresholdLogic4Threshold devAsynFloat64::initCommon drvUserCreate 
+USB1608G_2AO:ThresholdLogic4Hysteresis devAsynFloat64::initCommon drvUserCreate 
+USB1608G_2AO:ThresholdLogic4UpdateRate devAsynFloat64::initCommon drvUserCreate 
+USB1608G_2AO:ThresholdLogic1AlarmState devAsynInt32::initCommon drvUserCreate 
+USB1608G_2AO:ThresholdLogic2AlarmState devAsynInt32::initCommon drvUserCreate 
+USB1608G_2AO:ThresholdLogic3AlarmState devAsynInt32::initCommon drvUserCreate 
+USB1608G_2AO:ThresholdLogic4AlarmState devAsynInt32::initCommon drvUserCreate 
+USB1608G_2AO:ThresholdLogic1Enable devAsynInt32::initCommon drvUserCreate 
+USB1608G_2AO:ThresholdLogic1Reset devAsynInt32::initCommon drvUserCreate 
+USB1608G_2AO:ThresholdLogic2Enable devAsynInt32::initCommon drvUserCreate 
+USB1608G_2AO:ThresholdLogic2Reset devAsynInt32::initCommon drvUserCreate 
+USB1608G_2AO:ThresholdLogic3Enable devAsynInt32::initCommon drvUserCreate 
+USB1608G_2AO:ThresholdLogic3Reset devAsynInt32::initCommon drvUserCreate 
+USB1608G_2AO:ThresholdLogic4Enable devAsynInt32::initCommon drvUserCreate 
+USB1608G_2AO:ThresholdLogic4Reset devAsynInt32::initCommon drvUserCreate 
+USB1608G_2AO:ThresholdLogic1TriggerCount devAsynInt32::initCommon drvUserCreate 
+USB1608G_2AO:ThresholdLogic2TriggerCount devAsynInt32::initCommon drvUserCreate 
+USB1608G_2AO:ThresholdLogic3TriggerCount devAsynInt32::initCommon drvUserCreate 
+USB1608G_2AO:ThresholdLogic4TriggerCount devAsynInt32::initCommon drvUserCreate 
+USB1608G_2AO:ThresholdLogic1Status devAsynInt32::initCommon drvUserCreate 
+USB1608G_2AO:ThresholdLogic2Status devAsynInt32::initCommon drvUserCreate 
+USB1608G_2AO:ThresholdLogic3Status devAsynInt32::initCommon drvUserCreate 
+USB1608G_2AO:ThresholdLogic4Status devAsynInt32::initCommon drvUserCreate 
+USB1608G_2AO:ThresholdLogic1LastUpdate devAsynOctet::initDrvUser drvUserCreate failed 
+USB1608G_2AO:ThresholdLogic2LastUpdate devAsynOctet::initDrvUser drvUserCreate failed 
+USB1608G_2AO:ThresholdLogic3LastUpdate devAsynOctet::initDrvUser drvUserCreate failed 
+USB1608G_2AO:ThresholdLogic4LastUpdate devAsynOctet::initDrvUser drvUserCreate failed 
+save_restore: **********************************
+
+## Setup autosave monitoring
+create_monitor_set("auto_settings.req",30,"P=USB1608G_2AO:")
+save_restore: connect failed for channel 'file'
+save_restore: connect failed for channel 'file'
+auto_settings.sav: 0 of 2 PV's connected
+[?2004hepics> 
+[?2004l[?2004hepics> 
+[?2004l[?2004hepics> 
+[?2004l[?2004hepics> dbl
+[?2004lUSB1608G_2AO:PollTimeMS
+USB1608G_2AO:PulseGen1Period_RBV
+USB1608G_2AO:PulseGen1DutyCycle_RBV
+USB1608G_2AO:PulseGen1Delay_RBV
+USB1608G_2AO:Ai1
+USB1608G_2AO:Ai2
+USB1608G_2AO:Ai3
+USB1608G_2AO:Ai4
+USB1608G_2AO:Ai5
+USB1608G_2AO:Ai6
+USB1608G_2AO:Ai7
+USB1608G_2AO:Ai8
+USB1608G_2AO:WaveDigDwellActual
+USB1608G_2AO:WaveDigTotalTime
+USB1608G_2AO:WaveGenFrequency
+USB1608G_2AO:WaveGenDwell
+USB1608G_2AO:WaveGenDwellActual
+USB1608G_2AO:WaveGenTotalTime
+USB1608G_2AO:ThresholdLogic1CurrentValue
+USB1608G_2AO:ThresholdLogic2CurrentValue
+USB1608G_2AO:ThresholdLogic3CurrentValue
+USB1608G_2AO:ThresholdLogic4CurrentValue
+USB1608G_2AO:PollSleepMS
+USB1608G_2AO:PulseGen1Period
+USB1608G_2AO:PulseGen1Frequency
+USB1608G_2AO:PulseGen1DutyCycle
+USB1608G_2AO:PulseGen1Width
+USB1608G_2AO:PulseGen1Delay
+USB1608G_2AO:Ai1Rate
+USB1608G_2AO:Ai2Rate
+USB1608G_2AO:Ai3Rate
+USB1608G_2AO:Ai4Rate
+USB1608G_2AO:Ai5Rate
+USB1608G_2AO:Ai6Rate
+USB1608G_2AO:Ai7Rate
+USB1608G_2AO:Ai8Rate
+USB1608G_2AO:WaveDigDwell
+USB1608G_2AO:Ao1
+USB1608G_2AO:Ao1Return
+USB1608G_2AO:Ao1TweakVal
+USB1608G_2AO:Ao2
+USB1608G_2AO:Ao2Return
+USB1608G_2AO:Ao2TweakVal
+USB1608G_2AO:WaveGenIntDwell
+USB1608G_2AO:WaveGenIntFrequency
+USB1608G_2AO:WaveGenUserDwell
+USB1608G_2AO:WaveGenUserFrequency
+USB1608G_2AO:WaveGen1PulseWidth
+USB1608G_2AO:WaveGen1Amplitude
+USB1608G_2AO:WaveGen1Offset
+USB1608G_2AO:WaveGen2PulseWidth
+USB1608G_2AO:WaveGen2Amplitude
+USB1608G_2AO:WaveGen2Offset
+USB1608G_2AO:ThresholdLogic1Threshold
+USB1608G_2AO:ThresholdLogic1Hysteresis
+USB1608G_2AO:ThresholdLogic1UpdateRate
+USB1608G_2AO:ThresholdLogic2Threshold
+USB1608G_2AO:ThresholdLogic2Hysteresis
+USB1608G_2AO:ThresholdLogic2UpdateRate
+USB1608G_2AO:ThresholdLogic3Threshold
+USB1608G_2AO:ThresholdLogic3Hysteresis
+USB1608G_2AO:ThresholdLogic3UpdateRate
+USB1608G_2AO:ThresholdLogic4Threshold
+USB1608G_2AO:ThresholdLogic4Hysteresis
+USB1608G_2AO:ThresholdLogic4UpdateRate
+USB1608G_2AO:Bi1
+USB1608G_2AO:Bi2
+USB1608G_2AO:Bi3
+USB1608G_2AO:Bi4
+USB1608G_2AO:Bi5
+USB1608G_2AO:Bi6
+USB1608G_2AO:Bi7
+USB1608G_2AO:Bi8
+USB1608G_2AO:Bo1_RBV
+USB1608G_2AO:Bo2_RBV
+USB1608G_2AO:Bo3_RBV
+USB1608G_2AO:Bo4_RBV
+USB1608G_2AO:Bo5_RBV
+USB1608G_2AO:Bo6_RBV
+USB1608G_2AO:Bo7_RBV
+USB1608G_2AO:Bo8_RBV
+USB1608G_2AO:ThresholdLogic1OutputState
+USB1608G_2AO:ThresholdLogic1AlarmState
+USB1608G_2AO:ThresholdLogic2OutputState
+USB1608G_2AO:ThresholdLogic2AlarmState
+USB1608G_2AO:ThresholdLogic3OutputState
+USB1608G_2AO:ThresholdLogic3AlarmState
+USB1608G_2AO:ThresholdLogic4OutputState
+USB1608G_2AO:ThresholdLogic4AlarmState
+USB1608G_2AO:Bo1
+USB1608G_2AO:Bo2
+USB1608G_2AO:Bo3
+USB1608G_2AO:Bo4
+USB1608G_2AO:Bo5
+USB1608G_2AO:Bo6
+USB1608G_2AO:Bo7
+USB1608G_2AO:Bo8
+USB1608G_2AO:Bd1
+USB1608G_2AO:Bd2
+USB1608G_2AO:Bd3
+USB1608G_2AO:Bd4
+USB1608G_2AO:Bd5
+USB1608G_2AO:Bd6
+USB1608G_2AO:Bd7
+USB1608G_2AO:Bd8
+USB1608G_2AO:PulseGen1Run
+USB1608G_2AO:PulseGen1IdleState
+USB1608G_2AO:Counter1Reset
+USB1608G_2AO:Counter2Reset
+USB1608G_2AO:WaveDigExtTrigger
+USB1608G_2AO:WaveDigExtClock
+USB1608G_2AO:WaveDigContinuous
+USB1608G_2AO:WaveDigAutoRestart
+USB1608G_2AO:WaveDigRetrigger
+USB1608G_2AO:WaveDigBurstMode
+USB1608G_2AO:Ao1Pulse
+USB1608G_2AO:Ao2Pulse
+USB1608G_2AO:WaveGenExtTrigger
+USB1608G_2AO:WaveGenExtClock
+USB1608G_2AO:WaveGenContinuous
+USB1608G_2AO:WaveGenRetrigger
+USB1608G_2AO:WaveGen1Enable
+USB1608G_2AO:WaveGen2Enable
+USB1608G_2AO:ThresholdLogic1Enable
+USB1608G_2AO:ThresholdLogic1Reset
+USB1608G_2AO:ThresholdLogic2Enable
+USB1608G_2AO:ThresholdLogic2Reset
+USB1608G_2AO:ThresholdLogic3Enable
+USB1608G_2AO:ThresholdLogic3Reset
+USB1608G_2AO:ThresholdLogic4Enable
+USB1608G_2AO:ThresholdLogic4Reset
+USB1608G_2AO:WaveDigRun
+USB1608G_2AO:WaveDigReadWF
+USB1608G_2AO:WaveGenRun
+USB1608G_2AO:PulseGen1Frequency_RBV
+USB1608G_2AO:PulseGen1Width_RBV
+USB1608G_2AO:PulseGen1CalcFrequency
+USB1608G_2AO:PulseGen1CalcPeriod
+USB1608G_2AO:PulseGen1CalcWidth
+USB1608G_2AO:PulseGen1CalcDutyCycle
+USB1608G_2AO:Ao1TweakUp
+USB1608G_2AO:Ao1TweakDown
+USB1608G_2AO:Ao2TweakUp
+USB1608G_2AO:Ao2TweakDown
+USB1608G_2AO:WaveGenCalcIntFrequency
+USB1608G_2AO:WaveGenCalcIntDwell
+USB1608G_2AO:WaveGenCalcUserFrequency
+USB1608G_2AO:WaveGenCalcUserDwell
+USB1608G_2AO:ThresholdLogic1Compare
+USB1608G_2AO:ThresholdLogic2Compare
+USB1608G_2AO:ThresholdLogic3Compare
+USB1608G_2AO:ThresholdLogic4Compare
+USB1608G_2AO:ModelNumber
+USB1608G_2AO:Li
+USB1608G_2AO:Lo_RBV
+USB1608G_2AO:Counter1Counts
+USB1608G_2AO:Counter2Counts
+USB1608G_2AO:WaveDigCurrentPoint
+USB1608G_2AO:WaveGenNumPoints
+USB1608G_2AO:WaveGenCurrentPoint
+USB1608G_2AO:ThresholdLogic1TriggerCount
+USB1608G_2AO:ThresholdLogic2TriggerCount
+USB1608G_2AO:ThresholdLogic3TriggerCount
+USB1608G_2AO:ThresholdLogic4TriggerCount
+USB1608G_2AO:Lo
+USB1608G_2AO:PulseGen1Count
+USB1608G_2AO:WaveDigNumPoints
+USB1608G_2AO:WaveDigTriggerCount
+USB1608G_2AO:WaveGenUserNumPoints
+USB1608G_2AO:WaveGenIntNumPoints
+USB1608G_2AO:WaveGenTriggerCount
+USB1608G_2AO:ThresholdLogic1Status
+USB1608G_2AO:ThresholdLogic2Status
+USB1608G_2AO:ThresholdLogic3Status
+USB1608G_2AO:ThresholdLogic4Status
+USB1608G_2AO:AiMode
+USB1608G_2AO:Ai1Range
+USB1608G_2AO:Ai1Type
+USB1608G_2AO:Ai2Range
+USB1608G_2AO:Ai2Type
+USB1608G_2AO:Ai3Range
+USB1608G_2AO:Ai3Type
+USB1608G_2AO:Ai4Range
+USB1608G_2AO:Ai4Type
+USB1608G_2AO:Ai5Range
+USB1608G_2AO:Ai5Type
+USB1608G_2AO:Ai6Range
+USB1608G_2AO:Ai6Type
+USB1608G_2AO:Ai7Range
+USB1608G_2AO:Ai7Type
+USB1608G_2AO:Ai8Range
+USB1608G_2AO:Ai8Type
+USB1608G_2AO:WaveDigFirstChan
+USB1608G_2AO:WaveDigNumChans
+USB1608G_2AO:Ao1Range
+USB1608G_2AO:Ao2Range
+USB1608G_2AO:WaveGen1Type
+USB1608G_2AO:WaveGen2Type
+USB1608G_2AO:TrigMode
+USB1608G_2AO:ModelName
+USB1608G_2AO:FirmwareVersion
+USB1608G_2AO:UniqueID
+USB1608G_2AO:ULVersion
+USB1608G_2AO:DriverVersion
+USB1608G_2AO:ThresholdLogic1LastUpdate
+USB1608G_2AO:ThresholdLogic2LastUpdate
+USB1608G_2AO:ThresholdLogic3LastUpdate
+USB1608G_2AO:ThresholdLogic4LastUpdate
+USB1608G_2AO:LastErrorMessage
+USB1608G_2AO:WaveDigTimeWF
+USB1608G_2AO:WaveDigAbsTimeWF
+USB1608G_2AO:WaveDig1VoltWF
+USB1608G_2AO:WaveDig2VoltWF
+USB1608G_2AO:WaveDig3VoltWF
+USB1608G_2AO:WaveDig4VoltWF
+USB1608G_2AO:WaveDig5VoltWF
+USB1608G_2AO:WaveDig6VoltWF
+USB1608G_2AO:WaveDig7VoltWF
+USB1608G_2AO:WaveDig8VoltWF
+USB1608G_2AO:WaveGenUserTimeWF
+USB1608G_2AO:WaveGenIntTimeWF
+USB1608G_2AO:WaveGen1UserWF
+USB1608G_2AO:WaveGen1InternalWF
+USB1608G_2AO:WaveGen2UserWF
+USB1608G_2AO:WaveGen2InternalWF
+[?2004hepics> 
+[?2004l[?2004hepics> 
+[?2004l[?2004hepics> 
+[?2004l[?2004hepics> save_restore:write_save_file: Backup file (./autosave/auto_settings.savB) bad or not found.  Writing a new one. [250830-151833]
+[Kepics> [Kepics> [Kepics> [?2004l
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./iocBoot/iocUSB1608G_2AO_V2/Makefile
+=================================================
+TOP = ../..
+include $(TOP)/configure/CONFIG
+ARCH = $(EPICS_HOST_ARCH)
+TARGETS = envPaths
+include $(TOP)/configure/RULES.ioc
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./iocBoot/iocUSB1608G_2AO_V2/README_ThresholdLogic.md
+=================================================
+# ThresholdLogic Controller MEDM 및 테스트 가이드
+
+## 개요
+
+이 문서는 USB1608G-2AO IOC에 추가된 ThresholdLogicController의 MEDM 화면과 테스트 스크립트 사용법을 설명합니다.
+
+## 파일 구성
+
+### MEDM 화면
+- `USB1608G_2AO_cpp.adl` - 기존 화면에 ThresholdLogic 섹션 추가
+- `medm_ThresholdLogic.sh` - ThresholdLogic 전용 MEDM 실행 스크립트
+- `medm_USB1608G_2AO.sh` - 기존 스크립트에 ThresholdLogic 옵션 추가
+
+### 테스트 스크립트
+- `catest_ThresholdLogic.sh` - 포괄적인 ThresholdLogic 테스트 스크립트
+- `catest_USB1608G_2AO.sh` - 기존 USB1608G-2AO 테스트 스크립트
+
+## MEDM 화면 사용법
+
+### 1. 전체 시스템 MEDM 화면 실행
+
+```bash
+# 방법 1: 기존 스크립트 사용 (메뉴에서 선택)
+./medm_USB1608G_2AO.sh
+# 메뉴에서 1번 또는 2번 선택
+
+# 방법 2: 직접 실행
+./medm_ThresholdLogic.sh
+```
+
+### 2. MEDM 화면 구성
+
+#### 기존 섹션 (상단)
+- **장치 정보**: 모델명, 고유 ID, 드라이버 버전
+- **디지털 I/O**: 8채널 디지털 입출력 제어
+- **아날로그 입력**: 8채널 아날로그 입력 모니터링
+- **아날로그 출력**: 2채널 아날로그 출력 제어
+- **트렌드 차트**: 실시간 데이터 시각화
+
+#### 새로 추가된 ThresholdLogic 섹션 (하단)
+
+**설정 컨트롤 (좌측)**:
+- **Threshold**: 임계값 설정 (V 단위)
+- **Hysteresis**: 히스테리시스 값 설정 (V 단위)
+- **Update Rate**: 업데이트 주기 설정 (Hz 단위)
+- **Logic Status**: 현재 로직 상태 표시
+- **Reset**: 시스템 리셋 버튼
+
+**상태 모니터링 (중앙)**:
+- **Current Value**: 현재 입력값 실시간 표시
+- **Output State**: 출력 상태 (LED 표시)
+- **Enable**: 컨트롤러 활성화/비활성화 버튼
+- **Alarm Status**: 알람 상태 표시
+
+**시각화 (우측)**:
+- **Meter**: 현재값을 아날로그 미터로 표시
+- **Trend Chart**: 현재값과 임계값의 시간 추이
+
+**로직 설명 박스**:
+- 임계값 로직의 동작 원리 설명
+- 히스테리시스 기능 설명
+
+### 3. 사용 절차
+
+1. **IOC 시작 확인**
+   ```bash
+   # IOC가 실행 중인지 확인
+   ps aux | grep USB1608G_2AO_cpp
+   ```
+
+2. **MEDM 화면 실행**
+   ```bash
+   ./medm_ThresholdLogic.sh
+   ```
+
+3. **ThresholdLogic 설정**
+   - Threshold 필드에 원하는 임계값 입력 (예: 2.5)
+   - Hysteresis 필드에 히스테리시스 값 입력 (예: 0.1)
+   - Update Rate 설정 (기본값: 10Hz)
+
+4. **컨트롤러 활성화**
+   - Enable 버튼을 클릭하여 "Enabled"로 변경
+
+5. **동작 확인**
+   - Current Value가 실시간으로 업데이트되는지 확인
+   - 임계값을 초과하면 Output State가 "High"로 변경되는지 확인
+   - 트렌드 차트에서 시간에 따른 변화 관찰
+
+## 테스트 스크립트 사용법
+
+### 1. 자동 전체 테스트
+
+```bash
+# 모든 테스트를 자동으로 실행
+./catest_ThresholdLogic.sh --auto
+```
+
+### 2. 대화형 테스트
+
+```bash
+# 대화형 메뉴로 실행
+./catest_ThresholdLogic.sh
+```
+
+메뉴 옵션:
+1. **전체 테스트 실행** - 모든 테스트를 순차적으로 실행
+2. **PV 연결 테스트만** - PV 연결 상태만 확인
+3. **임계값 로직 테스트만** - 임계값 비교 로직만 테스트
+4. **히스테리시스 테스트만** - 히스테리시스 기능만 테스트
+5. **연속 모니터링 테스트만** - 사인파 입력으로 연속 테스트
+6. **실시간 모니터링** - 실시간 PV 값 모니터링
+7. **현재 상태 확인** - 현재 설정 및 상태 확인
+8. **설정 초기화** - 모든 설정을 기본값으로 초기화
+9. **종료** - 스크립트 종료
+
+### 3. 테스트 내용
+
+#### PV 연결 테스트
+- 모든 ThresholdLogic PV의 연결 상태 확인
+- IOC 실행 상태 검증
+
+#### 임계값 로직 테스트
+- 다양한 입력 전압에 대한 출력 상태 확인
+- 임계값 초과/미만 시 동작 검증
+- 로직 정확성 검증
+
+#### 히스테리시스 테스트
+- 히스테리시스 기능 동작 확인
+- 출력 진동 방지 기능 검증
+- 상향/하향 임계값 동작 확인
+
+#### 연속 모니터링 테스트
+- 사인파 입력으로 30초간 연속 테스트
+- 출력 상태 변화 횟수 카운트
+- 실시간 응답성 확인
+
+#### 성능 테스트
+- 빠른 입력 변화에 대한 응답성 테스트
+- 다양한 업데이트 주기에서의 동작 확인
+- CPU 사용률 및 안정성 검증
+
+## 문제 해결
+
+### 1. MEDM 실행 오류
+
+**증상**: MEDM이 시작되지 않음
+```bash
+medm: command not found
+```
+
+**해결 방법**:
+```bash
+# MEDM 설치 확인
+which medm
+
+# EPICS Extensions 경로 확인
+echo $PATH | grep -i medm
+
+# 필요시 PATH 추가
+export PATH=$PATH:/usr/local/epics/extensions/bin/$EPICS_HOST_ARCH
+```
+
+### 2. PV 연결 실패
+
+**증상**: PV 연결 타임아웃
+```bash
+Channel connect timed out
+```
+
+**해결 방법**:
+```bash
+# IOC 실행 상태 확인
+ps aux | grep USB1608G_2AO_cpp
+
+# IOC 재시작
+cd iocBoot/iocUSB1608G_2AO_cpp
+../../bin/linux-x86_64/USB1608G_2AO_cpp st.cmd
+
+# 네트워크 설정 확인
+echo $EPICS_CA_ADDR_LIST
+echo $EPICS_CA_AUTO_ADDR_LIST
+```
+
+### 3. ThresholdLogic 동작 안함
+
+**증상**: 임계값을 초과해도 출력이 변경되지 않음
+
+**해결 방법**:
+```bash
+# 컨트롤러 활성화 상태 확인
+caget USB1608G_2AO_cpp:ThresholdLogic1Enable
+
+# 활성화
+caput USB1608G_2AO_cpp:ThresholdLogic1Enable 1
+
+# 현재값 확인
+caget USB1608G_2AO_cpp:ThresholdLogic1CurrentValue
+
+# 임계값 확인
+caget USB1608G_2AO_cpp:ThresholdLogic1Threshold
+```
+
+### 4. 테스트 스크립트 권한 오류
+
+**증상**: Permission denied
+
+**해결 방법**:
+```bash
+# 실행 권한 부여
+chmod +x catest_ThresholdLogic.sh
+chmod +x medm_ThresholdLogic.sh
+
+# 스크립트 실행
+./catest_ThresholdLogic.sh
+```
+
+## 고급 사용법
+
+### 1. 사용자 정의 테스트
+
+테스트 스크립트를 수정하여 특정 요구사항에 맞는 테스트 추가:
+
+```bash
+# 스크립트 복사
+cp catest_ThresholdLogic.sh my_custom_test.sh
+
+# 사용자 정의 테스트 함수 추가
+function my_custom_test() {
+    print_header "사용자 정의 테스트"
+    # 여기에 사용자 정의 테스트 로직 추가
+}
+```
+
+### 2. 자동화된 모니터링
+
+시스템 모니터링을 위한 자동화 스크립트:
+
+```bash
+# 주기적 상태 확인
+while true; do
+    echo "$(date): $(caget -t USB1608G_2AO_cpp:ThresholdLogic1CurrentValue) V"
+    sleep 10
+done
+```
+
+### 3. 로그 분석
+
+테스트 결과 로그 분석:
+
+```bash
+# 테스트 보고서 확인
+cat /tmp/threshold_logic_test_report.txt
+
+# 특정 패턴 검색
+grep -i "error\|fail" /tmp/threshold_logic_test_report.txt
+```
+
+## 참고 자료
+
+- [EPICS MEDM 사용자 가이드](https://epics.anl.gov/EpicsDocumentation/ExtensionsManuals/MEDM/MEDM.html)
+- [Channel Access 클라이언트 도구](https://epics.anl.gov/base/R7-0/8-docs/CAref.html)
+- [ThresholdLogicController API 문서](../../docs/ThresholdLogicController_API_Documentation.md)
+- [문제 해결 가이드](../../docs/ThresholdLogicController_Troubleshooting_Guide.md)
+
+## 버전 정보
+
+- 생성일: 2025년 8월 20일
+- ThresholdLogicController 버전: 1.0.0
+- EPICS Base 호환성: R7.0+
+- 테스트 환경: Linux x86_64
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./iocBoot/iocUSB1608G_2AO_V2/auto_settings.req
+=================================================
+    file "/usr/local/epics/EPICS_R7.0/siteApp/USB1608G_2AO_V2/USB1608G_2AO_V2App/Db/USB1608G_2AO_settings.req", P=$(P)
+    file "/usr/local/epics/EPICS_R7.0/siteApp/USB1608G_2AO_V2/USB1608G_2AO_V2App/Db/threshold_logic_settings.req", P=$(P)
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./iocBoot/iocUSB1608G_2AO_V2/autosave/auto_settings.sav
+=================================================
+# autosave R5.3	Automatically generated - DO NOT MODIFY - 250830-215736
+! 2 channel(s) not connected - or not all gets were successful
+#file Search Issued
+#file Search Issued
+<END>
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./iocBoot/iocUSB1608G_2AO_V2/autosave/auto_settings.sav0
+=================================================
+# autosave R5.3	Automatically generated - DO NOT MODIFY - 250830-214735
+! 2 channel(s) not connected - or not all gets were successful
+#file Search Issued
+#file Search Issued
+<END>
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./iocBoot/iocUSB1608G_2AO_V2/autosave/auto_settings.sav1
+=================================================
+# autosave R5.3	Automatically generated - DO NOT MODIFY - 250830-215736
+! 2 channel(s) not connected - or not all gets were successful
+#file Search Issued
+#file Search Issued
+<END>
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./iocBoot/iocUSB1608G_2AO_V2/autosave/auto_settings.sav2
+=================================================
+# autosave R5.3	Automatically generated - DO NOT MODIFY - 250830-214735
+! 2 channel(s) not connected - or not all gets were successful
+#file Search Issued
+#file Search Issued
+<END>
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./iocBoot/iocUSB1608G_2AO_V2/autosave/auto_settings.savB
+=================================================
+# autosave R5.3	Automatically generated - DO NOT MODIFY - 250830-215736
+! 2 channel(s) not connected - or not all gets were successful
+#file Search Issued
+#file Search Issued
+<END>
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./iocBoot/iocUSB1608G_2AO_V2/catest_ThresholdLogic.sh
+=================================================
+#!/bin/bash
+
+# ThresholdLogic Controller 테스트 스크립트
+# 이 스크립트는 ThresholdLogicController의 모든 기능을 테스트합니다.
+
+# ===== 색상 정의 =====
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+BLUE='\033[0;34m'
+PURPLE='\033[0;35m'
+CYAN='\033[0;36m'
+NC='\033[0m' # No Color
+
+# ===== PV 이름 정의 =====
+PREFIX="USB1608G_2AO:"
+CONTROLLER="ThresholdLogic1"
+
+THRESHOLD_PV="${PREFIX}${CONTROLLER}Threshold"
+HYSTERESIS_PV="${PREFIX}${CONTROLLER}Hysteresis"
+CURRENT_VALUE_PV="${PREFIX}${CONTROLLER}CurrentValue"
+OUTPUT_STATE_PV="${PREFIX}${CONTROLLER}OutputState"
+ENABLE_PV="${PREFIX}${CONTROLLER}Enable"
+UPDATE_RATE_PV="${PREFIX}${CONTROLLER}UpdateRate"
+ALARM_STATE_PV="${PREFIX}${CONTROLLER}AlarmState"
+RESET_PV="${PREFIX}${CONTROLLER}Reset"
+
+# 테스트용 아날로그 출력 (입력 시뮬레이션용)
+AO_PV="${PREFIX}Ao1"
+
+# ===== 유틸리티 함수 =====
+
+function print_header() {
+    echo -e "${CYAN}========================================${NC}"
+    echo -e "${CYAN}$1${NC}"
+    echo -e "${CYAN}========================================${NC}"
+}
+
+function print_section() {
+    echo -e "\n${YELLOW}--- $1 ---${NC}"
+}
+
+function print_success() {
+    echo -e "${GREEN}✓ $1${NC}"
+}
+
+function print_error() {
+    echo -e "${RED}✗ $1${NC}"
+}
+
+function print_info() {
+    echo -e "${BLUE}ℹ $1${NC}"
+}
+
+function wait_for_user() {
+    echo -e "${PURPLE}Press Enter to continue...${NC}"
+    read
+}
+
+function check_pv_connection() {
+    local pv=$1
+    local timeout=5
+    
+    if timeout $timeout caget "$pv" > /dev/null 2>&1; then
+        print_success "PV 연결 성공: $pv"
+        return 0
+    else
+        print_error "PV 연결 실패: $pv"
+        return 1
+    fi
+}
+
+function get_pv_value() {
+    local pv=$1
+    caget -t "$pv" 2>/dev/null
+}
+
+function set_pv_value() {
+    local pv=$1
+    local value=$2
+    caput -t "$pv" "$value" > /dev/null 2>&1
+}
+
+function monitor_pvs() {
+    local duration=$1
+    print_info "실시간 모니터링 시작 (${duration}초간)..."
+    timeout "$duration" camonitor "$CURRENT_VALUE_PV" "$OUTPUT_STATE_PV" "$THRESHOLD_PV" 2>/dev/null || true
+}
+
+# ===== 테스트 함수들 =====
+
+function test_pv_connections() {
+    print_header "1. PV 연결 테스트"
+    
+    local pvs=(
+        "$THRESHOLD_PV"
+        "$HYSTERESIS_PV"
+        "$CURRENT_VALUE_PV"
+        "$OUTPUT_STATE_PV"
+        "$ENABLE_PV"
+        "$UPDATE_RATE_PV"
+        "$ALARM_STATE_PV"
+        "$AO_PV"
+    )
+    
+    local failed=0
+    for pv in "${pvs[@]}"; do
+        if ! check_pv_connection "$pv"; then
+            ((failed++))
+        fi
+    done
+    
+    if [ $failed -eq 0 ]; then
+        print_success "모든 PV 연결 성공!"
+    else
+        print_error "$failed 개의 PV 연결 실패"
+        echo "IOC가 실행 중인지 확인하세요."
+        exit 1
+    fi
+}
+
+function test_initial_setup() {
+    print_header "2. 초기 설정 테스트"
+    
+    print_section "기본 설정값 확인"
+    echo "임계값: $(get_pv_value $THRESHOLD_PV) V"
+    echo "히스테리시스: $(get_pv_value $HYSTERESIS_PV) V"
+    echo "업데이트 주기: $(get_pv_value $UPDATE_RATE_PV) Hz"
+    echo "활성화 상태: $(get_pv_value $ENABLE_PV)"
+    echo "현재값: $(get_pv_value $CURRENT_VALUE_PV) V"
+    echo "출력 상태: $(get_pv_value $OUTPUT_STATE_PV)"
+    
+    print_section "테스트용 설정 적용"
+    set_pv_value "$THRESHOLD_PV" "2.5"
+    set_pv_value "$HYSTERESIS_PV" "0.2"
+    set_pv_value "$UPDATE_RATE_PV" "10.0"
+    
+    sleep 1
+    
+    print_success "테스트 설정 완료:"
+    echo "  - 임계값: 2.5V"
+    echo "  - 히스테리시스: 0.2V"
+    echo "  - 업데이트 주기: 10Hz"
+}
+
+function test_enable_disable() {
+    print_header "3. 활성화/비활성화 테스트"
+    
+    print_section "컨트롤러 비활성화"
+    set_pv_value "$ENABLE_PV" "0"
+    sleep 1
+    local enable_state=$(get_pv_value $ENABLE_PV)
+    if [ "$enable_state" = "0" ]; then
+        print_success "비활성화 성공"
+    else
+        print_error "비활성화 실패"
+    fi
+    
+    print_section "컨트롤러 활성화"
+    set_pv_value "$ENABLE_PV" "1"
+    sleep 2
+    enable_state=$(get_pv_value $ENABLE_PV)
+    if [ "$enable_state" = "1" ]; then
+        print_success "활성화 성공"
+    else
+        print_error "활성화 실패"
+    fi
+    
+    print_info "활성화 후 현재 상태:"
+    echo "  - 현재값: $(get_pv_value $CURRENT_VALUE_PV) V"
+    echo "  - 출력 상태: $(get_pv_value $OUTPUT_STATE_PV)"
+}
+
+function test_threshold_logic() {
+    print_header "4. 임계값 로직 테스트"
+    
+    # 컨트롤러가 활성화되어 있는지 확인
+    if [ "$(get_pv_value $ENABLE_PV)" != "1" ]; then
+        print_info "컨트롤러 활성화 중..."
+        set_pv_value "$ENABLE_PV" "1"
+        sleep 2
+    fi
+    
+    local test_voltages=(0.0 1.0 2.0 2.5 3.0 4.0 3.0 2.3 2.0 1.0 0.0)
+    
+    print_section "임계값 로직 테스트 시작"
+    print_info "임계값: 2.5V, 히스테리시스: 0.2V"
+    print_info "예상 동작:"
+    print_info "  - 입력 > 2.5V → 출력 HIGH"
+    print_info "  - 입력 < 2.3V (2.5-0.2) → 출력 LOW"
+    echo
+    
+    for voltage in "${test_voltages[@]}"; do
+        print_section "테스트 전압: ${voltage}V"
+        
+        # 아날로그 출력으로 입력 시뮬레이션
+        set_pv_value "$AO_PV" "$voltage"
+        sleep 3
+        
+        # 현재 상태 확인
+        local current_val=$(get_pv_value $CURRENT_VALUE_PV)
+        local output_state=$(get_pv_value $OUTPUT_STATE_PV)
+        local output_text="LOW"
+        if [ "$output_state" = "1" ]; then
+            output_text="HIGH"
+        fi
+        
+        echo "  설정값: ${voltage}V → 측정값: ${current_val}V → 출력: ${output_text}"
+        
+        # 로직 검증
+        if (( $(echo "$voltage > 2.5" | bc -l) )); then
+            if [ "$output_state" = "1" ]; then
+                print_success "  로직 정상: 임계값 초과 → HIGH"
+            else
+                print_error "  로직 오류: 임계값 초과했지만 LOW"
+            fi
+        elif (( $(echo "$voltage < 2.3" | bc -l) )); then
+            if [ "$output_state" = "0" ]; then
+                print_success "  로직 정상: 히스테리시스 미만 → LOW"
+            else
+                print_error "  로직 오류: 히스테리시스 미만이지만 HIGH"
+            fi
+        else
+            print_info "  히스테리시스 구간: 이전 상태 유지"
+        fi
+        
+        sleep 1
+    done
+}
+
+function test_hysteresis() {
+    print_header "5. 히스테리시스 기능 테스트"
+    
+    print_section "히스테리시스 테스트 준비"
+    set_pv_value "$THRESHOLD_PV" "3.0"
+    set_pv_value "$HYSTERESIS_PV" "0.5"
+    sleep 1
+    
+    print_info "설정: 임계값=3.0V, 히스테리시스=0.5V"
+    print_info "예상 동작: 3.0V에서 HIGH, 2.5V에서 LOW"
+    
+    # 히스테리시스 테스트 시퀀스
+    local hyst_voltages=(0.0 2.0 2.8 3.2 2.8 2.3 3.5 2.0)
+    
+    for voltage in "${hyst_voltages[@]}"; do
+        print_section "히스테리시스 테스트: ${voltage}V"
+        set_pv_value "$AO_PV" "$voltage"
+        sleep 3
+        
+        local current_val=$(get_pv_value $CURRENT_VALUE_PV)
+        local output_state=$(get_pv_value $OUTPUT_STATE_PV)
+        local output_text="LOW"
+        if [ "$output_state" = "1" ]; then
+            output_text="HIGH"
+        fi
+        
+        echo "  ${voltage}V → 측정: ${current_val}V → 출력: ${output_text}"
+        sleep 1
+    done
+    
+    # 원래 설정으로 복원
+    set_pv_value "$THRESHOLD_PV" "2.5"
+    set_pv_value "$HYSTERESIS_PV" "0.2"
+}
+
+function test_update_rate() {
+    print_header "6. 업데이트 주기 테스트"
+    
+    local rates=(1.0 5.0 20.0 10.0)
+    
+    for rate in "${rates[@]}"; do
+        print_section "업데이트 주기: ${rate}Hz"
+        set_pv_value "$UPDATE_RATE_PV" "$rate"
+        sleep 1
+        
+        local actual_rate=$(get_pv_value $UPDATE_RATE_PV)
+        echo "  설정: ${rate}Hz → 실제: ${actual_rate}Hz"
+        
+        print_info "5초간 모니터링..."
+        monitor_pvs 5
+    done
+}
+
+function test_alarm_conditions() {
+    print_header "7. 알람 조건 테스트"
+    
+    print_section "정상 범위 테스트"
+    set_pv_value "$AO_PV" "2.0"
+    sleep 3
+    echo "알람 상태: $(get_pv_value $ALARM_STATE_PV)"
+    
+    print_section "범위 초과 테스트"
+    set_pv_value "$AO_PV" "9.5"
+    sleep 3
+    echo "알람 상태: $(get_pv_value $ALARM_STATE_PV)"
+    
+    # 정상 범위로 복원
+    set_pv_value "$AO_PV" "2.0"
+    sleep 2
+}
+
+function test_reset_function() {
+    print_header "8. 리셋 기능 테스트"
+    
+    print_section "리셋 명령 전송"
+    if check_pv_connection "$RESET_PV"; then
+        set_pv_value "$RESET_PV" "1"
+        sleep 2
+        print_success "리셋 명령 전송 완료"
+        
+        print_info "리셋 후 상태:"
+        echo "  - 현재값: $(get_pv_value $CURRENT_VALUE_PV) V"
+        echo "  - 출력 상태: $(get_pv_value $OUTPUT_STATE_PV)"
+        echo "  - 알람 상태: $(get_pv_value $ALARM_STATE_PV)"
+    else
+        print_error "리셋 PV를 사용할 수 없습니다"
+    fi
+}
+
+function test_continuous_monitoring() {
+    print_header "9. 연속 모니터링 테스트"
+    
+    print_section "사인파 입력으로 연속 테스트"
+    print_info "30초간 사인파 입력을 생성하여 ThresholdLogic 동작을 확인합니다"
+    print_info "임계값: 2.5V, 진폭: 4V (0V ~ 4V)"
+    
+    # 백그라운드에서 모니터링 시작
+    timeout 35 camonitor "$CURRENT_VALUE_PV" "$OUTPUT_STATE_PV" > /tmp/threshold_monitor.log 2>&1 &
+    local monitor_pid=$!
+    
+    # 사인파 생성 (30초, 0.5Hz)
+    local samples=60
+    local duration=30
+    local amplitude=2.0
+    local offset=2.0
+    
+    for ((i = 0; i < samples; i++)); do
+        local t=$(echo "$i * $duration / $samples" | bc -l)
+        local theta=$(echo "2 * 3.141592 * 0.5 * $t" | bc -l)
+        local sin_val=$(python3 -c "import math; print(math.sin($theta))" 2>/dev/null || echo "0")
+        local voltage=$(echo "$offset + $amplitude * $sin_val" | bc -l)
+        
+        set_pv_value "$AO_PV" "$voltage"
+        printf "시간: %2ds, 입력: %.2fV\r" "$((i/2))" "$voltage"
+        sleep 0.5
+    done
+    
+    echo
+    wait $monitor_pid 2>/dev/null || true
+    
+    print_success "연속 모니터링 테스트 완료"
+    if [ -f /tmp/threshold_monitor.log ]; then
+        local transitions=$(grep -c "High\|Low" /tmp/threshold_monitor.log 2>/dev/null || echo "0")
+        print_info "출력 상태 변화 횟수: $transitions"
+        rm -f /tmp/threshold_monitor.log
+    fi
+}
+
+function test_performance() {
+    print_header "10. 성능 테스트"
+    
+    print_section "빠른 변화 테스트"
+    set_pv_value "$UPDATE_RATE_PV" "50.0"
+    sleep 1
+    
+    print_info "빠른 전압 변화로 응답성 테스트 (50Hz 업데이트)"
+    local fast_voltages=(1.0 3.0 1.0 3.0 1.0 3.0 1.0 3.0)
+    
+    for voltage in "${fast_voltages[@]}"; do
+        set_pv_value "$AO_PV" "$voltage"
+        sleep 0.2
+        local output=$(get_pv_value $OUTPUT_STATE_PV)
+        printf "%.1fV → %s  " "$voltage" "$output"
+    done
+    echo
+    
+    # 원래 설정으로 복원
+    set_pv_value "$UPDATE_RATE_PV" "10.0"
+    set_pv_value "$AO_PV" "0.0"
+}
+
+function generate_test_report() {
+    print_header "테스트 결과 요약"
+    
+    local timestamp=$(date '+%Y-%m-%d %H:%M:%S')
+    local report_file="/tmp/threshold_logic_test_report.txt"
+    
+    {
+        echo "ThresholdLogic Controller 테스트 보고서"
+        echo "생성 시간: $timestamp"
+        echo "========================================"
+        echo
+        echo "최종 설정 상태:"
+        echo "  임계값: $(get_pv_value $THRESHOLD_PV) V"
+        echo "  히스테리시스: $(get_pv_value $HYSTERESIS_PV) V"
+        echo "  업데이트 주기: $(get_pv_value $UPDATE_RATE_PV) Hz"
+        echo "  활성화 상태: $(get_pv_value $ENABLE_PV)"
+        echo
+        echo "최종 동작 상태:"
+        echo "  현재값: $(get_pv_value $CURRENT_VALUE_PV) V"
+        echo "  출력 상태: $(get_pv_value $OUTPUT_STATE_PV)"
+        echo "  알람 상태: $(get_pv_value $ALARM_STATE_PV)"
+        echo
+        echo "테스트 완료 항목:"
+        echo "  ✓ PV 연결 테스트"
+        echo "  ✓ 초기 설정 테스트"
+        echo "  ✓ 활성화/비활성화 테스트"
+        echo "  ✓ 임계값 로직 테스트"
+        echo "  ✓ 히스테리시스 기능 테스트"
+        echo "  ✓ 업데이트 주기 테스트"
+        echo "  ✓ 알람 조건 테스트"
+        echo "  ✓ 연속 모니터링 테스트"
+        echo "  ✓ 성능 테스트"
+    } > "$report_file"
+    
+    cat "$report_file"
+    print_success "테스트 보고서가 생성되었습니다: $report_file"
+}
+
+function cleanup() {
+    print_header "정리 작업"
+    
+    print_section "설정 초기화"
+    set_pv_value "$AO_PV" "0.0"
+    set_pv_value "$THRESHOLD_PV" "2.5"
+    set_pv_value "$HYSTERESIS_PV" "0.1"
+    set_pv_value "$UPDATE_RATE_PV" "10.0"
+    set_pv_value "$ENABLE_PV" "0"
+    
+    print_success "정리 작업 완료"
+}
+
+# ===== 메인 함수 =====
+
+function show_menu() {
+    echo -e "\n${CYAN}ThresholdLogic Controller 테스트 메뉴${NC}"
+    echo "1) 전체 테스트 실행"
+    echo "2) PV 연결 테스트만"
+    echo "3) 임계값 로직 테스트만"
+    echo "4) 히스테리시스 테스트만"
+    echo "5) 연속 모니터링 테스트만"
+    echo "6) 실시간 모니터링 (Ctrl+C로 중지)"
+    echo "7) 현재 상태 확인"
+    echo "8) 설정 초기화"
+    echo "9) 종료"
+    echo -n "선택하세요 (1-9): "
+}
+
+function interactive_mode() {
+    while true; do
+        show_menu
+        read choice
+        
+        case $choice in
+            1)
+                run_all_tests
+                ;;
+            2)
+                test_pv_connections
+                ;;
+            3)
+                test_threshold_logic
+                ;;
+            4)
+                test_hysteresis
+                ;;
+            5)
+                test_continuous_monitoring
+                ;;
+            6)
+                print_info "실시간 모니터링 시작 (Ctrl+C로 중지)..."
+                camonitor "$CURRENT_VALUE_PV" "$OUTPUT_STATE_PV" "$THRESHOLD_PV" "$ENABLE_PV"
+                ;;
+            7)
+                print_header "현재 상태"
+                echo "임계값: $(get_pv_value $THRESHOLD_PV) V"
+                echo "히스테리시스: $(get_pv_value $HYSTERESIS_PV) V"
+                echo "현재값: $(get_pv_value $CURRENT_VALUE_PV) V"
+                echo "출력 상태: $(get_pv_value $OUTPUT_STATE_PV)"
+                echo "활성화 상태: $(get_pv_value $ENABLE_PV)"
+                echo "업데이트 주기: $(get_pv_value $UPDATE_RATE_PV) Hz"
+                ;;
+            8)
+                cleanup
+                ;;
+            9)
+                print_info "테스트를 종료합니다."
+                exit 0
+                ;;
+            *)
+                print_error "잘못된 선택입니다."
+                ;;
+        esac
+        
+        wait_for_user
+    done
+}
+
+function run_all_tests() {
+    print_header "ThresholdLogic Controller 전체 테스트 시작"
+    
+    test_pv_connections
+    test_initial_setup
+    test_enable_disable
+    test_threshold_logic
+    test_hysteresis
+    test_update_rate
+    test_alarm_conditions
+    test_reset_function
+    test_continuous_monitoring
+    test_performance
+    generate_test_report
+    cleanup
+    
+    print_header "모든 테스트 완료!"
+}
+
+# ===== 스크립트 시작 =====
+
+function main() {
+    print_header "ThresholdLogic Controller 테스트 스크립트"
+    print_info "이 스크립트는 ThresholdLogicController의 모든 기능을 테스트합니다."
+    print_info "IOC가 실행 중이고 ThresholdLogic이 설정되어 있는지 확인하세요."
+    echo
+    
+    # 명령행 인수 확인
+    if [ "$1" = "--auto" ] || [ "$1" = "-a" ]; then
+        print_info "자동 모드로 전체 테스트를 실행합니다..."
+        run_all_tests
+    else
+        print_info "대화형 모드로 시작합니다..."
+        interactive_mode
+    fi
+}
+
+# 스크립트 실행
+main "$@"
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./iocBoot/iocUSB1608G_2AO_V2/catest_USB1608G_2AO.sh
+=================================================
+#!/bin/bash
+
+# ===== 함수 정의 =====
+
+function set_automode() {
+  echo "==========[ 초기화: AutoMode ON ]=========="
+  caput USB1608G_2AO:AiMode 1
+  for i in {5..8}; do
+    caput USB1608G_2AO:Threshold:Ai1-Bo$i:AutoMode 1
+  done
+  sleep 2
+}
+
+
+
+function set_voltage_and_read() {
+  local voltage=$1
+  echo ""
+  echo "--------- Ao1 = ${voltage}V"
+  caput USB1608G_2AO:Ao1 "$voltage"
+  sleep 3
+  caget USB1608G_2AO:Ai1
+  for i in {5..8}; do
+    caget USB1608G_2AO:Threshold:Ai1-Bo$i:Calc
+  done
+  for i in {5..8}; do
+    caget USB1608G_2AO:Bo$i
+  done
+}
+
+
+
+function manual_calc_test() {
+  echo ""
+  echo "==========[ CALC에 고정값으로 직접 넣어서 확인 ]=========="
+
+  # CALC, OUT 필드 수동 설정
+  caput USB1608G_2AO:Threshold:Ai1-Bo6:Calc.CALC "B?(A>=2):C"
+  caput USB1608G_2AO:Threshold:Ai1-Bo6:Calc.OUT "USB1608G_2AO:Bo6 PP"
+
+  # 테스트 전압 설정
+  caput -t USB1608G_2AO:Ao1 2.5
+  sleep 3
+  caget USB1608G_2AO:Ai1
+
+  # PROC 강제 실행
+  caput USB1608G_2AO:Threshold:Ai1-Bo6:Calc.PROC 1
+
+  # 결과 확인
+  caget USB1608G_2AO:Threshold:Ai1-Bo6:Calc
+  caget USB1608G_2AO:Bo5
+  caget USB1608G_2AO:Bo6
+
+  # 다시 0V로 설정
+  caput -t USB1608G_2AO:Ao1 0
+  sleep 3
+  caget USB1608G_2AO:Ai1
+}
+
+
+
+
+
+# 형식: sine_wave_ao1 <진폭> <주파수> <샘플수> <지연시간>
+# 예시: sine_wave_ao1 5 1 100 0.1   → 5V 사인파, 1Hz, 100포인트, 0.1초 간격 출력
+
+function sine_wave_ao1() {
+  local amplitude=$1   # 최대 전압 (예: 5V)
+  local samples=$2     # 전체 샘플 수
+  local duration=$3    # 전체 시간 (초)
+
+  # delay = duration / samples
+  local delay=$(echo "scale=6; $duration / $samples" | bc -l)
+
+  # frequency = 1 / duration
+  local freq=$(echo "scale=6; 1 / $duration" | bc -l)
+
+  echo "===== Ao1에 Sine Wave 출력 시작 ====="
+  echo "진폭=${amplitude}V, 샘플수=${samples}, 전체시간=${duration}s, 주기=${freq}Hz, delay=${delay}s"
+
+  for ((i = 0; i < samples; i++)); do
+    # 시간 t
+    t=$(echo "$i * $delay" | bc -l)
+
+    # 각도 theta = 2πft
+    theta=$(echo "2 * 3.141592 * $freq * $t" | bc -l)
+
+    # 사인값 계산
+    sin_val=$(python3 -c "import math; print(math.sin($theta))")
+
+    # 전압 = A * sin(theta)
+    voltage=$(echo "$amplitude * $sin_val" | bc -l)
+
+    # 출력
+    printf "[%03d] Ao1 = %.3f V\n" "$i" "$voltage"
+    caput -t USB1608G_2AO:Ao1 "$voltage"
+
+    sleep "$delay"
+  done
+
+  echo "===== Sine Wave 출력 종료 ====="
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# ===== main 함수 정의 =====
+
+function main() {
+  set_automode
+
+  local voltages=(0.0 1.11 2.22 3.33 4.44 3.33 2.22 1.11 0.0)
+
+  for v in "${voltages[@]}"; do
+    set_voltage_and_read "$v"
+  done
+
+  # manual_calc_test
+  
+  # 진폭 5V, 100 샘플, 50초 동안 사인파 1주기 출력
+  sine_wave_ao1 5 100 30
+
+}
+
+# ===== 스크립트 실행 시작 =====
+main
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./iocBoot/iocUSB1608G_2AO_V2/cleanup_USB1608G_2AO.sh
+=================================================
+#!/bin/bash
+
+# EPICS 애플리케이션의 사용하지 않는 파일 및 빌드 아티팩트를 정리하는 스크립트
+
+# 함수: 지정된 패턴의 파일/디렉토리를 찾아 삭제를 확인하고 실행
+# 사용법: cleanup_items "설명" <find 명령어 인자들>
+cleanup_items() {
+    local description="$1"
+    shift
+    local find_args=("$@")
+
+    echo "--- $description 검색 중..."
+    # find 명령을 실행하고 결과를 배열에 저장
+    # -print0과 read -d ''를 사용하여 공백이 포함된 파일 이름 처리
+    local items_to_delete=()
+    while IFS= read -r -d $'\0'; do
+        items_to_delete+=("$REPLY")
+    done < <(find . -depth "${find_args[@]}" -print0 2>/dev/null)
+
+
+    if [ ${#items_to_delete[@]} -eq 0 ]; then
+        echo " -> 삭제할 항목 없음."
+        echo ""
+        return
+    fi
+
+    echo " -> 다음 항목들을 삭제할까요?"
+    printf '    - %s\n' "${items_to_delete[@]}"
+
+    read -p "   삭제하시겠습니까? (y/n): " confirm
+    if [[ "$confirm" == "y" || "$confirm" == "Y" ]]; then
+        # 배열의 각 항목에 대해 rm -rf 실행
+        for item in "${items_to_delete[@]}"; do
+            if [ -e "$item" ]; then # 항목이 존재하는지 확인
+                echo "    -> 삭제 중: $item"
+                rm -rf "$item"
+            fi
+        done
+        echo " -> 완료."
+    else
+        echo " -> 삭제를 건너뜁니다."
+    fi
+    echo ""
+}
+
+# 메인 정리 함수
+main_cleanup() {
+    echo "================================================="
+    echo "EPICS 애플리케이션 정리 스크립트"
+    echo "================================================="
+    echo "현재 디렉토리: $(pwd)"
+    echo ""
+
+    # 1. 빌드 출력 디렉토리 (O.*)
+    cleanup_items "빌드 출력 디렉토리 (O.*)" -type d -name "O.*"
+
+    # 2. 백업 파일 (*.bak, *_BAK.adl)
+    cleanup_items "백업 파일 (*.bak, *_BAK.adl)" -type f \( -name "*.bak" -o -name "*_BAK.adl" \)
+
+    # 3. EPICS autosave 백업 파일 (*.sav[0-9], *.savB)
+    cleanup_items "EPICS autosave 백업 파일" -type f \( -name "*.sav[0-9]" -o -name "*.savB" \)
+
+    # 4. 컴파일된 실행 파일 (bin/*)
+    cleanup_items "컴파일된 실행 파일" -path "./bin/*" -type f
+
+    # 5. 이 IOC에서 사용하지 않는 다른 모델용 설정 파일 (*_settings.req)
+    cleanup_items "다른 모델용 설정 파일" -type f -name "*_settings.req" \
+        -not -name "measComp*" \
+        -not -name "USB1608G_2AO_settings.req"
+
+    echo "================================================="
+    echo "정리 완료."
+    echo "================================================="
+}
+
+# 스크립트 실행
+main_cleanup
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./iocBoot/iocUSB1608G_2AO_V2/envPaths
+=================================================
+epicsEnvSet("IOC","iocUSB1608G_2AO_V2")
+epicsEnvSet("TOP","/usr/local/epics/EPICS_R7.0/siteApp/USB1608G_2AO_V2")
+epicsEnvSet("EPICS_BASE","/usr/local/epics/EPICS_R7.0/base")
+epicsEnvSet("SUPPORT","/usr/local/epics/EPICS_R7.0/modules/synApps/support")
+epicsEnvSet("ASYN","/usr/local/epics/EPICS_R7.0/modules/synApps/support/asyn-R4-44-2")
+epicsEnvSet("CALC","/usr/local/epics/EPICS_R7.0/modules/synApps/support/calc-R3-7-5")
+epicsEnvSet("SCALER","/usr/local/epics/EPICS_R7.0/modules/synApps/support/scaler-4-1")
+epicsEnvSet("MCA","/usr/local/epics/EPICS_R7.0/modules/synApps/support/mca-R7-10")
+epicsEnvSet("BUSY","/usr/local/epics/EPICS_R7.0/modules/synApps/support/busy-R1-7-4")
+epicsEnvSet("SSCAN","/usr/local/epics/EPICS_R7.0/modules/synApps/support/sscan-R2-11-6")
+epicsEnvSet("AUTOSAVE","/usr/local/epics/EPICS_R7.0/modules/synApps/support/autosave-R5-11")
+epicsEnvSet("SNCSEQ","/usr/local/epics/EPICS_R7.0/modules/synApps/support/sequencer-mirror-R2-2-9")
+epicsEnvSet("MEASCOMP","/usr/local/epics/EPICS_R7.0/modules/synApps/support/measComp-R4-2")
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./iocBoot/iocUSB1608G_2AO_V2/medm_USB1608G_2AO.sh
+=================================================
+#!/bin/bash
+
+# ========== Logging ==========
+LOG_DIR="/root/log"
+script_name="${0##*/}";
+script_name="${script_name%.*}"
+LOG_FILE="$LOG_DIR/$script_name.log"
+
+APPNAME="USB1608G_2AO_V2"
+
+init_log() {
+    mkdir -p "$LOG_DIR"
+    {
+        echo "========================================="
+        echo " Log File: $LOG_FILE"
+        echo " Created: $(date '+%Y-%m-%d %H:%M:%S')"
+        echo " User: $(whoami)"
+        echo " Host: $(hostname)"
+        echo "========================================="
+    } > "$LOG_FILE"
+}
+
+
+export EPICS_SITE=${EPICS_PATH}/siteApp
+# ========== Functions ==========
+# /usr/local/epics/EPICS_R7.0/siteApp/USB1608G/USB1608GApp/op/USB1608G.adl
+
+USB1608G_2AO_exec() {
+    local OPDIR=${EPICS_SITE}/${APPNAME}/${APPNAME}App/op
+
+    cd ${OPDIR}
+    # args="P=USB1608G_2AO:,Bi=Bi,Li=Li,Bo=Bo,Lo=Lo,Bd=Bd,Ai=Ai,Ao=Ao,Ct=Counter,Wd=WaveDig,Wg=WaveGen,Pg=PulseGen,Tg=Trig"
+
+    # Build macro string
+    local MACRO_STR="P=USB1608G_2AO:,Bi=Bi,Li=Li,Bo=Bo,Lo=Lo,Bd=Bd,Ai=Ai,Ao=Ao,Ct=Counter,Wd=WaveDig,Wg=WaveGen,Pg=PulseGen,Tg=Trig"    
+
+    # Call medm with explicit options, properly quoted. / 명시적 옵션과 올바른 따옴표
+    medm -x -macro "$MACRO_STR" -displayFont fixed "${APPNAME}.adl" &
+    echo " - cd ${OPDIR}"
+}
+
+USB1608G_2AO_edit() {
+    local OPDIR=${EPICS_SITE}/${APPNAME}/${APPNAME}App/op
+
+    cd ${OPDIR}
+    # args="P=USB1608G_2AO:,Bi=Bi,Li=Li,Bo=Bo,Lo=Lo,Bd=Bd,Ai=Ai,Ao=Ao,Ct=Counter,Wd=WaveDig,Wg=WaveGen,Pg=PulseGen,Tg=Trig"
+    export MEDM_MACRO="-macro P=USB1608G_2AO:,Bi=Bi,Li=Li,Bo=Bo,Lo=Lo,Bd=Bd,Ai=Ai,Ao=Ao,Ct=Counter,Wd=WaveDig,Wg=WaveGen,Pg=PulseGen,Tg=Trig"
+    export MEDM_FONT='-displayFont fixed'
+    medm $MEDM_MACRO $MEDM_FONT ${APPNAME}.adl &
+    echo " - cd ${OPDIR}"
+}
+
+
+measCompDigitalIO8_exec() {
+    local OPDIR=${EPICS_SITE}/${APPNAME}/${APPNAME}App/op
+
+    cd ${OPDIR}    
+    export MEDM_MACRO="-macro P=USB1608G_2AO:,Bi=Bi,Li=Li,Bo=Bo,Lo=Lo,Bd=Bd"
+    export MEDM_FONT='-displayFont fixed'
+    medm -x $MEDM_MACRO $MEDM_FONT measCompDigitalIO8.adl &
+    echo " - cd ${OPDIR}"
+}
+
+measCompDigitalIO8_edit() {
+    local OPDIR=${EPICS_SITE}/${APPNAME}/${APPNAME}App/op
+
+    cd ${OPDIR}    
+    export MEDM_MACRO="-macro P=USB1608G_2AO:,Bi=Bi,Li=Li,Bo=Bo,Lo=Lo,Bd=Bd"
+    export MEDM_FONT='-displayFont fixed'
+    medm $MEDM_MACRO $MEDM_FONT measCompDigitalIO8.adl &
+    echo " - cd ${OPDIR}"
+}
+
+
+
+
+
+
+# ========== Common function ==========
+kill_medm() {
+    echo "[INFO] Checking for existing medm processes..."
+
+    local medm_pids
+    medm_pids=$(pgrep -x medm)
+
+    if [[ -z "$medm_pids" ]]; then
+        printf "%7s%s\n" "" "- No medm process found. Nothing to kill."
+    else
+        printf "%7s%s\n" "" "- Found medm process(es): $medm_pids"
+        printf "%7s%s\n" "" "- Killing medm process(es)..."
+        kill $medm_pids
+        sleep 0.5
+
+        if pgrep -x medm >/dev/null; then
+            printf "%7s%s\n" "" "- [WARN] Some medm process(es) may still be running."
+        else
+            printf "%7s%s\n" "" "- All medm process(es) terminated successfully."
+        fi
+    fi
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+# ========== Main ==========
+handle_selection() {
+	case "$1" in
+			1) USB1608G_2AO_exec ;;
+			2) USB1608G_2AO_edit ;;
+            3) measCompDigitalIO8_exec ;;
+            4) measCompDigitalIO8_edit ;;
+			0)
+					echo "Exit the script"
+					return 0  # << exit 대신 return
+					;;
+			*)
+					echo ""
+					echo "You have entered '${1}'"
+					echo "Please select the number in the list..."
+					echo "Exit the script"
+					echo ""
+					return 1
+					;;
+	esac
+
+	echo -e "\n========================================"
+	echo "[DONE] All tasks completed"
+}
+
+
+main() {
+    #init_log
+    #printf '\n%.0s' {1..3}
+    kill_medm
+
+    echo ""
+    echo "Enter the number of you want to script"
+    echo "1 : USB1608G_2AO_exec (with ThresholdLogic)"
+    echo "2 : USB1608G_2AO_edit (with ThresholdLogic)"
+    echo ""
+    echo "3 : measCompDigitalIO8_exec"
+    echo "4 : measCompDigitalIO8_edit"
+    echo ""
+    echo "0 : Exit script"
+    echo -n "Enter the number : "
+    read answer
+
+    handle_selection "$answer"
+    if [[ $? -ne 0 ]]; then
+        exit 1
+    fi
+}
+main
+
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./iocBoot/iocUSB1608G_2AO_V2/save_restore.cmd
+=================================================
+# Debug-output level
+save_restoreSet_Debug(0)
+
+# Ok to save/restore save sets with missing values (no CA connection to PV)?
+save_restoreSet_IncompleteSetsOk(1)
+# Save dated backup files?
+save_restoreSet_DatedBackupFiles(1)
+
+# Number of sequenced backup files to write
+save_restoreSet_NumSeqFiles(3)
+# Time interval between sequenced backups
+save_restoreSet_SeqPeriodInSeconds(300)
+
+# specify where save files should be
+set_savefile_path(".", "autosave")
+
+# specify what save files should be restored.  Note these files must be
+# in the directory specified in set_savefile_path(), or, if that function
+# has not been called, from the directory current when iocInit is invoked0
+set_pass0_restoreFile("auto_settings.sav")
+set_pass1_restoreFile("auto_settings.sav")
+
+# specify directories in which to to search for included request files
+# Note cdCommands defines 'startup', but envPaths does not
+set_requestfile_path(".",         "")
+set_requestfile_path(".",         "autosave")
+set_requestfile_path($(AUTOSAVE), "db")
+set_requestfile_path($(CALC),     "db")
+set_requestfile_path($(SCALER),   "db")
+set_requestfile_path($(SSCAN),    "db")
+set_requestfile_path($(MEASCOMP), "db")
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./iocBoot/iocUSB1608G_2AO_V2/st.cmd
+=================================================
+#!../../bin/linux-x86_64/USB1608G_2AO_V2
+< envPaths
+
+## Register all support components
+dbLoadDatabase("$(TOP)/dbd/USB1608G_2AO_V2.dbd")
+USB1608G_2AO_V2_registerRecordDeviceDriver(pdbbase)
+
+## Environment variable setup
+epicsEnvSet("PREFIX", "USB1608G_2AO:")
+epicsEnvSet("PORT", "USB1608G_2AO_PORT")
+epicsEnvSet("WDIG_POINTS", "1048576")
+epicsEnvSet("WGEN_POINTS", "1048576")
+epicsEnvSet("UNIQUE_ID", "01D97CFA")
+
+## Configure port driver
+MultiFunctionConfig("$(PORT)", "$(UNIQUE_ID)", $(WDIG_POINTS), $(WGEN_POINTS))
+
+## Configure threshold logic controller
+epicsEnvSet("THRESHOLD_PORT", "THRESHOLD_LOGIC_PORT")
+ThresholdLogicConfig("$(THRESHOLD_PORT)", "$(PORT)", 0)
+
+## Load database templates
+dbLoadTemplate("$(TOP)/USB1608G_2AO_V2App/Db/USB1608G_2AO.substitutions", "P=$(PREFIX),PORT=$(PORT),WDIG_POINTS=$(WDIG_POINTS),WGEN_POINTS=$(WGEN_POINTS)")
+
+## Load save/restore configuration
+< save_restore.cmd
+
+## Initialize IOC
+iocInit
+
+## Setup autosave monitoring
+create_monitor_set("auto_settings.req",30,"P=$(PREFIX)")
+

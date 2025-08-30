@@ -1,0 +1,43 @@
+📁 tree of bin/
+./bin
+└── linux-x86_64
+    └── USB1608G_2AO_V2
+
+1 directory, 1 file
+
+
+
+
+
+
+
+
+
+
+📄 All files under bin/:
+./bin/linux-x86_64/USB1608G_2AO_V2
+
+
+
+
+
+
+
+
+
+
+📄 Contents of files under bin/:
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./bin/linux-x86_64/USB1608G_2AO_V2
+=================================================
+[SKIPPED: ❌ binary or unreadable file]

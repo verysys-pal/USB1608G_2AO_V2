@@ -1,0 +1,42 @@
+📁 tree of dbd/
+./dbd
+└── USB1608G_2AO_V2.dbd
+
+0 directories, 1 file
+
+
+
+
+
+
+
+
+
+
+📄 All files under dbd/:
+./dbd/USB1608G_2AO_V2.dbd
+
+
+
+
+
+
+
+
+
+
+📄 Contents of files under dbd/:
+
+
+
+
+
+
+
+
+
+
+
+🔥 File: ./dbd/USB1608G_2AO_V2.dbd
+=================================================
+[SKIPPED: 🚋 OP 화면용 파일 (*.dbd)]
