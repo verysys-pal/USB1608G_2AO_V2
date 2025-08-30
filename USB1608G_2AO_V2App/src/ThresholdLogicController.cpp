@@ -77,6 +77,7 @@ ThresholdLogicController::ThresholdLogicController(const char* portName, const c
     createParam(THRESHOLD_VALUE_STRING,  asynParamFloat64, &P_ThresholdValue);
     createParam(CURRENT_VALUE_STRING,    asynParamFloat64, &P_CurrentValue);
     createParam(OUTPUT_STATE_STRING,     asynParamInt32,   &P_OutputState);
+    createParam(COMPARE_RESULT_STRING,   asynParamInt32,   &P_CompareResult);
     createParam(ENABLE_STRING,           asynParamInt32,   &P_Enable);
     createParam(HYSTERESIS_STRING,       asynParamFloat64, &P_Hysteresis);
     createParam(UPDATE_RATE_STRING,      asynParamFloat64, &P_UpdateRate);
@@ -103,6 +104,7 @@ ThresholdLogicController::ThresholdLogicController(const char* portName, const c
     setDoubleParam(P_ThresholdValue, thresholdValue_);
     setDoubleParam(P_CurrentValue, currentValue_);
     setIntegerParam(P_OutputState, outputState_ ? 1 : 0);
+    setIntegerParam(P_CompareResult, outputState_ ? 1 : 0);
     setIntegerParam(P_Enable, enabled_ ? 1 : 0);
     setDoubleParam(P_Hysteresis, hysteresis_);
     setDoubleParam(P_UpdateRate, updateRate_);
@@ -451,7 +453,7 @@ asynStatus ThresholdLogicController::readInt32(asynUser *pasynUser, epicsInt32 *
     else if (function == P_OutputState) {
         *value = outputState_ ? 1 : 0;
         asynPrint(pasynUser, ASYN_TRACEIO_DEVICE,
-                  "%s::%s: 출력 상태 읽기: %d (%s)\n", 
+                  "%s::%s: 출력 상태 읽기: %d (%s)\n",
                   driverName, functionName, *value, outputState_ ? "HIGH" : "LOW");
         
         // 스레드가 실행 중이지 않은데 출력 상태가 변경된 경우 경고
@@ -460,6 +462,12 @@ asynStatus ThresholdLogicController::readInt32(asynUser *pasynUser, epicsInt32 *
                       "%s::%s: 모니터링 스레드가 중지된 상태에서 출력이 HIGH입니다\n",
                       driverName, functionName);
         }
+    }
+    else if (function == P_CompareResult) {
+        *value = outputState_ ? 1 : 0;
+        asynPrint(pasynUser, ASYN_TRACEIO_DEVICE,
+                  "%s::%s: 비교 결과 읽기: %d\n",
+                  driverName, functionName, *value);
     }
     else if (function == P_AlarmStatus) {
         *value = alarmStatus_;
@@ -605,6 +613,7 @@ void ThresholdLogicController::processThresholdLogic()
     // 4. 매개변수 업데이트 및 타임스탬프 갱신
     setDoubleParam(P_CurrentValue, currentValue_);
     setIntegerParam(P_AlarmStatus, alarmStatus_);
+    setIntegerParam(P_CompareResult, outputState_ ? 1 : 0);
     
     // 타임스탬프 업데이트
     epicsTimeGetCurrent(&lastUpdate_);

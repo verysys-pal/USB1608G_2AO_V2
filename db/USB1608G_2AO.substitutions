@@ -162,10 +162,10 @@ pattern
 file "$(TOP)/USB1608G_2AO_V2App/Db/threshold_logic.template"
 {
 pattern
-{ R,               IN_CH,  OUT_CH, THRESHOLD, HYSTERESIS, ENABLE, UPDATE_RATE, PREC, EGU }
-{ ThresholdLogic1, "Ai1",   "Bo5",     2.5,       0.1,        1,      10.0,        3,   "V" }
-{ ThresholdLogic2, "Ai2",   "Bo6",     5.0,       0.2,        1,      10.0,        3,   "V" }
-{ ThresholdLogic3, "Ai3",   "Bo7",     1.0,       0.05,       0,      5.0,         3,   "V" }
-{ ThresholdLogic4, "Ai4",   "Bo8",     7.5,       0.3,        0,      20.0,        3,   "V" }
+{ R,               IN_CH,  THRESHOLD, HYSTERESIS, ENABLE, UPDATE_RATE, PREC, EGU }
+{ ThresholdLogic1, "Ai1",     2.5,       0.1,        1,      10.0,        3,   "V" }
+{ ThresholdLogic2, "Ai2",     5.0,       0.2,        1,      10.0,        3,   "V" }
+{ ThresholdLogic3, "Ai3",     1.0,       0.05,       0,      5.0,         3,   "V" }
+{ ThresholdLogic4, "Ai4",     7.5,       0.3,        0,      20.0,        3,   "V" }
 }
 

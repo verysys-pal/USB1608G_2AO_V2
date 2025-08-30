@@ -28,7 +28,7 @@ USB1608G_2AO_V2_SRCS += USB1608G_2AO_V2_registerRecordDeviceDriver.cpp
 USB1608G_2AO_V2_SRCS += drvMultiFunction.cpp
 USB1608G_2AO_V2_SRCS += drvUSBCTR.cpp
 USB1608G_2AO_V2_SRCS += measCompDiscover.cpp
-USB1608G_2AO_V2_SRCS += ThresholdLogicController.cpp
+USB1608G_2AO_V2_SRCS += ThresholdLogicController.cpp  # publishes threshold result via asyn
 USB1608G_2AO_V2_SRCS += ErrorHandler.cpp
 USB1608G_2AO_V2_SRCS += USBCTR_SNL.st
 

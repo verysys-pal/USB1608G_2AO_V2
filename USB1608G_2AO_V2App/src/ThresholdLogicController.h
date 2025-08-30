@@ -51,6 +51,7 @@ public:
     int getThresholdValueParam() const { return P_ThresholdValue; }
     int getCurrentValueParam() const { return P_CurrentValue; }
     int getOutputStateParam() const { return P_OutputState; }
+    int getCompareResultParam() const { return P_CompareResult; }
     int getEnableParam() const { return P_Enable; }
     int getHysteresisParam() const { return P_Hysteresis; }
     int getUpdateRateParam() const { return P_UpdateRate; }
@@ -61,6 +62,7 @@ protected:
     int P_ThresholdValue;      ///< 임계값 설정 매개변수
     int P_CurrentValue;        ///< 현재 측정값 매개변수
     int P_OutputState;         ///< 출력 상태 매개변수
+    int P_CompareResult;       ///< 임계값 비교 결과 매개변수
     int P_Enable;              ///< 활성화 상태 매개변수
     int P_Hysteresis;          ///< 히스테리시스 값 매개변수
     int P_UpdateRate;          ///< 업데이트 주기 매개변수
@@ -122,6 +124,7 @@ extern "C" {
 #define THRESHOLD_VALUE_STRING      "THRESHOLD_VALUE"
 #define CURRENT_VALUE_STRING        "CURRENT_VALUE"
 #define OUTPUT_STATE_STRING         "OUTPUT_STATE"
+#define COMPARE_RESULT_STRING       "COMPARE_RESULT"
 #define ENABLE_STRING               "ENABLE"
 #define HYSTERESIS_STRING           "HYSTERESIS"
 #define UPDATE_RATE_STRING          "UPDATE_RATE"

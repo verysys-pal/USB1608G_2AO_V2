@@ -56,28 +56,14 @@ record(ai, "$(P)$(R)CurrentValue") {
     field(HSV,  "MINOR")
     field(LSV,  "MINOR")
     field(LLSV, "MAJOR")
-    field(FLNK, "$(P)$(R)Compare")
 }
 
-# 임계값 비교 계산 레코드
-record(calcout, "$(P)$(R)Compare") {
-    field(DESC, "Threshold Comparison :  $(IN_CH) -> $(OUT_CH)")
-    field(CALC, "A>=(B+C)?1:(A<=(B-C)?0:D)")
-    field(INPA, "$(P)$(IN_CH) CP")
-    field(INPB, "$(P)$(R)Threshold")
-    field(INPC, "$(P)$(R)Hysteresis")
-    field(INPD, "$(P)$(R)OutputState")
-    field(OUT,  "$(P)$(OUT_CH) PP")
-    field(OOPT, "Every Time")
-    field(DOPT, "Use CALC")
-    field(SCAN, "Passive")
-}
-
-# 출력 상태 레코드 (실제 바이너리 출력 채널 상태 모니터링)
+# 드라이버에서 제공하는 비교 결과 모니터 레코드
 record(bi, "$(P)$(R)OutputState") {
-    field(DESC, "Current Output State of $(OUT_CH)")
-    field(INP,  "$(P)$(OUT_CH) CP")
-    field(SCAN, "Passive")
+    field(DESC, "Threshold comparison result")
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR=0))COMPARE_RESULT")
+    field(SCAN, "I/O Intr")
     field(ZNAM, "Low")
     field(ONAM, "High")
     field(ZSV,  "NO_ALARM")
