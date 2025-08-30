@@ -1,4 +1,7 @@
-# ThresholdLogicController 지원을 위한 DBD 정의
+# ThresholdLogicController 및 aSub(임계값 비교) 지원을 위한 DBD 정의
 
 # 드라이버 등록 함수
 registrar(ThresholdLogicRegister)
+
+# aSub user routine 등록
+function(thresholdCompare)

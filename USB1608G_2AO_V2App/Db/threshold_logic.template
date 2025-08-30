@@ -59,17 +59,29 @@ record(ai, "$(P)$(R)CurrentValue") {
     field(FLNK, "$(P)$(R)Compare")
 }
 
-# 임계값 비교 계산 레코드
-record(calcout, "$(P)$(R)Compare") {
-    field(DESC, "Threshold Comparison :  $(IN_CH) -> $(OUT_CH)")
-    field(CALC, "A>=(B+C)?1:(A<=(B-C)?0:D)")
+# 임계값 비교 계산 레코드 (C++ aSub로 대체)
+record(aSub, "$(P)$(R)Compare") {
+    field(DESC, "Threshold Comparison (aSub): $(IN_CH) -> $(OUT_CH)")
+    # 입력 링크: 현재값(A), 임계값(B), 히스테리시스(C), 이전 출력(D)
     field(INPA, "$(P)$(IN_CH) CP")
     field(INPB, "$(P)$(R)Threshold")
     field(INPC, "$(P)$(R)Hysteresis")
     field(INPD, "$(P)$(R)OutputState")
-    field(OUT,  "$(P)$(OUT_CH) PP")
-    field(OOPT, "Every Time")
-    field(DOPT, "Use CALC")
+    # 입력 타입 설정 (스칼라 Double)
+    field(FTA,  "DOUBLE")
+    field(FTB,  "DOUBLE")
+    field(FTC,  "DOUBLE")
+    field(FTD,  "DOUBLE")
+    field(NOA,  "1")
+    field(NOB,  "1")
+    field(NOC,  "1")
+    field(NOD,  "1")
+    # 출력 링크: 계산 결과를 OUT_CH로 전달 (정수 0/1)
+    field(OUTA, "$(P)$(OUT_CH) PP")
+    field(FTVA, "LONG")
+    field(NOVA, "1")
+    # 실행할 함수 이름 등록 (ThresholdCompare.cpp)
+    field(SNAM, "thresholdCompare")
     field(SCAN, "Passive")
 }
 

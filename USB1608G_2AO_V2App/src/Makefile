@@ -31,6 +31,7 @@ USB1608G_2AO_V2_SRCS += measCompDiscover.cpp
 USB1608G_2AO_V2_SRCS += ThresholdLogicController.cpp
 USB1608G_2AO_V2_SRCS += ErrorHandler.cpp
 USB1608G_2AO_V2_SRCS += USBCTR_SNL.st
+USB1608G_2AO_V2_SRCS += ThresholdCompare.cpp
 
 
 # Build the main IOC entry point on workstation OSs.
